@@ -73,7 +73,7 @@
 \usepackage{changepage}
 \usepackage{scrextend}
 \usepackage{xstring}
-\usepackage[printonlyused,withpage]{acronym}
+\usepackage[printonlyused]{acronym}
 \usepackage{url}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 
