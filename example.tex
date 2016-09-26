@@ -1,0 +1,41 @@
+\documentclass[dp]{FEIstyle}
+
+\FEIauthor{Ján Srnka}
+\FEItitle{Ukážkový \LaTeX\ dokument s dlhým názvom}
+\FEItitleEn{Example \LaTeX\ document with long title}
+\FEIregNr{FEI-xxxx-xxxx}
+\FEIsupervisor{Mgr. Ing. Peter Párker, PhD.}
+%\FEIconsultant{Ing. John Doe}
+
+\begin{document}
+\frontmatter
+
+\FEIpdfInfo
+\FEIcover
+\FEItitlePage
+% \FEIassignment {includes/assignment.jpeg}
+\FEIabstract{includes/abstract}{keyword1, keyword2, keyword3}
+\FEIabstractEn{includes/abstractEN}{keyword1, keyword2, keyword3}
+%\FEIdeclaration{includes/declaration} 
+\FEIthanks{includes/thanks}           
+\FEIcontent
+\FEIlistOfFiguresAndTables
+\FEIlistOfAbbreviations{includes/abbreviations}
+\FEIlistOfAlgorithms
+
+\mainmatter
+
+\FEIintroduction{includes/introduction}
+\FEIcore{includes/core}
+\FEIconclusion{includes/conclusion}
+\FEIresume{includes/resume}
+% bibliography should use UTF-8 accents (write as is ľščťžýáí...) NOT converted by BibDesk
+% http://tex.stackexchange.com/questions/57743/how-to-write-%C3%A4-and-other-umlauts-and-accented-letters-in-bibliography
+\FEIbibliography %includes/bibliography.bib
+
+\backmatter
+
+\FEIlistOfAppendix
+\FEIappendix{Štruktúra elektronického nosiča}{includes/attachmentA}
+\FEIappendix{Algoritmus}{includes/attachmentB}
+\end{document}

@@ -1,0 +1,39 @@
+\begin{algorithm}
+\lstset{
+    language=C,
+    basicstyle=\small\sffamily,
+    frame=none,
+    numbers=left,
+    xleftmargin=5.0ex,
+    numberstyle=\tiny,
+    stepnumber=1,
+    showstringspaces=false,
+    keywordstyle=\color{blue}\bfseries
+    }
+\lstset{emph={%  Adjust any special keywords
+    prinf%
+    },emphstyle={\color[rgb]{1,0,0}\bfseries}%
+}%
+\begin{lstlisting}
+#include <stdio.h>
+#define N 10
+/* Block
+ * comment */
+
+int main()
+{
+    int i;
+
+    // Line comment.
+    puts("Good Bye!");
+    
+    for (i = 0; i < N; i++)
+    {
+        puts("LaTeX is also great for programmers!");
+    }
+
+    return 0;
+}
+\end{lstlisting}
+ \caption{Ukážka algoritmu}\label{good-bye}
+\end{algorithm}
