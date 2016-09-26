@@ -7,6 +7,10 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  
 >**note**: This FEIstyle supports **only UTF-8** encoding.
 
+### Changelog
+
+Changelog is located [here](https://github.com/Kyslik/FEIStyle/blob/master/CHANGELOG.md).
+
 ## Installation
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
  
