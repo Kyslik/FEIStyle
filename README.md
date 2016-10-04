@@ -35,7 +35,7 @@ Runs necessary compile chain.
 $ latexmk -pdf -bibtex -quiet file
 ```
 
-Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk).
+Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk) or use added Makefile.
 
    
 ## Hints and trics
