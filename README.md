@@ -54,7 +54,7 @@ editors and IDEs:
  
 >Afraid of losing your work? Use GIT.
  
-### Hints and trics for OS X
+### Installation on macOS
 
  - install [MacTex distribution](https://tug.org/mactex/) using [homebrew](http://brew.sh/index.html) (~2gb)
 
@@ -67,6 +67,20 @@ editors and IDEs:
    ```
    $ brew install latexmk
    ```
+
+### Installation on Ubuntu/Fedora using eitl
+- download install script
+```
+$ wget http://mirrors.ctan.org/support/texlive/eitl.zip
+```
+- unzip
+```
+$ unzip eitl.zip && cd eitl
+```
+- install TexLive
+```
+$ ./eitl /usr/share/texlive
+```
 
 # TODO
 
