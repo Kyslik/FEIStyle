@@ -596,8 +596,8 @@
 		
 	\renewcommand\multinamedelim{\addcomma\space}
 	\renewcommand\finalnamedelim{\addspace\bibstring{and}\space}
-		
-	\setlength{\bibhang}{3ex}
+	% below you can set padding in bibliography
+	\setlength{\bibhang}{0pt}
 	\printbibliography
 }
 
