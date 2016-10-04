@@ -5,11 +5,17 @@ FILE=example
 BUILD_DIR=.build
 OPTIONS=-output-directory=$(BUILD_DIR) -quiet -pdf -bibtex -pdflatex="pdflatex" 
 
-all:
+all: build
+	
+build:
 	latexmk $(OPTIONS) $(FILE).tex
 	mv $(BUILD_DIR)/$(FILE).pdf .
 
+# latexmk -output-directory=$(BUILD_DIR) -CA might be used to clean
 clean:
 	rm -fr $(BUILD_DIR)
+	rm -f $(FILE).pdf
 
-.PHONY: all clean
+refresh: clean build
+
+.PHONY: all build clean refresh

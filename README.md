@@ -11,14 +11,14 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
 
 Changelog is located [here](https://github.com/Kyslik/FEIStyle/blob/master/CHANGELOG.md).
 
-## Installation
+# Installation
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
  
-## Compile chain
+# Compile chain
 
->**note** In following subchapters `file` is your main `file.tex` (eg: `diploma.tex` in root folder)
+>**Note**: in following subchapters `file` is your main `file.tex` (eg: `diploma.tex` in root folder)
 
-### Manual
+## Manual
 
 Following chain should output `file.pdf`
 
@@ -28,17 +28,34 @@ $ biber file
 $ pdflatex file
 ```
 
-### Using *latexmk*
-Runs necessary compile chain.
+## Using *latexmk*
+>**Note**: see [Hints and Trics](https://github.com/Kyslik/FEIStyle#hints-and-trics) section to get information on how to install **letexmk**
+
+Following command runs necessary compile chain.
 
 ```
 $ latexmk -pdf -bibtex -quiet file
 ```
 
-Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk) or use added Makefile.
+## Using Makefile (uses latexmk)
+>**Note**: make sure to change filename in Makefile on line #2
+
+Build in `.build` folder
+
+```
+$ make
+```
+
+Clean `.build` folder and delete PDF file in parent folder
+
+```
+$ make clean
+```
+
+Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk).
 
    
-## Hints and trics
+# Hints and trics
 
 searchterms:
 
@@ -54,7 +71,7 @@ editors and IDEs:
  
 >Afraid of losing your work? Use GIT.
  
-### Installation on macOS
+## Installation on macOS
 
  - install [MacTex distribution](https://tug.org/mactex/) using [homebrew](http://brew.sh/index.html) (~2gb)
 
@@ -68,19 +85,28 @@ editors and IDEs:
    $ brew install latexmk
    ```
 
-### Installation on Ubuntu/Fedora using eitl
-- download install script
-```
-$ wget http://mirrors.ctan.org/support/texlive/eitl.zip
-```
-- unzip
-```
-$ unzip eitl.zip && cd eitl
-```
-- install TexLive
-```
-$ ./eitl /usr/share/texlive
-```
+## Installation on Ubuntu/Fedora using eitl
+>**note**: biblatex-iso690 is included in 2016 build of texlive
+
+Do following steps only if you have texlive 2015 or less
+
+ - download install script
+  
+   ```
+   $ wget http://mirrors.ctan.org/support/texlive/eitl.zip
+   ```
+ 
+ - unzip
+   
+   ```
+   $ unzip eitl.zip && cd eitl
+   ```
+
+ - install TexLive
+ 
+   ```
+   $ ./eitl /usr/share/texlive
+   ```
 
 # TODO
 
