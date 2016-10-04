@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [FEIstyle](#feistyle)
+    - [Changelog](#changelog)
+- [Usage](#usage)
+- [Compile chain](#compile-chain)
+  - [Manual](#manual)
+  - [Using *latexmk*](#using-latexmk)
+  - [Using Makefile (uses *latexmk*)](#using-makefile-uses-latexmk)
+- [Hints and trics](#hints-and-trics)
+  - [Installation on macOS](#installation-on-macos)
+  - [Installation on Ubuntu/Fedora using eitl](#installation-on-ubuntufedora-using-eitl)
+- [TODO](#todo)
+- [Contribution](#contribution)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # FEIstyle
 Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony)):
 
@@ -11,7 +30,7 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
 
 Changelog is located [here](https://github.com/Kyslik/FEIStyle/blob/master/CHANGELOG.md).
 
-# Installation
+# Usage
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
  
 # Compile chain
@@ -37,8 +56,9 @@ Following command runs necessary compile chain.
 $ latexmk -pdf -bibtex -quiet file
 ```
 
-## Using Makefile (uses latexmk)
->**Note**: make sure to change filename in Makefile on line #2
+## Using Makefile (uses *latexmk*)
+
+>**Note**: make sure to change filename in Makefile on line [#2](https://github.com/Kyslik/FEIStyle/blob/master/Makefile#L2)
 
 Build in `.build` folder
 
@@ -69,7 +89,7 @@ editors and IDEs:
 
  - [http://tex.stackexchange.com/questions/339/latex-editors-ides](http://tex.stackexchange.com/questions/339/latex-editors-ides)
  
->Afraid of losing your work? Use GIT.
+> Afraid of losing your work? Use GIT.
  
 ## Installation on macOS
 
