@@ -134,6 +134,7 @@ Do following steps only if you have texlive 2015 or less
  - <strike>working example on [Sharelatex.com](https://www.sharelatex.com)</strike> - Sharelatex does not support biblatex-iso690 at this time 
  - transform **tutorial.pdf** to wiki page
  - update readme to include usage for Windows OS users
+ - update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
 
 # Contribution
 
