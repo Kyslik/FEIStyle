@@ -23,6 +23,7 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber
  - support for acronym package
  - removed FEIstyle.bst (not needed)
+ - added Makefile
  
 >**note**: This FEIstyle supports **only UTF-8** encoding.
 
@@ -130,7 +131,9 @@ Do following steps only if you have texlive 2015 or less
 
 # TODO
 
- - working example on [Sharelatex.com](https://www.sharelatex.com)
+ - <strike>working example on [Sharelatex.com](https://www.sharelatex.com)</strike> - Sharelatex does not support biblatex-iso690 at this time 
+ - transform **tutorial.pdf** to wiki page
+ - update readme to include usage for Windows OS users
 
 # Contribution
 
