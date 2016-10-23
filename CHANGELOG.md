@@ -5,6 +5,7 @@
    3. removed FEIstyle.bst (not needed)
    4. minimize warnings caused by `\\`
    5. build using makefile
+   6. added seminar paper template (see example_paper.tex|pdf)
 
  - 1.2f (2016.05.16.zip)
    1. zmena číslovania strán (začínať majú od 1 pri úvode)

@@ -24,6 +24,7 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - support for acronym package
  - removed FEIstyle.bst (not needed)
  - added Makefile
+ - added seminar paper template (see example_paper.tex|pdf)
  
 >**note**: This FEIstyle supports **only UTF-8** encoding.
 
