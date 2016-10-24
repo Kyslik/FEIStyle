@@ -374,7 +374,7 @@
                     {0}{}
                     {1}{\@tempKonzultanta \> \printKonzultant}
                     }[]
-            }{\@tempCourse \> \@skolaCourse \\
+            }{\@tempCourse \> \parbox[t]{9cm}{\@skolaCourse\vspace{1ex}} \\ %TODO use this for abstract minipage
                 \@tempLecturer \> \@skolaLecturer \\
                 \@tempTa \> \@skolaTa \\
             }

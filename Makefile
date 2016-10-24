@@ -1,5 +1,5 @@
 # filename without extenstion e.g: if we have example.tex
-FILE=example
+FILE=example_paper
 
 # specify where to put all build garbage
 BUILD_DIR=.build
