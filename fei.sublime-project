@@ -1,0 +1,28 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": [".build"],
+            "follow_symlinks": true
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "LaTeX",
+            "working_dir": "${folder}",
+            "shell_cmd": "make",
+            "variants": [
+                { 
+                    "name": "clean",
+                    "shell_cmd": "make clean",
+                },
+                { 
+                    "name": "refresh",
+                    "shell_cmd": "make refresh",
+                }
+            ]
+        }
+    ]
+}
