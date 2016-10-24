@@ -1,5 +1,5 @@
 /.build
-fei.sublime-workspace
+*.sublime-workspace
 *.pri
 *.aux
 *.bbl
