@@ -18,9 +18,9 @@
 \DeclareOption{sp}{\def\typPraceSkr{s}}
     \def\isThesis{0}
     \def\typPraceEn{Seminar Paper}
-    \def\typPrace{Semestr\'{a}lna pr\'{a}ca}
-    \def\typPraceTemp{semestr\'{a}lnu pr\'{a}cu}
-    \def\typPraceTempII{semestr\'{a}lnej práce}
+    \def\typPrace{Semin\'{a}rna pr\'{a}ca}
+    \def\typPraceTemp{semin\'{a}rnu pr\'{a}cu}
+    \def\typPraceTempII{semin\'{a}rnej práce}
 
 \newcommand*\myset{a4paper,12pt}
 \newcommand*\parentclass{article}
