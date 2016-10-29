@@ -6,7 +6,7 @@
    4. minimize warnings caused by `\\`
    5. build using makefile
    6. added seminar paper template (see example_paper.tex|pdf)
-   7. python script (utils/tree.py) to auto-generate contents of media (attachmentA.tex)
+   7. python script (utils/tree.py) to auto-generate contents of medium (attachmentA.tex)
 
  - 1.2f (2016.05.16.zip)
    1. zmena číslovania strán (začínať majú od 1 pri úvode)

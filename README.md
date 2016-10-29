@@ -5,13 +5,14 @@
 - [FEIstyle](#feistyle)
     - [Changelog](#changelog)
 - [Usage](#usage)
+- [Utilities](#utilities)
 - [Compile chain](#compile-chain)
   - [Manual](#manual)
   - [Using *latexmk*](#using-latexmk)
   - [Using Makefile (uses *latexmk*)](#using-makefile-uses-latexmk)
 - [Hints and trics](#hints-and-trics)
   - [Installation on macOS](#installation-on-macos)
-  - [Installation on Ubuntu/Fedora using eitl](#installation-on-ubuntufedora-using-eitl)
+  - [Installation on Ubuntu / Fedora using eitl](#installation-on-ubuntu--fedora-using-eitl)
 - [TODO](#todo)
 - [Contribution](#contribution)
 
@@ -25,7 +26,7 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - removed FEIstyle.bst (not needed)
  - added Makefile
  - added seminar paper template (**example_paper.tex**) [example_paper.pdf](example_paper.pdf)
- - python script (utils/tree.py) to auto-generate contents of electronic media (**attachmentA.tex**)
+ - python script (utils/tree.py) to auto-generate contents of electronic mediaum (**attachmentA.tex**)
  
 >**note**: FEIstyle supports **only UTF-8** encoding.
 
@@ -146,7 +147,7 @@ Do following steps only if you have texlive 2015 or less
  - [ ] transform **tutorial.pdf** to wiki page
  - [ ] update readme to include usage for Windows OS users
  - [ ] update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
- - [x] auto-generate contents of electronic media
+ - [x] auto-generate contents of electronic medium
 
 # Contribution
 
