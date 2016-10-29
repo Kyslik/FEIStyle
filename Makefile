@@ -1,5 +1,7 @@
 # filename without extenstion e.g: if we have example.tex
 FILE=example
+
+# path to electronic medium
 ELECTRONIC_MEDIUM=.
 
 

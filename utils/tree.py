@@ -1,14 +1,15 @@
 #!/usr/bin/python
 
-import argparse
 import os
+import sys
+import argparse
 import subprocess
 import fnmatch
 
 __author__ = "Martin Kiesel"
 __copyright__ = "Copyright 2016, FEIstyle v1.3"
 __license__ = "MIT"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __maintainer__ = "Martin Kiesel"
 __email__ = "martin.kiesel@gmail.com"
 __status__ = "Development"
@@ -53,6 +54,7 @@ def walk(path='.', depth=None, respect_git_ignore=True):
     :yields: (str) filename, including path
     """
     ignore_list = git_ignore() if respect_git_ignore else []
+
     if depth and depth == 1:
         for filename in os.listdir(path):
             if any(fnmatch.fnmatch(filename, pattern) for pattern in ignore_list):
@@ -121,24 +123,34 @@ def write_to_file(render_paths, file):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate tree for FEIstyle template.')
-    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3, help='depth of tree')
-    parser.add_argument('-r', '--root', dest='root', type=str, default='.', help='root of tree')
-    parser.add_argument('-q', '--quiet', dest='quiet_flag', action='store_true', help='no output is displayed')
+    parser = argparse.ArgumentParser(description='Generate contents of electronic media for FEIstyle template.')
+    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3, help='scan depth')
+    parser.add_argument('-r', '--root', dest='root', type=str, default='.', help='medium root')
     parser.add_argument('-o', '--outfile', dest='file_out', type=str, default='./attachmentA.tex',
                         help='file destination')
+    parser.add_argument('-q', '--quiet', dest='quiet_flag', action='store_true', help='no output is displayed')
+    parser.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true', help='"/" directory is skipped')
     parser.add_argument('-i', '--ignore-list', dest='ignore_list_flag', action='store_false', help='ignore .gtignore')
+    parser.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true', help='dry run, does not write to file')
     args = parser.parse_args()
 
-    render_paths = ['/']
+    if args.quiet_flag:
+        devnull=open(os.devnull, 'w')
+        sys.stdout=devnull
+        sys.stderr=devnull
+
+    render_paths = ['/'] if not args.skip_parend_flag else []
 
     for file_name in walk(args.root, args.depth, args.ignore_list_flag):
         paths(file_name, render_paths)
+    
     render_paths = list(map(rewrite_to_latex, render_paths))
-    write_to_file(render_paths, args.file_out)
-    if not args.quiet_flag:
-        for path in render_paths:
-            print(path)
+    
+    if not args.dry_run_flag:
+        write_to_file(render_paths, args.file_out)
+    
+    for path in render_paths:
+        print(path)
 
 
 if __name__ == "__main__":
