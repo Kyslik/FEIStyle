@@ -24,17 +24,26 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - support for acronym package
  - removed FEIstyle.bst (not needed)
  - added Makefile
- - added seminar paper template (see example_paper.tex|pdf)
+ - added seminar paper template (**example_paper.tex**) [example_paper.pdf](example_paper.pdf)
+ - python script (utils/tree.py) to auto-generate contents of electronic media (**attachmentA.tex**)
  
->**note**: This FEIstyle supports **only UTF-8** encoding.
+>**note**: FEIstyle supports **only UTF-8** encoding.
 
 ### Changelog
 
-Changelog is located [here](https://github.com/Kyslik/FEIStyle/blob/master/CHANGELOG.md).
+Changelog is located [here](CHANGELOG.md).
 
 # Usage
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
- 
+
+# Utilities
+You may value [**tree.py**](utils/tree.py) utility, which generates contents of media and translates it to LaTeX ([attachmentA.tex](includes/attachmentA.tex)), to see how to use tree.py run following:
+
+```
+$ python utils/tree.py -h
+```
+>**Note**: Makefile generates (and overwrites) **attachmentA.tex** before each LaTeX compilation
+
 # Compile chain
 
 >**Note**: in following subchapters `file` is your main `file.tex` (eg: `diploma.tex` in root folder)
@@ -81,7 +90,7 @@ Read more on how to be even more efficient with [latexmk && make](https://drewsi
 
 searchterms:
 
- - latexmk, CTAN, latex, tex, 
+ - latexmk, CTAN, latex, tex, make, Makefile
  
 humas whom you can ask: 
 
@@ -107,7 +116,7 @@ editors and IDEs:
    $ brew install latexmk
    ```
 
-## Installation on Ubuntu/Fedora using eitl
+## Installation on Ubuntu / Fedora using eitl
 >**note**: biblatex-iso690 is included in 2016 build of texlive
 
 Do following steps only if you have texlive 2015 or less
@@ -132,10 +141,12 @@ Do following steps only if you have texlive 2015 or less
 
 # TODO
 
- - <strike>working example on [Sharelatex.com](https://www.sharelatex.com)</strike> - Sharelatex does not support biblatex-iso690 at this time 
- - transform **tutorial.pdf** to wiki page
- - update readme to include usage for Windows OS users
- - update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
+ - [ ] <strike>working example on [Sharelatex.com](https://www.sharelatex.com)</strike>
+   - Sharelatex does not support biblatex-iso690 at this time 
+ - [ ] transform **tutorial.pdf** to wiki page
+ - [ ] update readme to include usage for Windows OS users
+ - [ ] update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
+ - [x] auto-generate contents of electronic media
 
 # Contribution
 
