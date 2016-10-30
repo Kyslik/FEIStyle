@@ -144,6 +144,7 @@ def main():
         paths(file_name, render_paths)
     
     render_paths = list(map(rewrite_to_latex, render_paths))
+    render_paths[-1] = render_paths[-1].rstrip('\\')
     
     if not args.dry_run_flag:
         write_to_file(render_paths, args.file_out)

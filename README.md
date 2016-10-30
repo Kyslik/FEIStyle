@@ -89,7 +89,7 @@ Read more on how to be even more efficient with [latexmk && make](https://drewsi
    
 # Hints and trics
 
-searchterms:
+search terms:
 
  - latexmk, CTAN, latex, tex, make, Makefile
  
