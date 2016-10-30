@@ -56,10 +56,10 @@ def walk(path='.', depth=None, respect_git_ignore=True):
     ignore_list = git_ignore() if respect_git_ignore else []
 
     if depth and depth == 1:
-        for filename in os.listdir(path):
-            if any(fnmatch.fnmatch(filename, pattern) for pattern in ignore_list):
+        for file_name in os.listdir(path):
+            if any(fnmatch.fnmatch('./' + file_name, pattern) for pattern in ignore_list):
                 continue
-            yield filename
+            yield file_name
     else:
         top_pathlen = len(path) + len(os.path.sep)
         for dir_path, dir_names, file_names in os.walk(path):
@@ -81,13 +81,12 @@ def rewrite_to_latex(path):
     rewrites to latex:
         if path is directory, wrap path in \textbf{}
         append \\ in the end of path (LaTeX - \n)
+        replace '_' with '\_'
     :param path:
     :return:
     """
     if os.path.isdir('.' + path):
         path = '\\textbf{' + path + '}'
-    else:
-        pass
     path = path.replace('_', '\\_') + ' \\\\'
     return path
 
