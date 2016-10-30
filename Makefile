@@ -1,7 +1,9 @@
 # filename without extenstion e.g: if we have example.tex
 FILE=example
 
-# path to root of electronic medium
+# path to root of electronic medium, 
+# preferably use absolute path (on Unix paths that start with '/', on Windows paths that start with 'C:\')
+# relative paths to Makefile work as well
 ELECTRONIC_MEDIUM=.
 
 # specify where to put all build garbage

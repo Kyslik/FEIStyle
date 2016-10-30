@@ -9,10 +9,11 @@ import fnmatch
 __author__ = "Martin Kiesel"
 __copyright__ = "Copyright 2016, FEIstyle v1.3"
 __license__ = "MIT"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __maintainer__ = "Martin Kiesel"
 __email__ = "martin.kiesel@gmail.com"
 __status__ = "Development"
+
 
 def git_available():
     """
@@ -31,17 +32,19 @@ def git_ignore():
     to read ignored files in current git repository
     :return git_ignores: (list) of ignored directories
     """
-    # default ignore "dot folders", myself, and .gitignore files
-    git_ignores = ['./.*', '*.gitignore', '*/' + os.path.basename(__file__)]
+    git_ignores = ['*/.*', '*/' + os.path.basename(__file__)]
+
     try:
         git_available()
         git = subprocess.Popen(['git', 'ls-files', '--others', '--ignored', '--exclude-standard', '--directory'],
-                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE,
+                               cwd=None)
     except (subprocess.CalledProcessError, OSError):
         return git_ignores
 
     for line in git.stdout:
-        git_ignores.append('./' + line.decode('utf-8').rstrip().rstrip("/"))
+        git_ignores.append('*/' + line.decode('utf-8').rstrip().rstrip('/'))
     return git_ignores
 
 
@@ -57,23 +60,23 @@ def walk(path='.', depth=None, respect_git_ignore=True):
 
     if depth and depth == 1:
         for file_name in os.listdir(path):
-            if any(fnmatch.fnmatch('./' + file_name, pattern) for pattern in ignore_list):
+            if any(fnmatch.fnmatch('/' + file_name, pattern) for pattern in ignore_list):
                 continue
             yield file_name
     else:
-        top_pathlen = len(path) + len(os.path.sep)
+        top_path_len = len(path) + len(os.path.sep)
         for dir_path, dir_names, file_names in os.walk(path):
             for dir_name in reversed(dir_names):
                 if any(fnmatch.fnmatch(os.path.join(dir_path, dir_name), pattern) for pattern in ignore_list):
                     dir_names.remove(dir_name)
-            dir_level = dir_path[top_pathlen:].count(os.path.sep)
+            dir_level = dir_path[top_path_len:].count(os.path.sep)
             if depth and dir_level >= depth:
                 dir_names[:] = []
             else:
-                for filename in file_names:
-                    if any(fnmatch.fnmatch(os.path.join(dir_path, filename), pattern) for pattern in ignore_list):
+                for file_name in file_names:
+                    if any(fnmatch.fnmatch(os.path.join(dir_path, file_name), pattern) for pattern in ignore_list):
                         continue
-                    yield os.path.join(dir_path, filename)
+                    yield os.path.join(dir_path, file_name)
 
 
 def rewrite_to_latex(path):
@@ -128,27 +131,40 @@ def main():
     parser.add_argument('-o', '--outfile', dest='file_out', type=str, default='./attachmentA.tex',
                         help='file destination')
     parser.add_argument('-q', '--quiet', dest='quiet_flag', action='store_true', help='no output is displayed')
-    parser.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true', help='"/" directory is skipped')
+    parser.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true',
+                        help='"/" directory is skipped')
     parser.add_argument('-i', '--ignore-list', dest='ignore_list_flag', action='store_false', help='ignore .gtignore')
-    parser.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true', help='dry run, does not write to file')
+    parser.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true',
+                        help='dry run, does not write to file')
     args = parser.parse_args()
 
     if args.quiet_flag:
-        devnull=open(os.devnull, 'w')
-        sys.stdout=devnull
-        sys.stderr=devnull
+        devnull = open(os.devnull, 'w')
+        sys.stdout = devnull
+        sys.stderr = devnull
+
+    original_cwd = os.getcwd()
+
+    root = args.root
+    if os.path.isabs(root):
+        os.chdir(root)
+    else:
+        os.chdir(os.path.abspath(os.getcwd() + '/' + args.root))
+    root = '.'
 
     render_paths = ['/'] if not args.skip_parend_flag else []
 
-    for file_name in walk(args.root, args.depth, args.ignore_list_flag):
+    for file_name in walk(root, args.depth, args.ignore_list_flag):
         paths(file_name, render_paths)
-    
+
     render_paths = list(map(rewrite_to_latex, render_paths))
     render_paths[-1] = render_paths[-1].rstrip('\\')
-    
+
+    os.chdir(original_cwd)
+
     if not args.dry_run_flag:
         write_to_file(render_paths, args.file_out)
-    
+
     for path in render_paths:
         print(path)
 
