@@ -5,7 +5,6 @@ import sys
 import argparse
 import subprocess
 import fnmatch
-import textwrap
 
 __author__ = "Martin Kiesel"
 __copyright__ = "Copyright 2016, FEIstyle v1.3"
