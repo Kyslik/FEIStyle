@@ -125,15 +125,15 @@ def write_to_file(render_paths, file):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate contents of electronic media for FEIstyle template.')
-    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3, help='scan depth')
-    parser.add_argument('-r', '--root', dest='root', type=str, default='.', help='medium root')
+    parser = argparse.ArgumentParser(description='Generate contents of electronic medium for FEIstyle template.')
+    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3, help='directory scan depth')
+    parser.add_argument('-r', '--root', dest='root', type=str, default='.', help='root of electronic medium (relative or absolute path)')
     parser.add_argument('-o', '--outfile', dest='file_out', type=str, default='./attachmentA.tex',
                         help='file destination')
     parser.add_argument('-q', '--quiet', dest='quiet_flag', action='store_true', help='no output is displayed')
     parser.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true',
                         help='"/" directory is skipped')
-    parser.add_argument('-i', '--ignore-list', dest='ignore_list_flag', action='store_false', help='ignore .gtignore')
+    parser.add_argument('-i', '--ignore-gitignore', dest='ignore_list_flag', action='store_false', help='ignore .gtignore (do NOT respect .gitignore)')
     parser.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true',
                         help='dry run, does not write to file')
     args = parser.parse_args()
