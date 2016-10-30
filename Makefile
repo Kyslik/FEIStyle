@@ -18,7 +18,7 @@ build:
 # check if python is available, 
 # run tree.py to generate directory structure of electronic medium
 ifneq (, $(shell which python))
-	python ./utils/tree.py -d 3 -r $(ELECTRONIC_MEDIUM) -o ./includes/attachmentA.tex -q
+	python ./utils/tree.py --depth 3 --root $(ELECTRONIC_MEDIUM) --outfile ./includes/attachmentA.tex --quiet
 endif
 	latexmk $(LATEXMK_OPTIONS) $(FILE).tex
 	mv $(BUILD_DIR)/$(FILE).pdf .

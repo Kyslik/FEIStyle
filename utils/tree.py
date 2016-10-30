@@ -5,6 +5,7 @@ import sys
 import argparse
 import subprocess
 import fnmatch
+import textwrap
 
 __author__ = "Martin Kiesel"
 __copyright__ = "Copyright 2016, FEIstyle v1.3"
@@ -125,17 +126,26 @@ def write_to_file(render_paths, file):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate contents of electronic medium for FEIstyle template.')
-    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3, help='directory scan depth')
-    parser.add_argument('-r', '--root', dest='root', type=str, default='.', help='root of electronic medium (relative or absolute path)')
-    parser.add_argument('-o', '--outfile', dest='file_out', type=str, default='./attachmentA.tex',
-                        help='file destination')
-    parser.add_argument('-q', '--quiet', dest='quiet_flag', action='store_true', help='no output is displayed')
-    parser.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true',
-                        help='"/" directory is skipped')
-    parser.add_argument('-i', '--ignore-gitignore', dest='ignore_list_flag', action='store_false', help='ignore .gtignore (do NOT respect .gitignore)')
-    parser.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true',
-                        help='dry run, does not write to file')
+    parser = argparse.ArgumentParser(description='Generate contents of electronic medium for FEIstyle template.',
+                                     formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27),
+                                     epilog='Note that program does not respect .gitignore per se, it uses'
+                                            '"$ git ls-files --others --ignored --exclude-standard --directory"'
+                                            ' to determine ignored files.')
+    parser.add_argument('-d', '--depth', dest='depth', type=int, default=3,
+                        help='directory scan depth (default: %(default)d)')
+    parser.add_argument('-r', '--root', dest='root', type=str, default='.',
+                        help='root of electronic medium (default: %(default)s)')
+    parser.add_argument('-o', '--outfile', dest='file_out', type=str, default='./attachment.tex',
+                        help='file destination (default: %(default)s)')
+    group_flags = parser.add_argument_group('flags')
+    group_flags.add_argument('-q', '--quiet', dest='quiet_flag', default=False, action='store_true',
+                             help='no output is displayed')
+    group_flags.add_argument('-s', '--skip-parent', dest='skip_parend_flag', action='store_true',
+                             help='"/" directory is skipped')
+    group_flags.add_argument('-i', '--ignore-gitignore', dest='ignore_list_flag', action='store_false',
+                             help='turn off ignoring .gitignore')
+    group_flags.add_argument('-dr', '--dry-run', dest='dry_run_flag', action='store_true',
+                             help='dry run, does not write to file')
     args = parser.parse_args()
 
     if args.quiet_flag:
