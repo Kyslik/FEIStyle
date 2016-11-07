@@ -127,7 +127,7 @@ def write_to_file(render_paths, file):
 def main():
     parser = argparse.ArgumentParser(description='Generate contents of electronic medium for FEIstyle template.',
                                      formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=27),
-                                     epilog='Note that program does not respect .gitignore per se, it uses'
+                                     epilog='Note that this script does not respect .gitignore per se, it uses '
                                             '"$ git ls-files --others --ignored --exclude-standard --directory"'
                                             ' to determine ignored files.')
     parser.add_argument('-d', '--depth', dest='depth', type=int, default=3,
