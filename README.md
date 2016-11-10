@@ -26,7 +26,7 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - removed FEIstyle.bst (not needed)
  - added Makefile
  - added seminar paper template (**example_paper.tex**) [example_paper.pdf](example_paper.pdf)
- - python script (utils/tree.py) to auto-generate contents of electronic mediaum (**attachmentA.tex**)
+ - python script (utils/tree.py) to auto-generate contents of electronic medium (**attachmentA.tex**)
  
 >**note**: FEIstyle supports **only UTF-8** encoding.
 
