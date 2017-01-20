@@ -2,7 +2,7 @@
  - 1.4 (2017.01.21)
    1. removed python script from `utils` since its not useful (misleads user to make ugly contents of medium)
    2. updated Makefile according to 1.
-   3. introducing two commands `\dir{NAME}{DESCRIPTION}{SUB[DIR|FILE]}` and `\file{NAME}{DESCRIPTION}`, please see `attachmentA.tex`
+   3. introducing two commands `\dir{NAME}{DESCRIPTION}{SUB[DIR|FILE]}` and `\file{NAME}{DESCRIPTION}`, please see [`attachmentA.tex`](https://github.com/Kyslik/FEIStyle/blob/master/includes/attachmentA.tex)
 
  - 1.3 (2016.09.26)
    1. support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber
