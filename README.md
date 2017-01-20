@@ -5,7 +5,6 @@
 - [FEIstyle](#feistyle)
     - [Changelog](#changelog)
 - [Usage](#usage)
-- [Utilities](#utilities)
 - [Compile chain](#compile-chain)
   - [Manual](#manual)
   - [Using *latexmk*](#using-latexmk)
@@ -37,14 +36,6 @@ Changelog is located [here](CHANGELOG.md).
 
 # Usage
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
-
-# Utilities
-You may value [**tree.py**](utils/tree.py) utility, which generates contents of media and translates it to LaTeX ([attachmentA.tex](includes/attachmentA.tex)), to see how to use tree.py run following:
-
-```
-$ python utils/tree.py -h
-```
->**Note**: Makefile generates (and overwrites) **attachmentA.tex** before each LaTeX compilation
 
 # Compile chain
 
