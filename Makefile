@@ -1,11 +1,6 @@
 # filename without extenstion e.g: if we have example.tex
 FILE=example
 
-# path to root of electronic medium, 
-# preferably use absolute path (on Unix paths that start with '/', on Windows paths that start with 'C:\')
-# relative paths to Makefile work as well
-ELECTRONIC_MEDIUM=.
-
 # specify where to put all build garbage
 BUILD_DIR=.build
 
@@ -15,11 +10,6 @@ LATEXMK_OPTIONS=-output-directory=$(BUILD_DIR) -quiet -pdf -bibtex -pdflatex="pd
 all: build
 	
 build:
-# check if python is available, 
-# run tree.py to generate directory structure of electronic medium
-ifneq (, $(shell which python))
-	python ./utils/tree.py --depth 3 --root $(ELECTRONIC_MEDIUM) --outfile ./includes/attachmentA.tex --quiet
-endif
 	latexmk $(LATEXMK_OPTIONS) $(FILE).tex
 	mv $(BUILD_DIR)/$(FILE).pdf .
 
