@@ -79,6 +79,7 @@
 \usepackage{xstring}
 \usepackage[printonlyused]{acronym}
 \usepackage{url}
+\usepackage{enumitem}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 
 \addbibresource{includes/bibliography.bib}
@@ -244,8 +245,30 @@
         \renewcommand{\ALG@name}{Algorithm}}
     }[]
 
+% http://tex.stackexchange.com/questions/588/how-can-i-change-the-margins-for-only-part-of-the-text
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
+
+\newcommand{\dir}[3]{
+\begin{description}[topsep=0pt,leftmargin=0.5cm,style=nextline]
+  \item[#1] $\cdot$ #2
+\end{description}
+\ifx&#3&%
+   % #3 is empty
+\else
+    \vspace{-5mm}
+    \begin{changemargin}{0.5cm}{0cm}
+        #3
+    \end{changemargin}
+    \vspace{-4mm}
+\fi
+}
+
+\newcommand{\file}[2]{
+    \begin{description}[topsep=0pt,leftmargin=0.5cm,font=\normalfont\itshape,style=nextline]
+        \item[#1] $\cdot$ #2
+    \end{description}
+}
 
 \newcommand\FEIcover{
     \pagestyle{empty}
