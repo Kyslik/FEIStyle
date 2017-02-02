@@ -5,19 +5,19 @@
 
 \DeclareOption{dp}{\def\typPraceSkr{d}
     \def\isThesis{1}
-    \def\typPraceEn{Diploma Thesis}
+    \def\typPraceEn{Master's thesis}
     \def\typPrace{Diplomov\a'a pr\a'aca}
     \def\typPraceTemp{diplomov\'{u} pr\'{a}cu}
     \def\typPraceTempII{diplomovej pr\'{a}ce}}
 \DeclareOption{bp}{\def\typPraceSkr{b}
     \def\isThesis{1}
-    \def\typPraceEn{Bachelor Thesis}
+    \def\typPraceEn{Bachelor's thesis}
     \def\typPrace{Bakal\a'arska pr\a'aca}
     \def\typPraceTemp{bakal\'{a}rsku pr\'{a}cu}
     \def\typPraceTempII{bakal\'{a}rskej pr\'{a}ce}}
 \DeclareOption{sp}{\def\typPraceSkr{s}}
     \def\isThesis{0}
-    \def\typPraceEn{Seminar Paper}
+    \def\typPraceEn{Seminar paper}
     \def\typPrace{Semin\'{a}rna pr\'{a}ca}
     \def\typPraceTemp{semin\'{a}rnu pr\'{a}cu}
     \def\typPraceTempII{semin\'{a}rnej práce}
@@ -145,6 +145,14 @@
 \def\@nazovEn{\@nedefinovane FEItitleEn}
 \def\FEItitleEn#1{\def\@nazovEn{#1}}
 \newcommand{\printNazovEn}{\@nazovEn}
+
+\def\@keywords{\@nedefinovane FEIkeywords}
+\def\FEIkeywords#1{\def\@keywords{#1}}
+\newcommand{\printKeywords}{\@keywords}
+
+\def\@keywordsEn{\@nedefinovane FEIkeywordsEn}
+\def\FEIkeywordsEn#1{\def\@keywordsEn{#1}}
+\newcommand{\printKeywordsEn}{\@keywordsEn}
 
 \def\@evidencneCislo{\@nedefinovane FEIregNr}
 \def\FEIregNr#1{\def\@evidencneCislo{#1}}
@@ -478,7 +486,7 @@
     \setlength{\voffset}{0cm}
 }
 
-\newcommand\FEIabstract[2]{ 
+\newcommand\FEIabstract[1]{
     \pagestyle{empty}   
     \section*{\fontsize{22pt}{1.3}\selectfont S\'{U}HRN}
     \noindent\MakeTextUppercase{\printSkola}
@@ -502,11 +510,11 @@
     \input{#1}
         
     \vspace{2em}
-    \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: #2 
+    \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
     \newpage
 }
     
-\newcommand\FEIabstractEn[2]{   
+\newcommand\FEIabstractEn[1]{
     \pagestyle{empty}   
     \section*{\fontsize{22pt}{1.3}\selectfont ABSTRACT\color{white}\'U\color{black}}
     \noindent\MakeTextUppercase{\printSkolaEn}
@@ -529,7 +537,7 @@
     \input{#1}
         
     \vspace{2em}
-    \noindent Keywords: #2 
+    \noindent Keywords: \printKeywordsEn
     \newpage
 }
         
@@ -747,10 +755,10 @@
         
 \newcommand\FEIpdfInfo{ 
     \hypersetup{pdfinfo={
-        Title={\printNazovEn},
+        Title={\printNazov},
         Author={\printAutor},
-        Subject={\typPraceEn},
-        Keywords ={\typPraceEn, \printSkolaEn, \printFakulta}
+        Subject={\typPrace},
+        Keywords ={\printKeywords}
     }}
 }
 

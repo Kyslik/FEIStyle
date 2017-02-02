@@ -8,7 +8,7 @@ BUILD_DIR=.build
 LATEXMK_OPTIONS=-output-directory=$(BUILD_DIR) -quiet -pdf -bibtex -pdflatex="pdflatex" 
 
 all: build
-	
+
 build:
 	latexmk $(LATEXMK_OPTIONS) $(FILE).tex
 	mv $(BUILD_DIR)/$(FILE).pdf .
