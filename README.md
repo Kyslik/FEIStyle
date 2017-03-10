@@ -19,7 +19,8 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # FEIstyle
-<img src="https://img.shields.io/badge/FEIStyle_1.5.0-green.svg?style=flat-square">
+[<img src="https://img.shields.io/badge/FEIstyle-1.5.0-green.svg?style=flat-square">](https://github.com/Kyslik/FEIStyle/releases)
+
 Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony)):
 
  - support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber

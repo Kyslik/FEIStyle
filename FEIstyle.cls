@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2016/09/26 v. 1.3 Thesis template - FEI STUBA] 
+\ProvidesClass{FEIstyle}[2017/03/10 v. 1.5 Thesis template - FEI STUBA] 
 
 % parse arguments
 
