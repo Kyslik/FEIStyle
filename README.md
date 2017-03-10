@@ -9,6 +9,7 @@
   - [Manual](#manual)
   - [Using *latexmk*](#using-latexmk)
   - [Using Makefile (uses *latexmk*)](#using-makefile-uses-latexmk)
+  - [Sublime-text 3 project file](#sublime-text-3-project-file)
 - [Hints and trics](#hints-and-trics)
   - [Installation on macOS](#installation-on-macos)
   - [Installation on Ubuntu / Fedora using eitl](#installation-on-ubuntu--fedora-using-eitl)
@@ -18,6 +19,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # FEIstyle
+<img src="https://img.shields.io/badge/FEIStyle_1.5.0-green.svg?style=flat-square">
 Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony)):
 
  - support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber
@@ -48,6 +50,7 @@ Following chain should output `file.pdf`
 ```
 $ pdflatex file
 $ biber file
+$ glossary file
 $ pdflatex file
 ```
 
@@ -57,6 +60,8 @@ $ pdflatex file
 Following command runs necessary compile chain.
 
 ```
+$ latexmk -pdf -bibtex -quiet file
+$ glossary file
 $ latexmk -pdf -bibtex -quiet file
 ```
 
@@ -78,9 +83,12 @@ $ make clean
 
 Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk).
 
+## Sublime-text 3 project file
+Repository consits of ST3 project file which includes building your pdf using `SUPER+b`.
+
+>**Note**: to enable building with shortcut `tools->Build System->FEI-LaTeX`
    
 # Hints and trics
-
 search terms:
 
  - latexmk, CTAN, latex, tex, make, Makefile
@@ -139,7 +147,9 @@ Do following steps only if you have texlive 2015 or less
  - [ ] transform **tutorial.pdf** to wiki page
  - [ ] update readme to include usage for Windows OS users
  - [ ] update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
- - [x] auto-generate contents of electronic medium
+ - [x] <strike>auto-generate contents of electronic medium</strike>
+   - el. medium should be breif with explanation
+ - [x] publish example of electronic medium
 
 # Contribution
 

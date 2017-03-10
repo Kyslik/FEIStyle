@@ -1,13 +1,15 @@
 \documentclass[dp]{FEIstyle}
 
-\FEIauthor{Ján Srnka}
+\FEIauthor{Ján Srnec}
 \FEItitle{Ukážkový \LaTeX\ dokument s dlhým názvom}
 \FEItitleEn{Example \LaTeX\ document with long title}
 \FEIkeywords{kľúčové slovo1, kľúčové slovo2, kľúčové slovo3}
 \FEIkeywordsEn{keyword1, keyword2, keyword3}
 \FEIregNr{FEI-xxxx-xxxx}
 \FEIsupervisor{Mgr. Ing. Peter Párker, PhD.}
-%\FEIconsultant{Ing. John Doe}
+\FEIconsultant{Ing. John Doe}
+
+\FEIglossaries{includes/glossary}
 
 \begin{document}
 \frontmatter
@@ -22,8 +24,10 @@
 \FEIthanks{includes/thanks}
 \FEIcontent
 \FEIlistOfFiguresAndTables
-\FEIlistOfAbbreviations{includes/abbreviations}
+\FEIlistOfGlossaries
 \FEIlistOfAlgorithms
+\FEIlistOfListings
+
 
 \mainmatter
 
@@ -40,4 +44,5 @@
 \FEIlistOfAppendix
 \FEIappendix{Štruktúra elektronického nosiča}{includes/attachmentA}
 \FEIappendix{Algoritmus}{includes/attachmentB}
+\FEIappendix{Výpis sublime}{includes/attachmentC}
 \end{document}

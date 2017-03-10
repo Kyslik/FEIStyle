@@ -58,7 +58,6 @@
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
 \usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8]{biblatex}
-% \usepackage{mathptmx}
 \usepackage[overload]{textcase}
 \usepackage{chngcntr}  
 \usepackage{tocloft}
@@ -71,13 +70,14 @@
 \usepackage{xstring}
 \usepackage[compact]{titlesec}
 \usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{lmodern}
 \usepackage{changepage}
 \usepackage{scrextend}
 \usepackage{xstring}
-\usepackage[printonlyused]{acronym}
+\usepackage[acronym,nopostdot]{glossaries}
 \usepackage{url}
 \usepackage{enumitem}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
@@ -91,10 +91,9 @@
     {1}{\setboolean{isThesis}{true}}
 }
 
-\ifthenelse{\boolean{isThesis}}
-    {\message{I am thesis}}
-    {\message{I am not thesis}}
-
+%\ifthenelse{\boolean{isThesis}}
+%    {\message{I am thesis}}
+%    {\message{I am not thesis}}
 
 % deine global variables 
 \def\@nedefinovane{! UNDEFINED: \textbackslash}
@@ -221,6 +220,8 @@
 \titlespacing\subsection{6pt}{12pt}{6pt}
 \titlespacing\subsubsection{12pt}{10pt}{0pt}
 
+\lstset{basicstyle=\scriptsize}
+
 % TODO: clean me up!!!!
 \IfEqCase*{\FEIenglish}{
     {0}{
@@ -230,26 +231,16 @@
         \addto\captionsslovak{\renewcommand\listfigurename{Zoznam obr\a'azkov}}
         \addto\captionsslovak{\renewcommand\listtablename{Zoznam tabuliek}}
         \addto\captionsslovak{\renewcommand{\chaptername}{Kapitola}}
-        \addto\captionsenglish{\renewcommand{\figurename}{Obr\a'azok}}
-        \addto\captionsenglish{\renewcommand{\tablename}{Tabu\v{l}ka}}
-        \addto\captionsenglish{\renewcommand{\contentsname}{Obsah}}
-        \addto\captionsenglish{\renewcommand\listfigurename{Zoznam obr\a'azkov}}
-        \addto\captionsenglish{\renewcommand\listtablename{Zoznam tabuliek}}
-        \addto\captionsenglish{\renewcommand{\chaptername}{Kapitola}}
+        \addto\captionsslovak{\renewcommand{\lstlistingname}{V\a'ypis}}
         \renewcommand{\ALG@name}{Algoritmus}}
     {1}{
-        \addto\captionsslovak{\renewcommand{\figurename}{Figure}}
-        \addto\captionsslovak{\renewcommand{\tablename}{Table}}
-        \addto\captionsslovak{\renewcommand{\contentsname}{Contents}}
-        \addto\captionsslovak{\renewcommand\listfigurename{List of Figures}}
-        \addto\captionsslovak{\renewcommand\listtablename{List of Table}}
-        \addto\captionsslovak{\renewcommand{\chaptername}{Chapter}}
         \addto\captionsenglish{\renewcommand{\figurename}{Figure}}
         \addto\captionsenglish{\renewcommand{\tablename}{Table}}
         \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
         \addto\captionsenglish{\renewcommand\listfigurename{List of Figures}}
         \addto\captionsenglish{\renewcommand\listtablename{List of Table}}
         \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+        \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
         \renewcommand{\ALG@name}{Algorithm}}
     }[]
 
@@ -508,7 +499,6 @@
     \end{tabbing}
     \vspace{1em}
     \input{#1}
-        
     \vspace{2em}
     \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
     \newpage
@@ -534,8 +524,7 @@
                 }[]Place and year of submission:\>\printMesto \ \@rok
     \end{tabbing}
     \vspace{1em}
-    \input{#1}
-        
+    \input{#1} 
     \vspace{2em}
     \noindent Keywords: \printKeywordsEn
     \newpage
@@ -560,10 +549,9 @@
     \setlength{\cftfignumwidth}{\dimexpr\mylenf+2em}
     \setlength{\cfttabnumwidth}{\dimexpr\mylenf+2em}
     \IfEqCase*{\FEIenglish}{
-        {0}{\subsection*{Zoznam obr\'{a}zkov a tabuliek}}
-        {1}{ \subsection*{List of Figures and Tables}}
+        {0}{\section*{Zoznam obr\'{a}zkov a tabuliek}}
+        {1}{\section*{List of Figures and Tables}}
         }[]    
-    \vspace{5mm}
     \phantomsection
     \@starttoc{lof}
     \bigskip
@@ -590,10 +578,24 @@
         {0}{\def\@zoznamAlg{Zoznam algoritmov}}
         {1}{\def\@zoznamAlg{List of Algorithm}}
         }[]
-    \renewcommand{\listalgorithmname}{\bf\fontsize{16pt}{1.3}\selectfont \@zoznamAlg}
+    \renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
     \makeatother
     \pagestyle{empty}
     \listofalgorithms
+    \newpage
+    \pagestyle{empty}
+}
+
+\newcommand\FEIlistOfListings{    
+    \makeatletter   
+    \IfEqCase*{\FEIenglish}{
+        {0}{\def\@zoznamList{Zoznam v\a'ypisov}}
+        {1}{\def\@zoznamList{List of listings}}
+        }[]
+    \renewcommand{\lstlistlistingname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamList}
+    \makeatother
+    \pagestyle{empty}
+    \lstlistoflistings
     \newpage
     \pagestyle{empty}
 }
@@ -604,49 +606,31 @@
     \newpage
     \pagestyle{empty}
 }
+
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+
+\newcommand\FEIglossaries[1]{
+    \setglossarystyle{long}
+    \makeglossaries
+    \input{#1}
+    \glsaddall
+    \setlength\LTleft{8pt}
+    \setlength\LTright{0pt}
+    \setlength\glsdescwidth{\hsize}
+}
         
-\newcommand\FEIlistOfAbbreviations[1]{  
+\newcommand\FEIlistOfGlossaries{  
     \pagestyle{empty}
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamZn{Zoznam skratiek}}
         {1}{\def\@zoznamZn{List of Abbreviations}}
-        }[]
+    }[]
     \addtocontents{lof}{\protect\thispagestyle{empty}}
     \addtocontents{lot}{\protect\thispagestyle{empty}}
-    \subsection*{\@zoznamZn}                                                    
-    \vspace{5mm} \noindent
-    \input{#1}
-    \newpage    
-}
-        
-\newcommand\FEIlistOfSymbols[1]{    
-    \pagestyle{empty}
-    \IfEqCase*{\FEIenglish}{
-        {0}{\def\@zoznamZnb{Zoznam zna\v{c}iek}}
-        {1}{\def\@zoznamZnb{List of Symbols}}
-        }[]
-    \addtocontents{lof}{\protect\thispagestyle{empty}}
-    \addtocontents{lot}{\protect\thispagestyle{empty}}
-    \subsection*{\@zoznamZnb}                                                   
-    \vspace{5mm} \noindent
-    \input{#1}
-    \newpage    
-}
-        
-\newcommand\FEIlistOfAbbreviationsAndSymbols[1]{    
-    \pagestyle{empty}
-    \IfEqCase*{\FEIenglish}{
-        {0}{\def\@zoznamZnc{Zoznam skratiek a zna\v{c}iek}}
-        {1}{\def\@zoznamZnc{List of Abbreviations and Symbols}}
-        }[]
-    \addtocontents{lof}{\protect\thispagestyle{empty}}
-    \addtocontents{lot}{\protect\thispagestyle{empty}}
-    \subsection*{\@zoznamZnc}
-    \vspace{5mm} \noindent
-    \input{#1}
+    \printglossary[type=\acronymtype,title={\@zoznamZn},nonumberlist]
     \newpage
 }
-
+             
 \newcommand\FEIintroduction[1]{ 
     %\setcounter{page}{1}
     \pagestyle{plain}
@@ -677,7 +661,7 @@
     \cleardoublepage
     \phantomsection 
     \addcontentsline{toc}{section}{\@zoznamZa}
-    \section*{ \@zoznamZa}
+    \section*{\@zoznamZa}
     \noindent \noindent \input{#1}
 }
 
@@ -699,9 +683,8 @@
         {1}{\def\@zoznamBib{Bibliography}}
         }[]
     \addcontentsline{toc}{section}{\@zoznamBib}
-    \renewcommand\refname{\@zoznamBib}
-    
-        
+    \renewcommand\refname{\@zoznamBib} 
+
     \renewcommand\multinamedelim{\addcomma\space}
     \renewcommand\finalnamedelim{\addspace\bibstring{and}\space}
     % below you can set padding in bibliography
@@ -729,6 +712,8 @@
     \counterwithin{figure}{section}
     \setcounter{algorithm}{0}
     \counterwithin{algorithm}{section}
+    \setcounter{lstlisting}{0}
+    \counterwithin{lstlisting}{section}
     \setcounter{page}{1}  
     \pagenumbering{Roman}
     \cleardoublepage
@@ -758,7 +743,7 @@
         Title={\printNazov},
         Author={\printAutor},
         Subject={\typPrace},
-        Keywords ={\printKeywords}
+        Keywords={\printKeywords}
     }}
 }
 

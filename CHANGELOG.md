@@ -1,4 +1,13 @@
 # Changelog
+ - 1.5 (2017.03.10)
+   1. improving grammar (english)
+   2. changing keywords workflow (see example.tex)
+   3. readme update
+   4. make update
+   5. replacing acronym package with glossary
+   6. improving listings
+   7. improving algorithms
+
  - 1.4 (2017.01.21)
    1. removed python script from `utils` since its not useful (misleads user to make ugly contents of medium)
    2. updated Makefile according to 1.

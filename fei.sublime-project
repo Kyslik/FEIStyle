@@ -10,17 +10,13 @@
     "build_systems":
     [
         {
-            "name": "LaTeX",
+            "name": "FEI-LaTeX",
             "working_dir": "${folder}",
             "shell_cmd": "make",
             "variants": [
                 { 
                     "name": "clean",
                     "shell_cmd": "make clean",
-                },
-                { 
-                    "name": "refresh",
-                    "shell_cmd": "make refresh",
                 }
             ]
         }

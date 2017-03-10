@@ -1,6 +1,6 @@
-\section{Úkážka skratiek}
-\noindent Verzia FEIstyle 1.3 používa acronym\footnote{\url{https://www.ctan.org/pkg/acronym?lang=en}} balík.
-\acf{IC} je dlhá skratka naopak \acs{TDMA} je skratka v krátkej forme.
+\section{Úkážka glossary}
+\noindent Verzia FEIstyle 1.5 používa glossary\footnote{\url{https://www.ctan.org/pkg/glossaries?lang=en}} balík.
+\acrfull{cdma} je dlhá skratka naopak \acrshort{gsm} je skratka v krátkej forme.
 \section{Recitácia}
 Citujem všetky zdroje v \textbf{bibliography.bib}, \cite{t00, t01, t02, t03, kniha, kniha2, kniha3, small, big, cs, koll, kap, tug, knuth, zbornik, prispevok}. \newline Good luck.
 \section{Možnosti anonymizácie}
@@ -8,9 +8,11 @@ Citujem všetky zdroje v \textbf{bibliography.bib}, \cite{t00, t01, t02, t03, kn
 \newline Nasleduje priblíženie niektorých možnosti anonymizácie.
 
 \subsection{Súkromné prehliadanie}
-\noindent Najpoužívanejšie internetové prehliadače súčasnosti majú v sebe zabudovanú funkcionalitu, ktorá dokáže čiastočne anonymizovať prístup na internet. Táto funkcionalita blokuje ukladanie navštívených stránok do histórie a nezaznamenáva súbory, ktoré sa stiahnu z~internetu. \ac{SW} a \acl{HW} sú skratky.
+\noindent Najpoužívanejšie internetové prehliadače súčasnosti majú v sebe zabudovanú funkcionalitu, ktorá dokáže čiastočne anonymizovať prístup na internet. Táto funkcionalita blokuje ukladanie navštívených stránok do histórie a nezaznamenáva súbory, ktoré sa stiahnu z~internetu. \acrshort{sw} a \acrlong{hw} sú skratky.
 
 \begin{table}[!htbp]
+\caption{Moduly a ich funkcie pri anonymizácii}
+\label{modulyVlastnosti}
 \begin{center}
 \begin{tabular}{p{4cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
 & \multicolumn{14}{c}%
@@ -36,8 +38,6 @@ Get anonymous personal edition & &X &X &X &X&X &  &  &  &  &  &  &  &     \\  \h
 Anonymous browsing toolbar & & & X & X & &  &  &  &  &  &  &  &  &     \\  \hline
 Easy hide your IP and surf anonymously & & & X & X& &  &  & X & X & X & X &  &  &     \\  \hline
 \end{tabular}
-\caption{Moduly a ich funkcie pri anonymizácii}
-\label{modulyVlastnosti}
 \end{center}
 \end{table}
 
@@ -46,7 +46,7 @@ Easy hide your IP and surf anonymously & & & X & X& &  &  & X & X & X & X &  &  
 
 
 \subsection{Funkcionalita}
-\noindent  Rozšírenie tiež okrem splnenia špecifikácie malo pre prehľadnosť a overenie funkčnosti zobrazovať údaje, ktoré boli na server odoslané. Zoznam údajov odoslaných na server, sa mal ukladať do krátkodobej histórie, aby nemal používateľ k dispozícií len najnovšie údaje, ale aj údaje odoslané v nejakom časovom období. 
+\noindent  Rozšírenie tiež okrem splnenia špecifikácie malo pre prehľadnosť a overenie funkčnosti zobrazovať údaje, ktoré boli na server odoslané. Zoznam údajov odoslaných na server, sa mal ukladať do krátkodobej histórie, aby nemal používateľ k dispozícií len najnovšie údaje, ale aj údaje odoslané v nejakom časovom období. Nejaky listing z priloh \ref{lst:sublime}.
 
 \subsubsection{Funkcionalita2}
 \noindent Samozrejmosťou bolo nastavenie zapnutia rozšírenia pri štarte, prípadne interval zmeny odosielaných údajov.
@@ -62,22 +62,33 @@ Easy hide your IP and surf anonymously & & & X & X& &  &  & X & X & X & X &  &  
 \noindent Dôležitou požiadavkou kladenou na rozšírenie bolo príjemné používateľské rozhranie.\cite{t00} Z~tohto dôvodu malo rozšírenie obsahovať zoznam modifikovaných vlastností a tlačidlo pre prístup k nastaveniam rozšírenia v jednoduchej a praktickej forme. Predpokladaný vzhľad je zobrazený na obrázku č. \ref{vzhladobr}.
 
 \begin{algorithm}
-\lstset{
-    language=C,
-    basicstyle=\small\sffamily,
-    frame=none,
-    numbers=left,
-    xleftmargin=5.0ex,
-    numberstyle=\tiny,
-    stepnumber=1,
-    showstringspaces=false,
-    keywordstyle=\color{blue}\bfseries
-    }
-\lstset{emph={%  Adjust any special keywords
-    printf%
-    },emphstyle={\color[rgb]{1,0,0}\bfseries}%
-}%
-\begin{lstlisting}
+\scriptsize
+\begin{algorithmic}
+ \STATE <text>
+ \IF{<condition>} \STATE {<text>} \ELSE \STATE{<text>} \ENDIF
+ \IF{<condition>} \STATE {<text>} \ELSIF{<condition>} \STATE{<text>} \ENDIF
+ \FOR{<condition>} \STATE {<text>} \ENDFOR
+ \FOR{<condition> \TO <condition> } \STATE {<text>} \ENDFOR
+ \FORALL{<condition>} \STATE{<text>} \ENDFOR
+ \WHILE{<condition>} \STATE{<text>} \ENDWHILE
+ \REPEAT \STATE{<text>} \UNTIL{<condition>}
+ \LOOP \STATE{<text>} \ENDLOOP
+ \REQUIRE <text>
+ \ENSURE <text>
+ \RETURN <text>
+ \PRINT <text>
+ \COMMENT{<text>}
+ \AND, \OR, \XOR, \NOT, \TO, \TRUE, \FALSE
+\end{algorithmic}
+\caption{Ukážka príkazov pre algorithmic}  
+\label{alg:preview}  
+\end{algorithm}
+
+\begin{lstlisting}[
+  caption={Ukážka algoritmu},
+  label={lst:main-c},
+  language=c
+]
 /* Hello World program */
 
 #include<stdio.h>
@@ -90,7 +101,5 @@ struct cpu_info {
 main()
 {
     printf("Hello World");
-}\end{lstlisting}
- \caption{Ukážka algoritmu}
- \label{euclid}
-\end{algorithm}
+}
+\end{lstlisting}
