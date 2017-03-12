@@ -77,10 +77,10 @@
 \usepackage{changepage}
 \usepackage{scrextend}
 \usepackage{xstring}
-\usepackage[acronym,nopostdot]{glossaries}
 \usepackage{url}
 \usepackage{enumitem}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
+\usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
 \addbibresource{includes/bibliography.bib}
 
@@ -90,10 +90,6 @@
     {0}{\setboolean{isThesis}{false}}
     {1}{\setboolean{isThesis}{true}}
 }
-
-%\ifthenelse{\boolean{isThesis}}
-%    {\message{I am thesis}}
-%    {\message{I am not thesis}}
 
 % deine global variables 
 \def\@nedefinovane{! UNDEFINED: \textbackslash}
@@ -613,7 +609,7 @@
     \setglossarystyle{long}
     \makeglossaries
     \input{#1}
-    \glsaddall
+    % \glsaddall
     \setlength\LTleft{8pt}
     \setlength\LTright{0pt}
     \setlength\glsdescwidth{\hsize}
@@ -627,7 +623,7 @@
     }[]
     \addtocontents{lof}{\protect\thispagestyle{empty}}
     \addtocontents{lot}{\protect\thispagestyle{empty}}
-    \printglossary[type=\acronymtype,title={\@zoznamZn},nonumberlist]
+    \printglossary[type=\acronymtype,title={\@zoznamZn}]
     \newpage
 }
              
