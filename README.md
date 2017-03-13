@@ -89,6 +89,8 @@ Read more on how to be even more efficient with [latexmk && make](https://drewsi
 Repository consits of ST3 project file which includes building your pdf using `SUPER+b`.
 
 >**Note**: to enable building with shortcut `tools->Build System->FEI-LaTeX`
+
+You can also install [LaTeXTools](https://github.com/SublimeText/LaTeXTools) to make build / debug process even easier. File [fei.sublime-project](https://github.com/Kyslik/FEIStyle/blob/master/fei.sublime-project) comes with settings set to build your documentation -- just edit `TEXroot` setting.
    
 # Hints and trics
 search terms:

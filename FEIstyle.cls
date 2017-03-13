@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2017/03/10 v. 1.5 Thesis template - FEI STUBA] 
+\ProvidesClass{FEIstyle}[2017/03/13 v. 1.5 Thesis template - FEI STUBA] 
 
 % parse arguments
 
@@ -81,8 +81,6 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
-
-\addbibresource{includes/bibliography.bib}
 
 \newboolean{isThesis}
 
