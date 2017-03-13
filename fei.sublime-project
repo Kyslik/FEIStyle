@@ -3,14 +3,26 @@
     [
         {
             "path": ".",
-            "folder_exclude_patterns": [".build"],
+            "folder_exclude_patterns": [".build", ".aux"],
             "follow_symlinks": true
         }
     ],
+    "settings" : {
+        "TEXroot": "example.tex",
+        "tex_file_exts": [".tex"],
+        "use_biblatex": true,
+        "glossary_auto_trigger": true,
+        "aux_directory": "./.aux",
+        "output_directory": "./.build",
+        "builder_settings": {
+            "program": "pdflatex",
+            "options": "--shell-escape"
+        }
+    },
     "build_systems":
     [
         {
-            "name": "FEI-LaTeX",
+            "name": "FEI - LaTeX",
             "working_dir": "${folder}",
             "shell_cmd": "make",
             "variants": [

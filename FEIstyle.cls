@@ -57,7 +57,7 @@
 \usepackage[T1]{fontenc}
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
-\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8]{biblatex}
+\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
 \usepackage[overload]{textcase}
 \usepackage{chngcntr}  
 \usepackage{tocloft}
@@ -69,8 +69,6 @@
 \usepackage{ifmtarg}
 \usepackage{xstring}
 \usepackage[compact]{titlesec}
-\usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{lmodern}
@@ -80,6 +78,8 @@
 \usepackage{url}
 \usepackage{enumitem}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
 \addbibresource{includes/bibliography.bib}
