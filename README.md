@@ -25,7 +25,7 @@
 Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony)):
 
  - support for citation standard [ISO-690](https://github.com/michal-h21/biblatex-iso690) required by [STU FEI](http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756), using biber
- - support for acronym package
+ - support for <strike>acronym</strike> glossaries package
  - removed FEIstyle.bst (not needed)
  - added Makefile
  - added seminar paper template (**example_paper.tex**) [example_paper.pdf](example_paper.pdf)
