@@ -32,11 +32,13 @@ Upgraded FEIStyle ([original](http://www.uim.elf.stuba.sk/kaivt/Predmety/Sablony
  - <strike>python script (utils/tree.py) to auto-generate contents of electronic medium (**attachmentA.tex**)</strike>
  - improved contents of electronic medium example, added 2 commands to make it easy to write [**attachmentA.tex**](https://github.com/Kyslik/FEIStyle/blob/master/includes/attachmentA.tex) like files
  
->**note**: FEIstyle supports **only UTF-8** encoding.
+>**Note**: FEIstyle supports **only UTF-8** encoding.
 
 ### Changelog
 
-Changelog is located [here](CHANGELOG.md).
+Changelog is located [here](CHANGELOG.md). 
+
+>**Note**: Minor changes are not noted in chnagelog.
 
 # Usage
  - Download all [files](https://github.com/Kyslik/FEIStyle/archive/master.zip) from repository, extract to desired folder and enjoy.
@@ -45,7 +47,7 @@ Changelog is located [here](CHANGELOG.md).
 
 >**Note**: in following subchapters `file` is your main `file.tex` (eg: `diploma.tex` in root folder)
 
-## Manual
+## Manual compiling
 
 Following chain should output `file.pdf`
 
@@ -54,6 +56,7 @@ $ pdflatex file
 $ biber file
 $ glossary file
 $ pdflatex file
+$ pdflatex file #not a typo!
 ```
 
 ## Using *latexmk*
@@ -62,9 +65,7 @@ $ pdflatex file
 Following command runs necessary compile chain.
 
 ```
-$ latexmk -pdf -bibtex -quiet file
-$ glossary file
-$ latexmk -pdf -bibtex -quiet file
+$ latexmk -pdf -synctex=1 -interaction=nonstopmode -silent file
 ```
 
 ## Using Makefile (uses *latexmk*)
@@ -83,6 +84,12 @@ Clean `.build` folder and delete PDF file in parent folder
 $ make clean
 ```
 
+Combine two commands above
+
+```
+$ make refresh
+```
+
 Read more on how to be even more efficient with [latexmk && make](https://drewsilcock.co.uk/using-make-and-latexmk).
 
 ## Sublime-text 3 project file
@@ -90,8 +97,8 @@ Repository consits of ST3 project file which includes building your pdf using `S
 
 >**Note**: to enable building with shortcut `tools->Build System->FEI-LaTeX`
 
-You can also install [LaTeXTools](https://github.com/SublimeText/LaTeXTools) to make build / debug process even easier. File [fei.sublime-project](https://github.com/Kyslik/FEIStyle/blob/master/fei.sublime-project) comes with settings set to build your documentation -- just edit `TEXroot` setting.
-   
+You can also install [LaTeXTools](https://github.com/SublimeText/LaTeXTools) to make build / debug process even easier. File [fei.sublime-project](https://github.com/Kyslik/FEIStyle/blob/master/fei.sublime-project) comes with settings set to build your documentation - just edit `TEXroot` setting.
+
 # Hints and trics
 search terms:
 
@@ -105,7 +112,7 @@ editors and IDEs:
 
  - [http://tex.stackexchange.com/questions/339/latex-editors-ides](http://tex.stackexchange.com/questions/339/latex-editors-ides)
  
-> Afraid of losing your work? Use GIT.
+> Afraid of losing your work? Use Git.
  
 ## Installation on macOS
 
@@ -122,7 +129,8 @@ editors and IDEs:
    ```
 
 ## Installation on Ubuntu / Fedora using eitl
->**note**: biblatex-iso690 is included in 2016 build of texlive
+
+>**Note**: biblatex-iso690 is included in 2016 build of texlive
 
 Do following steps only if you have texlive 2015 or less
 
@@ -150,7 +158,8 @@ Do following steps only if you have texlive 2015 or less
    - Sharelatex does not support biblatex-iso690 at this time 
  - [ ] transform **tutorial.pdf** to wiki page
  - [ ] update readme to include usage for Windows OS users
- - [ ] update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
+ - [x] update csquotes style to slovak after [this PR](https://github.com/josephwright/csquotes/pull/9) is merged, (perhaps in 2017)
+   - optional since not everyone has up-to-date packages installed
  - [x] <strike>auto-generate contents of electronic medium</strike>
    - el. medium should be breif with explanation
  - [x] publish example of electronic medium

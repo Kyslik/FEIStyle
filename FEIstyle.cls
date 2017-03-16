@@ -53,11 +53,16 @@
 
 \usepackage[english,slovak]{babel}
 \usepackage[utf8]{inputenc}
+
+% you may use style=slovak in case you have up-to-date packages
 \usepackage[style=german]{csquotes}
 \usepackage[T1]{fontenc}
+
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
-\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
+% if you have newer version use commented out usepackage command
+%\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
+\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8]{biblatex}
 \usepackage[overload]{textcase}
 \usepackage{chngcntr}  
 \usepackage{tocloft}
@@ -216,7 +221,6 @@
 
 \lstset{basicstyle=\scriptsize}
 
-% TODO: clean me up!!!!
 \IfEqCase*{\FEIenglish}{
     {0}{
         \addto\captionsslovak{\renewcommand{\figurename}{Obr\a'azok}}
