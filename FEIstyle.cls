@@ -221,7 +221,14 @@
 \titlespacing\subsection{6pt}{12pt}{6pt}
 \titlespacing\subsubsection{12pt}{10pt}{0pt}
 
-\lstset{basicstyle=\scriptsize}
+\lstset{
+  basicstyle=\scriptsize\ttfamily,
+  columns=flexible, % removes spaces
+  breaklines=true,
+  breakatwhitespace=true,
+  showstringspaces=false, % removes ␣ character from " "
+  captionpos=b % caption below text
+}
 
 \IfEqCase*{\FEIenglish}{
     {0}{
