@@ -82,6 +82,8 @@
 \usepackage{xstring}
 \usepackage{url}
 \usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
@@ -607,8 +609,17 @@
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 
-\newcommand\FEIglossaries[1]{
+% https://tex.stackexchange.com/questions/266591/printing-glossaries-with-long-styles-adds-to-the-tables-counter
+\newglossarystyle{FEIlong}{
     \setglossarystyle{long}
+    \renewenvironment{theglossary}{
+      \begin{longtable*}{lp{\glsdescwidth}}
+    }
+    {\end{longtable*}}%
+}
+
+\newcommand\FEIglossaries[1]{
+    \setglossarystyle{FEIlong}
     \makeglossaries
     \input{#1}
     % \glsaddall
