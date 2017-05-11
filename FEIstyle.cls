@@ -505,10 +505,11 @@
                 }[]Miesto a rok predlo\v{z}enia pr\a'ace:\>\printMesto \ \@rok
     \end{tabbing}
     \vspace{1em}
-    \input{#1}
+    \input{#1} %following blank line is important!
+    
     \vspace{2em}
     \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
-    \newpage
+    \clearpage
 }
     
 \newcommand\FEIabstractEn[1]{
@@ -531,10 +532,11 @@
                 }[]Place and year of submission:\>\printMesto \ \@rok
     \end{tabbing}
     \vspace{1em}
-    \input{#1} 
+    \input{#1} %following blank line is important!
+
     \vspace{2em}
     \noindent Keywords: \printKeywordsEn
-    \newpage
+    \clearpage
 }
         
 \newcommand\FEIcontent{ 
