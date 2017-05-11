@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2017/03/13 v. 1.5 Thesis template - FEI STUBA] 
+\ProvidesClass{FEIstyle}[2017/05/11 v. 1.5 Thesis template - FEI STUBA] 
 
 % parse arguments
 
@@ -88,6 +88,9 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
+% \usepackage{showframe} % debugging overflows
+
+% \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
 
 \newboolean{isThesis}
 
