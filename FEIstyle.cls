@@ -423,48 +423,8 @@
     \newpage
 }
 
-\newcommand\FEIdeclaration[1]{
-    \pagestyle{empty}
-    \vspace*{120mm}
-    \IfEqCase*{\FEIenglish}{
-        {0}{\section*{\fontsize{22pt}{1.3}\selectfont Vyhl\'{a}senie autora }   
-            Podp\'{i}san\IfEqCase*{\FEIgen}{
-                {0}{\'{y}(\'{a})}
-                {1}{\'{y}}
-                {2}{\'{a}}
-                }[]
-            \printAutor \ \v{c}estne vyhlasujem, \v{z}e som \typPraceTemp \ \printNazov \ vypracoval\IfEqCase*{\FEIgen}{
-                {0}{(a)
-                }
-                {1}{            
-                }
-                {2}{a       
-                }
-                }[]
-            na z\'{a}klade poznatkov z\'{i}skan\'{y}ch po\v{c}as \v{s}t\'{u}dia a inform\'{a}ci\'{i} z dostupnej literat\'{u}ry uvedenej v pr\'{a}ci.
-            \newline
-            \indent Ved\'{u}cim mojej \typPraceTempII ~bol \IfEndWith{\@veduciZaverecnejPrace}{.}{\StrGobbleRight{\@veduciZaverecnejPrace}{1}}{\@veduciZaverecnejPrace}.
-            \newline\newline
-            \printMesto, d\v{n}a \printDatum
-            \newline \newline \newline
-            \begin{flushleft}
-                {
-                    \hfill
-                    ............................................\\
-                    \hfill
-                    podpis autora  \hspace*{1cm}}
-            \end{flushleft}}
-        {1}{
-            \section*{\fontsize{22pt}{1.3}\selectfont Declaration } 
-            \input{#1}
-        }
-        }[]
-        
-    \newpage
-}
-
 \newcommand\FEIthanks[1]{
-    \pagestyle{empty}
+    \pagestyle{plain}
     \vspace*{120mm}
     \IfEqCase*{\FEIenglish}{
         {0}{\section*{\fontsize{22pt}{1.3}\selectfont Po\v{d}akovanie}}
@@ -478,7 +438,7 @@
 }
 
 \newcommand\FEIassignment[1]{   
-    \pagestyle{empty}
+    \pagestyle{plain}
     \setlength{\voffset}{-2.5cm}
     \begin{center}
         \makebox[\textwidth]{\includegraphics[width=\paperwidth]{#1}}
@@ -488,7 +448,7 @@
 }
 
 \newcommand\FEIabstract[1]{
-    \pagestyle{empty}   
+    \pagestyle{plain}   
     \section*{\fontsize{22pt}{1.3}\selectfont S\'{U}HRN}
     \noindent\MakeTextUppercase{\printSkola}
     \newline
@@ -508,15 +468,15 @@
                 }[]Miesto a rok predlo\v{z}enia pr\a'ace:\>\printMesto \ \@rok
     \end{tabbing}
     \vspace{1em}
-    \input{#1} %following blank line is important!
-    
+    \input{#1}
+
     \vspace{2em}
     \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
     \clearpage
 }
     
 \newcommand\FEIabstractEn[1]{
-    \pagestyle{empty}   
+    \pagestyle{plain}   
     \section*{\fontsize{22pt}{1.3}\selectfont ABSTRACT\color{white}\'U\color{black}}
     \noindent\MakeTextUppercase{\printSkolaEn}
     \newline
@@ -535,7 +495,7 @@
                 }[]Place and year of submission:\>\printMesto \ \@rok
     \end{tabbing}
     \vspace{1em}
-    \input{#1} %following blank line is important!
+    \input{#1}
 
     \vspace{2em}
     \noindent Keywords: \printKeywordsEn
@@ -543,13 +503,13 @@
 }
         
 \newcommand\FEIcontent{ 
-    \pagestyle{empty}
-    \addtocontents{toc}{\protect\thispagestyle{empty}}
+    \pagestyle{plain}
+    \addtocontents{toc}{\protect\thispagestyle{plain}}
     \tableofcontents
     \newpage
 }
         
-\newcommand\listoffiguresandtables{ 
+\newcommand\listoffiguresandtables{
     \IfEqCase*{\FEIenglish}{
         {0}{\renewcommand{\cftfigpresnum}{Obr\'{a}zok\ }
             \renewcommand{\cfttabpresnum}{Tabu\v{l}ka\ }}
@@ -558,8 +518,8 @@
         }[] 
     \newlength{\mylenf}
     \settowidth{\mylenf}{\cftfigpresnum}
-    \setlength{\cftfignumwidth}{\dimexpr\mylenf+2em}
-    \setlength{\cfttabnumwidth}{\dimexpr\mylenf+2em}
+    \setlength{\cftfignumwidth}{\dimexpr\mylenf+3em}
+    \setlength{\cfttabnumwidth}{\dimexpr\mylenf+3em}
     \IfEqCase*{\FEIenglish}{
         {0}{\section*{Zoznam obr\'{a}zkov a tabuliek}}
         {1}{\section*{List of Figures and Tables}}
@@ -570,53 +530,49 @@
     \@starttoc{lot}
 }
         
-\newcommand\FEIlistOfTables{        
-    \pagestyle{empty}
+\newcommand\FEIlistOfTables{
+    \pagestyle{plain}        
     \listoftables
     \newpage
-    \pagestyle{empty}   
+    \pagestyle{plain}
 }
         
 \newcommand\FEIlistOfFigures{   
-    \pagestyle{empty}
+    \pagestyle{plain}
     \listoffigures
     \newpage
-    \pagestyle{empty}
+    \pagestyle{plain}
 }
         
-\newcommand\FEIlistOfAlgorithms{    
-    \makeatletter   
+\newcommand\FEIlistOfAlgorithms{
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamAlg{Zoznam algoritmov}}
         {1}{\def\@zoznamAlg{List of Algorithm}}
         }[]
-    \renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
-    \makeatother
-    \pagestyle{empty}
+    @\renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
+    \pagestyle{plain}
     \listofalgorithms
     \newpage
-    \pagestyle{empty}
+    \pagestyle{plain}
 }
 
 \newcommand\FEIlistOfListings{    
-    \makeatletter   
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamList{Zoznam v\a'ypisov}}
         {1}{\def\@zoznamList{List of listings}}
         }[]
     \renewcommand{\lstlistlistingname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamList}
-    \makeatother
-    \pagestyle{empty}
+    \pagestyle{plain}
     \lstlistoflistings
     \newpage
-    \pagestyle{empty}
+    \pagestyle{plain}
 }
         
-\newcommand\FEIlistOfFiguresAndTables{  
-    \pagestyle{empty}
+\newcommand\FEIlistOfFiguresAndTables{ 
+    \pagestyle{plain}
     \listoffiguresandtables
     \newpage
-    \pagestyle{empty}
+    \pagestyle{plain}
 }
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
@@ -633,27 +589,26 @@
 \newcommand\FEIglossaries[1]{
     \setglossarystyle{FEIlong}
     \makeglossaries
-    \input{#1}
-    % \glsaddall
+    \loadglsentries{#1}
     \setlength\LTleft{8pt}
     \setlength\LTright{0pt}
     \setlength\glsdescwidth{\hsize}
 }
         
 \newcommand\FEIlistOfGlossaries{  
-    \pagestyle{empty}
+    \pagestyle{plain}
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamZn{Zoznam skratiek}}
         {1}{\def\@zoznamZn{List of Abbreviations}}
     }[]
-    \addtocontents{lof}{\protect\thispagestyle{empty}}
-    \addtocontents{lot}{\protect\thispagestyle{empty}}
+    %\addtocontents{lof}{\protect\thispagestyle{plain}}
+    %\addtocontents{lot}{\protect\thispagestyle{plain}}
     \printglossary[type=\acronymtype,title={\@zoznamZn}]
     \newpage
+    \pagestyle{plain}
 }
              
 \newcommand\FEIintroduction[1]{ 
-    %\setcounter{page}{1}
     \pagestyle{plain}
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamUv{\'{U}vod}}
@@ -720,7 +675,7 @@
     {1}{\def\@zoznamPri{Appendix}}
     }[]
 
-\newcommand\FEIlistOfAppendix{  
+\newcommand\FEIlistOfAppendix{
     \newpage
     \renewcommand \thesection{\Alph{section}}
     \setcounter{section}{0}
@@ -735,7 +690,7 @@
     \counterwithin{algorithm}{section}
     \setcounter{lstlisting}{0}
     \counterwithin{lstlisting}{section}
-    \setcounter{page}{1}  
+    % \setcounter{page}{1}  
     \pagenumbering{Roman}
     \cleardoublepage
     \phantomsection 
@@ -770,10 +725,10 @@
 
 %PZ: hack - front/main/backmatter v article 
 %http://tex.stackexchange.com/questions/154646/
-\makeatletter
+%\makeatletter
 
 \newcommand\frontmatter{%
-    \cleardoublepage
+    \clearpage
     %\@mainmatterfalse
     \pagenumbering{roman}}
 
@@ -790,5 +745,5 @@
     \fi
     % \@mainmatterfalse
 }
-\makeatother
+%\makeatother
 \endinput
