@@ -549,7 +549,7 @@
         {0}{\def\@zoznamAlg{Zoznam algoritmov}}
         {1}{\def\@zoznamAlg{List of Algorithm}}
         }[]
-    @\renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
+    \renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
     \pagestyle{plain}
     \listofalgorithms
     \newpage
