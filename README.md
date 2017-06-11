@@ -11,6 +11,7 @@
   - [Using Makefile (uses *latexmk*)](#using-makefile-uses-latexmk)
   - [Sublime-text 3 project file](#sublime-text-3-project-file)
 - [Hints and trics](#hints-and-trics)
+  - [Counting words, lines and characters](#counting-words-lines-and-characters)
   - [Installation on macOS](#installation-on-macos)
     - [Updating TeX packages](#updating-tex-packages)
   - [Installation on Ubuntu / Fedora using eitl](#installation-on-ubuntu--fedora-using-eitl)
@@ -114,7 +115,31 @@ editors and IDEs:
  - [http://tex.stackexchange.com/questions/339/latex-editors-ides](http://tex.stackexchange.com/questions/339/latex-editors-ides)
  
 > Afraid of losing your work? Use Git.
+
+## Counting words, lines and characters
+
+There is a variety of ways to count words and lines (characters are not so important) of compiled PDF file, and none is precise so we list a few and you can compare results yourself.
+
+**Using ps2ascii**
+
+```
+$ ps2ascii example.pdf |  wc -l -w -c
+```
+
+**Using pdftotext**
+
+```
+pdftotext example.pdf - | wc -l -w -c
+```
+
+>**Note**: [CZRP](http://cms.crzp.sk/) does word counting differently, for example my thesis using `ps2ascii` method outputs *4288*, *21031*, *145198*; `pdftotext` method outputs *7051*, *21377*, *148535*; CZRP word count is *14039* and character count *138687*.
  
+Counting words from source file (**not recommended**, since template does a lot of `/include`ing and `/input`ting).
+
+```
+texcount -inc example.tex
+```
+
 ## Installation on macOS
 
  - install [MacTex distribution](https://tug.org/mactex/) using [homebrew](http://brew.sh/index.html) (~2GB / 6GB installed)
@@ -124,7 +149,7 @@ editors and IDEs:
     ```
  - you can download MacTex manually from [tug.org](http://www.tug.org/mactex/mactex-download.html).
 
->**Note**: MacTex installs also bibDesk which can be used to maintain your bibliography
+>**Note**: MacTex installs also BibDesk which can be used to maintain your bibliography in a very nice way.
 
 ### Updating TeX packages
 
