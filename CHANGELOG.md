@@ -1,4 +1,9 @@
 # Changelog
+ - 1.5.3 (2019.04.19)
+   1. added dissertation type of thesis
+   2. fixed width of right column in abstract page
+   3. use slovak lang in csquotes package as default
+
  - 1.5 (2017.03.10)
    1. improving grammar (english)
    2. changing keywords workflow (see example.tex)
