@@ -2,7 +2,12 @@
 \ProvidesClass{FEIstyle}[2017/05/11 v. 1.5 Thesis template - FEI STUBA] 
 
 % parse arguments
-
+\DeclareOption{dizp}{\def\typPraceSkr{dizp}
+    \def\isThesis{1}
+    \def\typPraceEn{Dissertation}
+    \def\typPrace{Dizerta\v{c}n\a'a pr\a'aca}
+    \def\typPraceTemp{dizerta\v{c}n\'{u} pr\'{a}cu}
+    \def\typPraceTempII{dizerta\v{c}nej pr\'{a}ce}}
 \DeclareOption{dp}{\def\typPraceSkr{d}
     \def\isThesis{1}
     \def\typPraceEn{Master's thesis}
