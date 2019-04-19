@@ -469,7 +469,7 @@
         \v{S}tudijn\a'y program:\> \printStudijnyProgram \\
         Autor:\> \printAutor \\
         \typPrace:\>
-        \begin{minipage}[t]{10em}
+        \begin{minipage}[t]{21.5em}
             \printNazov
         \end{minipage} \\
         Ved\a'uci z\a'avere\v{c}nej pr\a'ace:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
@@ -496,7 +496,7 @@
         Study Programme:\> \printStudijnyProgramEn \\
         Author:\> \printAutor \\
         \typPraceEn:\>
-        \begin{minipage}[t]{10em}
+        \begin{minipage}[t]{21.5em}
             \printNazovEn
         \end{minipage} \\
         Supervisor:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
