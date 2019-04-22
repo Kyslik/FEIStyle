@@ -1,8 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2017/05/11 v. 1.5 Thesis template - FEI STUBA] 
+\ProvidesClass{FEIstyle}[2019/04/19 v. 1.5.3 Thesis template - FEI STUBA] 
 
 % parse arguments
-
+\DeclareOption{dizp}{\def\typPraceSkr{dizp}
+    \def\isThesis{1}
+    \def\typPraceEn{Dissertation}
+    \def\typPrace{Dizerta\v{c}n\a'a pr\a'aca}
+    \def\typPraceTemp{dizerta\v{c}n\'{u} pr\'{a}cu}
+    \def\typPraceTempII{dizerta\v{c}nej pr\'{a}ce}}
 \DeclareOption{dp}{\def\typPraceSkr{d}
     \def\isThesis{1}
     \def\typPraceEn{Master's thesis}
@@ -59,15 +64,12 @@
 
 \usepackage[utf8]{inputenc}
 
-% you may use style=slovak in case you have up-to-date packages
-\usepackage[style=german]{csquotes}
+\usepackage[style=slovak]{csquotes}
 \usepackage[T1]{fontenc}
 
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
-% if you have newer version use commented out usepackage command
-%\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
-\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8]{biblatex}
+\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
 \usepackage[overload]{textcase}
 \usepackage{chngcntr}  
 \usepackage{tocloft}
@@ -464,7 +466,7 @@
         \v{S}tudijn\a'y program:\> \printStudijnyProgram \\
         Autor:\> \printAutor \\
         \typPrace:\>
-        \begin{minipage}[t]{10em}
+        \begin{minipage}[t]{21.5em}
             \printNazov
         \end{minipage} \\
         Ved\a'uci z\a'avere\v{c}nej pr\a'ace:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
@@ -491,7 +493,7 @@
         Study Programme:\> \printStudijnyProgramEn \\
         Author:\> \printAutor \\
         \typPraceEn:\>
-        \begin{minipage}[t]{10em}
+        \begin{minipage}[t]{21.5em}
             \printNazovEn
         \end{minipage} \\
         Supervisor:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
