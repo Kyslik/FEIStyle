@@ -1,4 +1,8 @@
 # Changelog
+ - 1.6 (2020.05.11)
+   1. changed Study Field 'Applied Informatics' to 'Informatics'
+   2. removed (commented out) Study Field Number
+
  - 1.5.3 (2019.04.19)
    1. added dissertation type of thesis
    2. fixed width of right column in abstract page

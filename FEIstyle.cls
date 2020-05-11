@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2019/04/19 v. 1.5.3 Thesis template - FEI STUBA] 
+\ProvidesClass{FEIstyle}[2020/05/11 v. 1.6 Thesis template - FEI STUBA]
 
 % parse arguments
 \DeclareOption{dizp}{\def\typPraceSkr{dizp}
@@ -184,15 +184,15 @@
 \def\FEIstudyProgrammeEn#1{\def\@studijnyProgramEn{#1}}
 \newcommand{\printStudijnyProgramEn}{\@studijnyProgramEn}
 
-\def\@cisloStudijnehoOdboru{2511}
-\def\FEIstudyFieldNumber#1{\def\@cisloStudijnehoOdboru{#1}}
-\newcommand{\printCisloStudijnehoOdboru}{\@cisloStudijnehoOdboru}
+%\def\@cisloStudijnehoOdboru{2511}
+%\def\FEIstudyFieldNumber#1{\def\@cisloStudijnehoOdboru{#1}}
+%\newcommand{\printCisloStudijnehoOdboru}{\@cisloStudijnehoOdboru}
 
-\def\@nazovStudijnehoOdboru{9.2.9 Aplikovan\a'a informatika}
+\def\@nazovStudijnehoOdboru{Informatika}
 \def\FEIstudyField#1{\def\@nazovStudijnehoOdboru{#1}}
 \newcommand{\printNazovStudijnehoOdboru}{\@nazovStudijnehoOdboru}
 
-\def\@nazovStudijnehoOdboruEn{9.2.9 Applied Informatics}
+\def\@nazovStudijnehoOdboruEn{Informatics}
 \def\FEIstudyFieldEn#1{\def\@nazovStudijnehoOdboruEn{#1}}
 \newcommand{\printNazovStudijnehoOdboruEn}{\@nazovStudijnehoOdboruEn}
 
@@ -344,7 +344,7 @@
                 \def\@skolaNazovPrace{\printNazov}
                 \def\@skolaTypPrace{\typPrace}
                 \def\@tempStudProgr{\v{S}tudijn\a'y program:}
-                \def\@tempCisloStud{\v{C}\a'islo \v{s}tudijn\a'eho odboru:}
+                %\def\@tempCisloStud{\v{C}\a'islo \v{s}tudijn\a'eho odboru:}
                 \def\@tempNazovStud{N\a'azov \v{s}tudijn\a'eho odboru:}
                 \def\@tempSkolPracov{\v{S}koliace pracovisko:}
                 \def\@tempVedPrace{Ved\a'uci z\a'avere\v{c}nej pr\a'ace:}
@@ -369,7 +369,7 @@
                 \def\@skolaNazovPrace{\printNazovEn}
                 \def\@skolaTypPrace{\typPraceEn}
                 \def\@tempStudProgr{Study Programme:}
-                \def\@tempCisloStud{Field Number:}
+                %\def\@tempCisloStud{Field Number:}
                 \def\@tempNazovStud{Study Field:}
                 \def\@tempSkolPracov{Training Workplace:}
                 \def\@tempVedPrace{Supervisor:}  
@@ -405,7 +405,7 @@
             \hspace*{5cm}\= \kill
             \@tempStudProgr \> \@skolaStudPr \\
             \ifthenelse{\boolean{isThesis}}
-            {\@tempCisloStud \> \printCisloStudijnehoOdboru \\
+            {%\@tempCisloStud \> \printCisloStudijnehoOdboru \\
              \@tempNazovStud \> \@skolaStudPrCisl \\
              \@tempSkolPracov \> \@skolaSkolPrac \\
              \@tempVedPrace \> \printVeduciZaverecnejPrace \\
