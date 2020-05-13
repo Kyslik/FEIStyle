@@ -1,4 +1,7 @@
 # Changelog
+ - 1.6.1 (2020.05.13)
+   1. changed Study Field 'Informatics' to AIS version 'Computer Science'
+
  - 1.6 (2020.05.11)
    1. changed Study Field 'Applied Informatics' to 'Informatics'
    2. removed (commented out) Study Field Number
