@@ -227,9 +227,9 @@
 \subsectionfont{\bf\fontsize{16pt}{1.3}\selectfont}
 \subsubsectionfont{\bf\fontsize{14pt}{1.3}\selectfont}
 
-\titlespacing\section{0pt}{24pt}{12pt}
-\titlespacing\subsection{6pt}{12pt}{6pt}
-\titlespacing\subsubsection{12pt}{10pt}{0pt}
+\titlespacing*\section{0pt}{24pt}{12pt}
+\titlespacing*\subsection{6pt}{12pt}{6pt}
+\titlespacing*\subsubsection{12pt}{10pt}{0pt}
 
 \lstset{
   basicstyle=\scriptsize\ttfamily,
