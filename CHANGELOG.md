@@ -1,4 +1,10 @@
 # Changelog
+ - 1.6.2 (2021.10.15)
+   1. fix some typos
+   2. fix bibliography invalid items (ISBN) and text formatting
+   3. remove all Overleaf warnings by: A) package reordering; B) some parameter changes (glossary package)
+   4. silence two warnings of sectsty.sty package (for now I don't see another solution)
+
  - 1.6.1 (2020.05.13)
    1. changed Study Field 'Informatics' to AIS version 'Computer Science'
 
