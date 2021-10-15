@@ -56,7 +56,7 @@ Following chain should output `file.pdf`
 ```
 $ pdflatex file
 $ biber file
-$ glossary file
+$ makeglossaries file
 $ pdflatex file
 $ pdflatex file #not a typo!
 ```
