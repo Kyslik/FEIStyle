@@ -23,7 +23,7 @@
 \DeclareOption{sp}{\def\typPraceSkr{s}}
     \def\isThesis{0}
     \def\typPraceEn{Seminar paper}
-    \def\typPrace{Semin\'{a}rna pr\'{a}ca}
+    \def\typPrace{Semin\a'arna pr\a'aca}
     \def\typPraceTemp{semin\'{a}rnu pr\'{a}cu}
     \def\typPraceTempII{semin\'{a}rnej práce}
 
