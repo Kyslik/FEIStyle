@@ -56,6 +56,13 @@
 \ExecuteOptions{dp}
 \LoadClass[\myset]{\parentclass}
 
+\usepackage[overload]{textcase}
+\usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
+
+% we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
+% package for biblatex https://github.com/michal-h21/biblatex-iso690
+\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
+
 \ifnum\FEIenglish=0
     \usepackage[slovak]{babel}
 \else
@@ -65,18 +72,22 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage[style=slovak]{csquotes}
+\usepackage{microtype}
 \usepackage[T1]{fontenc}
 
-% we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
-% package for biblatex https://github.com/michal-h21/biblatex-iso690
-\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
-\usepackage[overload]{textcase}
-\usepackage{chngcntr}  
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command}
+% silence warnings of sectsty/sectsty.sty:
+%     'Command \underbar has changed.'
+%     'Command \underline has changed.'
+\usepackage{sectsty}
+\DeactivateWarningFilters[temp]
+
+\usepackage{chngcntr}
 \usepackage{tocloft}
 \usepackage{rotating}
 \usepackage{anysize}
 \usepackage{xifthen}
-\usepackage{sectsty}
 \usepackage{amsmath}
 \usepackage{ifmtarg}
 \usepackage{xstring}
@@ -94,7 +105,6 @@
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 % \usepackage{showframe} % debugging overflows
 
 % \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
@@ -484,10 +494,11 @@
     
 \newcommand\FEIabstractEn[1]{
     \pagestyle{empty}   
-    \section*{\fontsize{22pt}{1.3}\selectfont ABSTRACT\color{white}\'U\color{black}}
+    \section*{\fontsize{22pt}{1.3}\selectfont ABSTRACT}
     \noindent\MakeTextUppercase{\printSkolaEn}
     \newline
-    \MakeTextUppercase{\printFakultaEn} \\
+    \MakeTextUppercase{\printFakultaEn}
+    \vspace{1em}
     \begin{tabbing} 
         \hspace*{7cm}\= \kill
         Study Programme:\> \printStudijnyProgramEn \\
@@ -584,22 +595,11 @@
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 
-% https://tex.stackexchange.com/questions/266591/printing-glossaries-with-long-styles-adds-to-the-tables-counter
-\newglossarystyle{FEIlong}{
-    \setglossarystyle{long}
-    \renewenvironment{theglossary}{
-      \begin{longtable*}{lp{\glsdescwidth}}
-    }
-    {\end{longtable*}}%
-}
-
 \newcommand\FEIglossaries[1]{
-    \setglossarystyle{FEIlong}
+    \setglossarystyle{long}
     \makeglossaries
     \loadglsentries{#1}
     \setlength\LTleft{8pt}
-    \setlength\LTright{0pt}
-    \setlength\glsdescwidth{\hsize}
 }
         
 \newcommand\FEIlistOfGlossaries{  
