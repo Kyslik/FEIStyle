@@ -1,4 +1,8 @@
 # Changelog
+ - 1.6.3 (2023.04.17)
+   1. more thorough make clean
+   2. fix slovak labels (Výpis, Algoritmus)
+
  - 1.6.2 (2021.10.15)
    1. fix some typos
    2. fix bibliography invalid items (ISBN) and text formatting
