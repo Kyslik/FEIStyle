@@ -13,6 +13,7 @@ pdf:
 clean:
 	rm -rf $(BUILD_DIR)
 	rm -fr $(FILE).pdf
+	rm -f *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,ist,loa,lof,log,lol,lot,out,pri,run.xml,synctex.gz,toc}
 
 refresh: clean pdf
 
