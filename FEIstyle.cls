@@ -97,7 +97,7 @@
 \usepackage{changepage}
 \usepackage{scrextend}
 \usepackage{xstring}
-\usepackage{url}
+\usepackage{xurl}
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{subcaption}
