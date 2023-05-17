@@ -66,7 +66,7 @@
 \usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
 
 \ifnum\FEIenglish=0
-    \usepackage[slovak]{babel}
+    \usepackage[english,slovak]{babel}
 \else
     \usepackage[english]{babel}
 \fi
