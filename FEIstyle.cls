@@ -104,6 +104,7 @@
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{booktabs}
 % \usepackage{showframe} % debugging overflows
 
 % \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
