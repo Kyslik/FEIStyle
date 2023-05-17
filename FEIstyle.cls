@@ -59,6 +59,8 @@
 \usepackage[overload]{textcase}
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
 \usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
@@ -69,10 +71,7 @@
     \usepackage[english]{babel}
 \fi
 
-\usepackage[utf8]{inputenc}
-
 \usepackage[style=slovak]{csquotes}
-\usepackage{microtype}
 \usepackage[T1]{fontenc}
 
 \usepackage[immediate]{silence}
