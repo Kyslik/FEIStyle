@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2023/05/17 v. 1.6.4 Thesis template - FEI STUBA]
+\ProvidesClass{FEIstyle}[2023/05/18 v. 1.7.0 Thesis template - FEI STUBA]
 
 % parse arguments
 \DeclareOption{dizp}{\def\typPraceSkr{dizp}

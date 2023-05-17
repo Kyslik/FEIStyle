@@ -1,5 +1,5 @@
 # Changelog
- - 1.6.4 (2023.05.17)
+ - 1.7.0 (2023.05.18)
    1. fix order of packages `inputenc` and `microtype`
    2. replace package `url` with `xurl`
    3. add package `booktabs`
