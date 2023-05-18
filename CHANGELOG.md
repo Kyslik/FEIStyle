@@ -1,4 +1,12 @@
 # Changelog
+ - 1.7.0 (2023.05.18)
+   1. fix order of packages `inputenc` and `microtype`
+   2. replace package `url` with `xurl`
+   3. add package `booktabs`
+   4. add list of accented slovak characters for `lstlisting`
+   5. add style `code-listing` for code listings
+   6. fix referencing unknown language
+
  - 1.6.3 (2023.04.17)
    1. more thorough make clean
    2. fix slovak labels (Výpis, Algoritmus)

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2023/04/17 v. 1.6.3 Thesis template - FEI STUBA]
+\ProvidesClass{FEIstyle}[2023/05/18 v. 1.7.0 Thesis template - FEI STUBA]
 
 % parse arguments
 \DeclareOption{dizp}{\def\typPraceSkr{dizp}
@@ -59,20 +59,19 @@
 \usepackage[overload]{textcase}
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
 \usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
 
 \ifnum\FEIenglish=0
-    \usepackage[slovak]{babel}
+    \usepackage[english,slovak]{babel}
 \else
     \usepackage[english]{babel}
 \fi
 
-\usepackage[utf8]{inputenc}
-
 \usepackage[style=slovak]{csquotes}
-\usepackage{microtype}
 \usepackage[T1]{fontenc}
 
 \usepackage[immediate]{silence}
@@ -98,16 +97,81 @@
 \usepackage{changepage}
 \usepackage{scrextend}
 \usepackage{xstring}
-\usepackage{url}
+\usepackage{xurl}
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{booktabs}
 % \usepackage{showframe} % debugging overflows
 
 % \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
+
+% https://stackoverflow.com/a/74266238
+\lstset{
+  extendedchars=true,
+  literate=
+    {á}{{\'a}}1
+    {ä}{{\"a}}1
+    {č}{{\v{c}}}1
+    {ď}{{\v{d}}}1
+    {é}{{\'e}}1
+    {í}{{\'i}}1
+    {ĺ}{{\'l}}1
+    {ľ}{{\v{l}}}1
+    {ň}{{\v{n}}}1
+    {ó}{{\'o}}1
+    {ô}{{\^o}}1
+    {ŕ}{{\'{r}}}1
+    {š}{{\v{s}}}1
+    {ť}{{\v{t}}}1
+    {ú}{{\'u}}1
+    {ý}{{\'y}}1
+    {ž}{{\v{z}}}1
+    {Á}{{\'A}}1
+    {Ä}{{\""A}}1
+    {Č}{{\v{C}}}1
+    {Ď}{{\v{C}}}1
+    {É}{{\'E}}1
+    {Í}{{\'I}}1
+    {Ĺ}{{\'L}}1
+    {Ľ}{{\v{L}}}1
+    {Ň}{{\v{N}}}1
+    {Ó}{{\'O}}1
+    {Ô}{{\^O}}1
+    {Ŕ}{{\'{R}}}1
+    {Š}{{\v{S}}}1
+    {Ť}{{\v{T}}}1
+    {Ú}{{\'U}}1
+    {Ý}{{\'Y}}1
+    {Ž}{{\v{Z}}}1
+}
+
+% https://www.overleaf.com/learn/latex/Code_listing
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{code-listing}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=none,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
 
 \newboolean{isThesis}
 
