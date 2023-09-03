@@ -301,9 +301,9 @@
 \subsectionfont{\bf\fontsize{16pt}{1.3}\selectfont}
 \subsubsectionfont{\bf\fontsize{14pt}{1.3}\selectfont}
 
-\titlespacing*\section{0pt}{24pt}{12pt}
-\titlespacing*\subsection{6pt}{12pt}{6pt}
-\titlespacing*\subsubsection{12pt}{10pt}{0pt}
+\titlespacing*\section{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*\subsection{6pt}{3ex plus 1ex minus .2ex}{1.25ex plus .2ex}
+\titlespacing*\subsubsection{12pt}{2.5ex plus 1ex minus .2ex}{1.25ex plus .2ex}
 
 \lstset{
   basicstyle=\scriptsize\ttfamily,
