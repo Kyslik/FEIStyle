@@ -656,8 +656,17 @@
 
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 
-\newcommand\FEIglossaries[1]{
+% https://tex.stackexchange.com/questions/266591/printing-glossaries-with-long-styles-adds-to-the-tables-counter
+\newglossarystyle{FEIlong}{
     \setglossarystyle{long}
+    \renewenvironment{theglossary}{
+      \begin{longtable*}{lp{\glsdescwidth}}
+    }
+    {\end{longtable*}}%
+}
+
+\newcommand\FEIglossaries[1]{
+    \setglossarystyle{FEIlong}
     \makeglossaries
     \loadglsentries{#1}
     \setlength\LTleft{8pt}
