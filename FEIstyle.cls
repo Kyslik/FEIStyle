@@ -104,6 +104,7 @@
 \usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{tabularx}
 \usepackage{booktabs}
 % \usepackage{showframe} % debugging overflows
 
@@ -522,22 +523,22 @@
     \noindent\MakeTextUppercase{\printSkola}
     \newline
     \MakeTextUppercase{\printFakulta}
-    \vspace{1em}
-    \begin{tabbing} 
-        \hspace*{7cm}\= \kill
-        \v{S}tudijn\a'y program:\> \printStudijnyProgram \\
-        Autor:\> \printAutor \\
-        \typPrace:\>
-        \begin{minipage}[t]{21.5em}
-            \printNazov
-        \end{minipage} \\
-        Ved\a'uci z\a'avere\v{c}nej pr\a'ace:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
-            {0}{}
-            {1}{Konzultant:\>\printKonzultant \\}
-                }[]Miesto a rok predlo\v{z}enia pr\a'ace:\>\printMesto \ \@rok
-    \end{tabbing}
-    \vspace{1em}
-    \input{#1}
+    \vspace{2.3em}
+
+    \noindent\begin{tabularx}{\textwidth}{@{}p{7cm}@{}X@{}}
+      \v{S}tudijn\a'y program:               & \printStudijnyProgram       \\
+      Autor:                                 & \printAutor                 \\
+      \typPrace:                             & \printNazov                 \\
+      Ved\a'uci z\a'avere\v{c}nej pr\a'ace:  & \printVeduciZaverecnejPrace \\
+      \IfEqCase*{\@tempKonzultant}{
+        {0}{}
+        {1}{Konzultant:                      & \printKonzultant            \\}
+      }[]
+      Miesto a rok predlo\v{z}enia pr\a'ace: & \printMesto \ \@rok         \\
+    \end{tabularx}
+    \vspace{1.4em}
+
+    \noindent\input{#1}
 
     \vspace{2em}
     \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
@@ -550,22 +551,22 @@
     \noindent\MakeTextUppercase{\printSkolaEn}
     \newline
     \MakeTextUppercase{\printFakultaEn}
-    \vspace{1em}
-    \begin{tabbing} 
-        \hspace*{7cm}\= \kill
-        Study Programme:\> \printStudijnyProgramEn \\
-        Author:\> \printAutor \\
-        \typPraceEn:\>
-        \begin{minipage}[t]{21.5em}
-            \printNazovEn
-        \end{minipage} \\
-        Supervisor:\> \printVeduciZaverecnejPrace \\\IfEqCase*{\@tempKonzultant}{
-            {0}{}
-            {1}{Consultant:\>\printKonzultant \\}
-                }[]Place and year of submission:\>\printMesto \ \@rok
-    \end{tabbing}
-    \vspace{1em}
-    \input{#1}
+    \vspace{2.3em}
+
+    \noindent\begin{tabularx}{\textwidth}{@{}p{7cm}@{}X@{}}
+      Study Programme:              & \printStudijnyProgramEn     \\
+      Author:                       & \printAutor                 \\
+      \typPraceEn:                  & \printNazovEn               \\
+      Supervisor:                   & \printVeduciZaverecnejPrace \\
+      \IfEqCase*{\@tempKonzultant}{
+        {0}{}
+        {1}{Consultant:             & \printKonzultant            \\}
+      }[]
+      Place and year of submission: & \printMesto \ \@rok         \\
+    \end{tabularx}
+    \vspace{1.4em}
+
+    \noindent\input{#1}
 
     \vspace{2em}
     \noindent Keywords: \printKeywordsEn
