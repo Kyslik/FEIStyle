@@ -151,27 +151,35 @@
 }
 
 % https://www.overleaf.com/learn/latex/Code_listing
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.506,0}
+\definecolor{codegray}{rgb}{0.2,0.2,0.2}
+\definecolor{codeviolet}{rgb}{0.58,0,0.82}
+\definecolor{codemagenta}{rgb}{0.839,0,0.494}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
 \lstdefinestyle{code-listing}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
+    keywordstyle=\color{codemagenta},
+    numberstyle=\ttfamily\footnotesize\color{codegray},
+    stringstyle=\color{codeviolet},
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
     keepspaces=true,
     numbers=none,
-    numbersep=5pt,
+    numbersep=8pt,
     showspaces=false,
     showstringspaces=false,
     showtabs=false,
-    tabsize=2
+    tabsize=2,
+    frame=single,
+    framesep=3pt,
+    framerule=0pt,
+    xleftmargin=4pt,
+    xrightmargin=4pt,
+    framexleftmargin=1pt,
+    framexrightmargin=1pt
 }
 
 \newboolean{isThesis}
