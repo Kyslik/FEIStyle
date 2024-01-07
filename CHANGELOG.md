@@ -1,4 +1,18 @@
 # Changelog
+ - 1.8.0 (2024.01.07)
+   1. title spacing now contains glue (LaTeX can make small changes in spacing)
+   2. remove unnecessary noindent from example
+   3. fix baselineskip in section titles (nicer spacing of multi-line titles)
+   4. better spacing of multi-line thesis titles in the abstract
+   5. improve formatting of listings
+      - colors now comply with WCAG AA
+      - margins are included for visual clarity
+   6. various improvements in the example
+      - add non-breakable spaces where they are needed
+      - change table position specifiers to [htbp]
+      - fix position of citations
+   7. fix table counters
+
  - 1.7.0 (2023.05.18)
    1. fix order of packages `inputenc` and `microtype`
    2. replace package `url` with `xurl`
