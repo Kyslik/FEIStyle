@@ -57,6 +57,11 @@
 \LoadClass[\myset]{\parentclass}
 
 \usepackage[overload]{textcase}
+
+% hyperref has to be loaded *before* glossaries
+% see https://mirror.kumi.systems/ctan/macros/latex/contrib/glossaries/glossaries-user.html#sec:hyperref
+\usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
+
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
 \usepackage{microtype}
@@ -101,7 +106,6 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[bookmarksopen,colorlinks,plainpages=false,urlcolor=blue,hypertexnames=false,unicode]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{tabularx}
