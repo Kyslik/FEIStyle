@@ -1,4 +1,7 @@
 # Changelog
+ - 1.8.1 (2024.05.02)
+   1. bring back hyperlinks for glossary references
+
  - 1.8.0 (2024.01.07)
    1. title spacing now contains glue (LaTeX can make small changes in spacing)
    2. remove unnecessary noindent from example
