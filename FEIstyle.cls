@@ -302,7 +302,7 @@
 %definovanie globalnych nastaveni
 \pagenumbering{arabic}  
 \pagestyle{plain}
-\parindent=0.8cm
+\parindent=0.63cm
 \parskip=1pt
 \linespread{1.3}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
