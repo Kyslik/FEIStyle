@@ -271,10 +271,6 @@
 \def\FEIstudyProgrammeEn#1{\def\@studijnyProgramEn{#1}}
 \newcommand{\printStudijnyProgramEn}{\@studijnyProgramEn}
 
-%\def\@cisloStudijnehoOdboru{2511}
-%\def\FEIstudyFieldNumber#1{\def\@cisloStudijnehoOdboru{#1}}
-%\newcommand{\printCisloStudijnehoOdboru}{\@cisloStudijnehoOdboru}
-
 \def\@nazovStudijnehoOdboru{Informatika}
 \def\FEIstudyField#1{\def\@nazovStudijnehoOdboru{#1}}
 \newcommand{\printNazovStudijnehoOdboru}{\@nazovStudijnehoOdboru}
@@ -419,7 +415,6 @@
                 \def\@skolaNazovPrace{\printNazov}
                 \def\@skolaTypPrace{\typPrace}
                 \def\@tempStudProgr{\v{S}tudijn\a'y program:}
-                %\def\@tempCisloStud{\v{C}\a'islo \v{s}tudijn\a'eho odboru:}
                 \def\@tempNazovStud{N\a'azov \v{s}tudijn\a'eho odboru:}
                 \def\@tempSkolPracov{\v{S}koliace pracovisko:}
                 \def\@tempVedPrace{Ved\a'uci z\a'avere\v{c}nej pr\a'ace:}
@@ -444,7 +439,6 @@
                 \def\@skolaNazovPrace{\printNazovEn}
                 \def\@skolaTypPrace{\typPraceEn}
                 \def\@tempStudProgr{Study Programme:}
-                %\def\@tempCisloStud{Field Number:}
                 \def\@tempNazovStud{Study Field:}
                 \def\@tempSkolPracov{Training Workplace:}
                 \def\@tempVedPrace{Supervisor:}  
@@ -480,8 +474,7 @@
             \hspace*{5cm}\= \kill
             \@tempStudProgr \> \@skolaStudPr \\
             \ifthenelse{\boolean{isThesis}}
-            {%\@tempCisloStud \> \printCisloStudijnehoOdboru \\
-             \@tempNazovStud \> \@skolaStudPrCisl \\
+            {\@tempNazovStud \> \@skolaStudPrCisl \\
              \@tempSkolPracov \> \@skolaSkolPrac \\
              \@tempVedPrace \> \printVeduciZaverecnejPrace \\
              \IfEqCase*{\@tempKonzultant}{
