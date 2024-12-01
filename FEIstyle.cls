@@ -90,7 +90,7 @@
 \usepackage{chngcntr}
 \usepackage{tocloft}
 \usepackage{rotating}
-\usepackage{anysize}
+\usepackage[tmargin=3cm,bmargin=3cm,lmargin=2.75cm,rmargin=2.75cm]{geometry}
 \usepackage{xifthen}
 \usepackage{amsmath}
 \usepackage{ifmtarg}
