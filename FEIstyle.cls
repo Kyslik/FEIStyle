@@ -306,13 +306,13 @@
 \parskip=1pt
 \linespread{1.3}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
-\sectionfont{\bf\fontsize{22pt}{20pt}\selectfont}
-\subsectionfont{\bf\fontsize{16pt}{15pt}\selectfont}
-\subsubsectionfont{\bf\fontsize{14pt}{14pt}\selectfont}
+\sectionfont{\fontsize{20pt}{18pt}\selectfont}
+\subsectionfont{\fontsize{16pt}{15pt}\selectfont}
+\subsubsectionfont{\fontsize{14pt}{14pt}\selectfont}
 
 \titlespacing*\section{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing*\subsection{6pt}{3ex plus 1ex minus .2ex}{1.25ex plus .2ex}
-\titlespacing*\subsubsection{12pt}{2.5ex plus 1ex minus .2ex}{1.25ex plus .2ex}
+\titlespacing*\subsection{0pt}{3ex plus 1ex minus .2ex}{1.25ex plus .2ex}
+\titlespacing*\subsubsection{0pt}{2.5ex plus 1ex minus .2ex}{1.25ex plus .2ex}
 
 \lstset{
   basicstyle=\scriptsize\ttfamily,
