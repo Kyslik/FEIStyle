@@ -359,44 +359,46 @@
 
 \newcommand\FEIcover{
     \pagestyle{empty}
-    \begin{changemargin}{0.19cm}{0.19cm}
+    \newgeometry{tmargin=2cm,bmargin=1.8cm,lmargin=2.75cm,rmargin=2.75cm}
         \IfEqCase*{\FEIenglish}{
             {0}{
                 \def\@skolaTemp{\printSkola}
                 \def\@skolaFakulta{\printFakulta}
-                \def\@skolaEvCislo{{\fontsize{12pt}{1.3}\selectfont Eviden\v{c}n\a'e \v{c}\a'islo: \printEvidencneCislo}}
+                \def\@skolaEvCislo{{Eviden\v{c}n\a'e \v{c}\a'islo: \printEvidencneCislo}}
                 \def\@skolaNazovPrace{\printNazov}
                 \def\@skolaTypPrace{\typPrace}
                 }
             {1}{
                 \def\@skolaTemp{\printSkolaEn}
                 \def\@skolaFakulta{\printFakultaEn}
-                \def\@skolaEvCislo{{\fontsize{12pt}{1.3}\selectfont Registration number: \printEvidencneCislo}}
+                \def\@skolaEvCislo{{Registration number: \printEvidencneCislo}}
                 \def\@skolaNazovPrace{\printNazovEn}
                 \def\@skolaTypPrace{\typPraceEn}
                 }
             }[]
+        \begin{sffamily}
         \begin{center}
-            {\fontsize{14pt}{1.3}\selectfont \bf \MakeTextUppercase{\@skolaTemp}\newline \MakeTextUppercase{\@skolaFakulta}}    
+            {\fontsize{14.5pt}{0}\selectfont\bfseries \MakeTextUppercase{\@skolaTemp}\\[11.3pt] \@skolaFakulta}
         \end{center}
-        \vspace{10mm}
+        \vspace{11.5mm}
         \ifthenelse{\boolean{isThesis}}
         {
-            \@skolaEvCislo
+            \fontsize{12.5pt}{0}\selectfont\noindent\@skolaEvCislo
         }{}
-        \vspace{60mm}
+        \vspace{51.5mm}
         \begin{center}
-            {\fontsize{16pt}{1.3}\selectfont \bf{\MakeTextUppercase{\@skolaNazovPrace}}} \\[1em] 
-            {\bf\fontsize{16pt}{1.3}\selectfont \MakeTextUppercase{\@skolaTypPrace}}
+            {\fontsize{20.5pt}{18.2pt}\selectfont\bfseries\nointerlineskip\@skolaNazovPrace\par}\vspace{29pt}
+            {\fontsize{14.5pt}{0}\selectfont\bfseries \@skolaTypPrace}
         \end{center}
         \vspace{\fill}
         \begin{flushleft}
-            {\fontsize{14pt}{1.3}\selectfont \bf
+            {\fontsize{14.5pt}{0}\selectfont\bfseries
                 \@rok
                 \hfill
                 \printAutor}
         \end{flushleft} 
-    \end{changemargin}
+    \end{sffamily}
+    \restoregeometry
     \newpage    
 }
 
