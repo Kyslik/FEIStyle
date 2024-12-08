@@ -405,7 +405,7 @@
 \newcommand\FEItitlePage{
     \setcounter{page}{1}
     \pagestyle{empty}
-    \begin{changemargin}{0.19cm}{0.19cm} 
+    \newgeometry{tmargin=3.024cm,bmargin=2.775cm,lmargin=2.75cm,rmargin=2.75cm}
         \IfEqCase*{\FEIenglish}{
             {0}{
                 \def\@skolaTemp{\printSkola}
@@ -413,13 +413,13 @@
                 \def\@skolaStudPr{\printStudijnyProgram}
                 \def\@skolaStudPrCisl{\printNazovStudijnehoOdboru}
                 \def\@skolaSkolPrac{\printSkoliacePracovisko}
-                \def\@skolaEvCislo{{\fontsize{12pt}{1.3}\selectfont Eviden\v{c}n\a'e \v{c}\a'islo: \printEvidencneCislo}}
+                \def\@skolaEvCislo{{Eviden\v{c}n\a'e \v{c}\a'islo: \printEvidencneCislo}}
                 \def\@skolaNazovPrace{\printNazov}
                 \def\@skolaTypPrace{\typPrace}
                 \def\@tempStudProgr{\v{S}tudijn\a'y program:}
-                \def\@tempNazovStud{N\a'azov \v{s}tudijn\a'eho odboru:}
+                \def\@tempNazovStud{Študijný odbor:}
                 \def\@tempSkolPracov{\v{S}koliace pracovisko:}
-                \def\@tempVedPrace{Ved\a'uci z\a'avere\v{c}nej pr\a'ace:}
+                \def\@tempVedPrace{Školiteľ:}
                 \def\@tempKonzultanta{Konzultant:}
                 \ifthenelse{\boolean{isThesis}}
                 {}{
@@ -437,7 +437,7 @@
                 \def\@skolaStudPr{\printStudijnyProgramEn}
                 \def\@skolaStudPrCisl{\printNazovStudijnehoOdboruEn}
                 \def\@skolaSkolPrac{\printSkoliacePracoviskoEn}
-                \def\@skolaEvCislo{\fontsize{12pt}{1.3}\selectfont Registration number: \printEvidencneCislo}       
+                \def\@skolaEvCislo{Registration number: \printEvidencneCislo}
                 \def\@skolaNazovPrace{\printNazovEn}
                 \def\@skolaTypPrace{\typPraceEn}
                 \def\@tempStudProgr{Study Programme:}
@@ -456,22 +456,24 @@
                 }
             }
             }[]
+        \begin{sffamily}
         \begin{center}
-            {\fontsize{14pt}{1.3}\selectfont \bf \MakeTextUppercase{\@skolaTemp}\newline \MakeTextUppercase{\@skolaFakulta}}    
+            {\fontsize{14pt}{1.3}\selectfont \bfseries \MakeTextUppercase{\@skolaTemp}\\[9.4pt] \@skolaFakulta}
         \end{center}
-        \vspace{10mm}
+        \vspace{9mm}
         {
             \ifthenelse{\boolean{isThesis}}
             {
                 \fontsize{12pt}{1.3}\selectfont \@skolaEvCislo
             }{}
         }    
-        \vspace{60mm}
+        \vspace{40.9mm}
         \begin{center}
-            {\fontsize{16pt}{1.3}\selectfont \bf{\MakeTextUppercase{\@skolaNazovPrace}}} \\[1em]
-            {\bf\fontsize{16pt}{1.3}\selectfont  \MakeTextUppercase{\@skolaTypPrace}}
+            {\fontsize{20pt}{18.1pt}\selectfont\bfseries\@skolaNazovPrace\par}\vspace{22pt}
+            {\fontsize{14pt}{0}\selectfont\bfseries\@skolaTypPrace}
         \end{center}
         \vspace{\fill}
+        {\fontsize{12pt}{14pt}\selectfont
         \begin{tabbing}
             \hspace*{5cm}\= \kill
             \@tempStudProgr \> \@skolaStudPr \\
@@ -488,15 +490,16 @@
                 \@tempTa \> \@skolaTa \\
             }
         \end{tabbing}
-        \vspace{\fill}
+        }
+        \vspace{3.43cm}
         \begin{flushleft}
-            {\fontsize{14pt}{1.3}\selectfont \bf
-                \printMesto \
+            {\fontsize{12pt}{0}\selectfont \bfseries
                 \@rok
                 \hfill
                 \printAutor}
         \end{flushleft}
-    \end{changemargin}
+        \end{sffamily}
+    \restoregeometry
     \newpage
 }
 
