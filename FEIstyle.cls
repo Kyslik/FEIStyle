@@ -747,8 +747,6 @@
     \counterwithin{algorithm}{section}
     \setcounter{lstlisting}{0}
     \counterwithin{lstlisting}{section}
-    % \setcounter{page}{1}  
-    \pagenumbering{Roman}
     \cleardoublepage
     \phantomsection 
     \addcontentsline{toc}{section}{\@zoznamPri}
@@ -787,12 +785,12 @@
 \newcommand\frontmatter{%
     \clearpage
     %\@mainmatterfalse
-    \pagenumbering{roman}}
+}
 
 \newcommand\mainmatter{%
     \cleardoublepage
     % \@mainmattertrue
-    \pagenumbering{arabic}}
+}
 
 \newcommand\backmatter{%
     \if@openright
