@@ -690,8 +690,8 @@
     \newpage
     \cleardoublepage
     \phantomsection 
-    \addcontentsline{toc}{section}{Resum\'{e}}
-    \section*{Resum\'{e}}
+    \addcontentsline{toc}{section}{Rezum\'{e}}
+    \section*{Rezum\'{e}}
     \noindent \noindent \input{#1}
 }
 
