@@ -44,14 +44,6 @@
     \def\FEIenglish{1} 
 }
 
-\def\FEIgen{0}
-\DeclareOption{m}{
-    \def\FEIgen{1} 
-}
-\DeclareOption{z}{
-    \def\FEIgen{2} 
-}
-
 \ProcessOptions
 \ExecuteOptions{dp}
 \LoadClass[\myset]{\parentclass}
@@ -294,10 +286,6 @@
 \def\@tempKonzultant{0}
 \def\FEIconsultant#1{\def\@konzultant{#1} \def\@tempKonzultant{1}}
 \newcommand{\printKonzultant}{\@konzultant}
-
-\def\@mesto{Bratislava}
-\def\FEIplace#1{\def\@mesto{#1}}
-\newcommand{\printMesto}{\@mesto}
 
 %definovanie globalnych nastaveni
 \pagenumbering{arabic}  
