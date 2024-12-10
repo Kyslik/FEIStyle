@@ -570,9 +570,9 @@
         
 \newcommand\listoffiguresandtables{
     \IfEqCase*{\FEIenglish}{
-        {0}{\renewcommand{\cftfigpresnum}{Obr\'{a}zok\ }
+        {0}{\renewcommand{\cftfigpresnum}{Obr.\ }
             \renewcommand{\cfttabpresnum}{Tabu\v{l}ka\ }}
-        {1}{\renewcommand{\cftfigpresnum}{Figure\ }
+        {1}{\renewcommand{\cftfigpresnum}{Fig.\ }
             \renewcommand{\cfttabpresnum}{Table\ }}
         }[] 
     \newlength{\mylenf}
@@ -580,8 +580,8 @@
     \setlength{\cftfignumwidth}{\dimexpr\mylenf+3em}
     \setlength{\cfttabnumwidth}{\dimexpr\mylenf+3em}
     \IfEqCase*{\FEIenglish}{
-        {0}{\section*{Zoznam obr\'{a}zkov a tabuliek}}
-        {1}{\section*{List of Figures and Tables}}
+        {0}{\section*{\fontsize{20pt}{1.3}\selectfont Zoznam obr\'{a}zkov a tabuliek}}
+        {1}{\section*{\fontsize{20pt}{1.3}\selectfont List of Figures and Tables}}
         }[]    
     \phantomsection
     \@starttoc{lof}
@@ -608,7 +608,7 @@
         {0}{\def\@zoznamAlg{Zoznam algoritmov}}
         {1}{\def\@zoznamAlg{List of Algorithm}}
         }[]
-    \renewcommand{\listalgorithmname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamAlg}
+    \renewcommand{\listalgorithmname}{\fontsize{20pt}{1.3}\selectfont \@zoznamAlg}
     \pagestyle{plain}
     \listofalgorithms
     \newpage
@@ -620,7 +620,7 @@
         {0}{\def\@zoznamList{Zoznam v\a'ypisov}}
         {1}{\def\@zoznamList{List of listings}}
         }[]
-    \renewcommand{\lstlistlistingname}{\bf\fontsize{22pt}{1.3}\selectfont \@zoznamList}
+    \renewcommand{\lstlistlistingname}{\fontsize{20pt}{1.3}\selectfont \@zoznamList}
     \pagestyle{plain}
     \lstlistoflistings
     \newpage
@@ -655,12 +655,12 @@
 \newcommand\FEIlistOfGlossaries{  
     \pagestyle{plain}
     \IfEqCase*{\FEIenglish}{
-        {0}{\def\@zoznamZn{Zoznam skratiek}}
-        {1}{\def\@zoznamZn{List of Abbreviations}}
+        {0}{\def\@zoznamZn{Zoznam značiek a skratiek}}
+        {1}{\def\@zoznamZn{List of Symbols and Abbreviations}}
     }[]
     %\addtocontents{lof}{\protect\thispagestyle{plain}}
     %\addtocontents{lot}{\protect\thispagestyle{plain}}
-    \printglossary[type=\acronymtype,title={\@zoznamZn}]
+    \printglossary[type=\acronymtype,title={\fontsize{20pt}{1.3}\selectfont \@zoznamZn}]
     \newpage
     \pagestyle{plain}
 }
@@ -712,7 +712,7 @@
     \cleardoublepage
     \phantomsection 
     \IfEqCase*{\FEIenglish}{
-        {0}{\def\@zoznamBib{Zoznam pou\v{z}itej literat\'{u}ry}}
+        {0}{\def\@zoznamBib{Literatúra}}
         {1}{\def\@zoznamBib{Bibliography}}
         }[]
     \addcontentsline{toc}{section}{\@zoznamBib}
