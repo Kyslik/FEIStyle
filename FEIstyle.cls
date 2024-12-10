@@ -505,15 +505,17 @@
 
 \newcommand\FEIthanks[1]{
     \pagestyle{empty}
-    \vspace*{120mm}
+    \vspace*{\stretch{1}}
     \IfEqCase*{\FEIenglish}{
-        {0}{\section*{\fontsize{22pt}{1.3}\selectfont Po\v{d}akovanie}}
-        {1}{\section*{\fontsize{22pt}{1.3}\selectfont Acknowledgments}}
+        {0}{\section*{\fontsize{16pt}{1.3}\selectfont Po\v{d}akovanie}}
+        {1}{\section*{\fontsize{16pt}{1.3}\selectfont Acknowledgments}}
         }[]
+    \vspace{1pt}
         
     \ifthenelse{\isempty{#1}}
     {Chcem sa po\v{d}akova\v{t} ved\'{u}cemu z\'{a}vere\v{c}nej pr\'{a}ce, ktor\'{y}m bol \printVeduciZaverecnejPrace, za odborn\'{e} vedenie, rady a pripomienky, ktor\'{e} mi pomohli pri vypracovan\'{i} tejto  \typPraceTempII.}
-    {\input{#1}}    
+    {\input{#1}}
+    \vspace{7.1pt}
     \newpage
 }
 
