@@ -716,7 +716,7 @@
 \newcounter{listOfAppendix}
 
 \IfEqCase*{\FEIenglish}{
-    {0}{\def\@zoznamPri{Pr\'{i}lohy}}
+    {0}{\def\@zoznamPri{Dodatky}}
     {1}{\def\@zoznamPri{Appendix}}
     }[]
 
@@ -786,6 +786,19 @@
     \else
     \clearpage
     \fi
+    \renewcommand \thesection{\Alph{section}}
+    \setcounter{section}{0}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \renewcommand \thetable{\Alph{section}}
+    \setcounter{table}{0}
+    \counterwithin{table}{section}
+    \setcounter{figure}{0}
+    \counterwithin{figure}{section}
+    \setcounter{algorithm}{0}
+    \counterwithin{algorithm}{section}
+    \setcounter{lstlisting}{0}
+    \counterwithin{lstlisting}{section}
     % \@mainmatterfalse
 }
 %\makeatother
