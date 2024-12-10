@@ -531,57 +531,33 @@
 
 \newcommand\FEIabstract[1]{
     \pagestyle{empty}   
-    \section*{\fontsize{22pt}{1.3}\selectfont S\'{U}HRN}
-    \noindent\MakeTextUppercase{\printSkola}
-    \newline
-    \MakeTextUppercase{\printFakulta}
-    \vspace{2.3em}
-
-    \noindent\begin{tabularx}{\textwidth}{@{}p{7cm}@{}X@{}}
-      \v{S}tudijn\a'y program:               & \printStudijnyProgram       \\
-      Autor:                                 & \printAutor                 \\
-      \typPrace:                             & \printNazov                 \\
-      Ved\a'uci z\a'avere\v{c}nej pr\a'ace:  & \printVeduciZaverecnejPrace \\
-      \IfEqCase*{\@tempKonzultant}{
-        {0}{}
-        {1}{Konzultant:                      & \printKonzultant            \\}
-      }[]
-      Miesto a rok predlo\v{z}enia pr\a'ace: & \printMesto \ \@rok         \\
-    \end{tabularx}
-    \vspace{1.4em}
+    \vspace*{-26.6pt}
+    \section*{\fontsize{20pt}{1.3}\selectfont Abstrakt}
+    \vspace{0.45cm}
 
     \noindent\input{#1}
 
-    \vspace{2em}
-    \noindent K\v{l}\a'u\v{c}ov\a'e slov\a'a: \printKeywords
+    \vspace{0.8cm}
+    \noindent \textbf{K\v{l}\a'u\v{c}ov\a'e slov\a'a}
+
+    \vspace{0.3cm}
+    \noindent \printKeywords
     \clearpage
 }
     
 \newcommand\FEIabstractEn[1]{
     \pagestyle{empty}   
-    \section*{\fontsize{22pt}{1.3}\selectfont ABSTRACT}
-    \noindent\MakeTextUppercase{\printSkolaEn}
-    \newline
-    \MakeTextUppercase{\printFakultaEn}
-    \vspace{2.3em}
-
-    \noindent\begin{tabularx}{\textwidth}{@{}p{7cm}@{}X@{}}
-      Study Programme:              & \printStudijnyProgramEn     \\
-      Author:                       & \printAutor                 \\
-      \typPraceEn:                  & \printNazovEn               \\
-      Supervisor:                   & \printVeduciZaverecnejPrace \\
-      \IfEqCase*{\@tempKonzultant}{
-        {0}{}
-        {1}{Consultant:             & \printKonzultant            \\}
-      }[]
-      Place and year of submission: & \printMesto \ \@rok         \\
-    \end{tabularx}
-    \vspace{1.4em}
+    \vspace*{-26.6pt}
+    \section*{\fontsize{20pt}{1.3}\selectfont Abstract}
+    \vspace{0.45cm}
 
     \noindent\input{#1}
 
-    \vspace{2em}
-    \noindent Keywords: \printKeywordsEn
+    \vspace{0.8cm}
+    \noindent \textbf{Keywords}
+
+    \vspace{0.3cm}
+    \noindent \printKeywordsEn
     \clearpage
 }
         
