@@ -292,7 +292,7 @@
 \pagestyle{plain}
 \parindent=0.63cm
 \parskip=1pt
-\linespread{1.3}
+\linespread{1.25}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
 \sectionfont{\fontsize{20pt}{18pt}\selectfont}
 \subsectionfont{\fontsize{16pt}{15pt}\selectfont}
