@@ -1,5 +1,7 @@
 \documentclass[dp]{FEIstyle}
 
+\usepackage{isomath}
+
 \FEIauthor{Ján Srnec}
 \FEItitle{Ukážkový \LaTeX\ dokument s dlhým názvom}
 \FEItitleEn{Example \LaTeX\ document with long title}
@@ -11,8 +13,6 @@
 
 \FEIglossaries{includes/glossary}
 \bibliography{includes/bibliography.bib}
-
-\iffalse \input{includes/glossary} \fi
 
 \begin{document}
 \frontmatter
@@ -27,7 +27,24 @@
 \FEIthanks{includes/thanks}
 \FEIcontent
 \FEIlistOfFiguresAndTables
-\FEIlistOfGlossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% List of units and abbreviations                                            %%
+%%============================================================================%%
+%% Choose the method of typesetting the list of units and abbreviations.      %%
+%% Uncomment just one of the two lines below!                                 %%
+%%----------------------------------------------------------------------------%%
+%% Method 1:                                                                  %%
+%% Automatically generated and sorted list of abbreviations with hyperlinks   %%
+%% from the text. Edit includes/glossary.tex.                                 %%
+\FEIlistOfGlossaries                                                          %%
+%%----------------------------------------------------------------------------%%
+%% Method 2:                                                                  %%
+%% Manual list – must be manually filled and sorted, does not make hyperlinks %%
+%% from the text. Edit includes/manual_glossary.tex.                          %%
+%% \FEImanualListOfGlossaries{includes/manual_glossary}                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \FEIlistOfAlgorithms
 \FEIlistOfListings
 

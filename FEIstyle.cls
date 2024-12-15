@@ -639,9 +639,8 @@
     \loadglsentries{#1}
     \setlength\LTleft{8pt}
 }
-        
-\newcommand\FEIlistOfGlossaries{  
-    \pagestyle{plain}
+
+\newcommand\FEIlistOfGlossaries{
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamZn{Zoznam značiek a skratiek}}
         {1}{\def\@zoznamZn{List of Symbols and Abbreviations}}
@@ -650,9 +649,21 @@
     %\addtocontents{lot}{\protect\thispagestyle{plain}}
     \printglossary[type=\acronymtype,title={\fontsize{20pt}{1.3}\selectfont \@zoznamZn}]
     \newpage
-    \pagestyle{plain}
 }
-             
+
+\newcommand\FEImanualListOfGlossaries[1]{
+    \IfEqCase*{\FEIenglish}{
+        {0}{\def\@zoznamZn{Zoznam značiek a skratiek}}
+        {1}{\def\@zoznamZn{List of Symbols and Abbreviations}}
+    }[]
+    \section*{\@zoznamZn}
+    {
+        \linespread{1.7}\selectfont
+        \input{#1}\par
+    }
+    \newpage
+}
+
 \newcommand\FEIintroduction[1]{ 
     \pagestyle{plain}
     \IfEqCase*{\FEIenglish}{
