@@ -717,8 +717,6 @@
     \addcontentsline{toc}{section}{\@zoznamBib}
     \renewcommand\refname{\@zoznamBib} 
 
-    \renewcommand\multinamedelim{\addcomma\space}
-    \renewcommand\finalnamedelim{\addspace\bibstring{and}\space}
     % below you can set padding in bibliography
     \setlength{\bibhang}{0pt}
     \printbibliography
