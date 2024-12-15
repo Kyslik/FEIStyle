@@ -558,9 +558,9 @@
         
 \newcommand\listoffiguresandtables{
     \IfEqCase*{\FEIenglish}{
-        {0}{\renewcommand{\cftfigpresnum}{Obr.\ }
+        {0}{\renewcommand{\cftfigpresnum}{Obrázok\ }
             \renewcommand{\cfttabpresnum}{Tabu\v{l}ka\ }}
-        {1}{\renewcommand{\cftfigpresnum}{Fig.\ }
+        {1}{\renewcommand{\cftfigpresnum}{Figure\ }
             \renewcommand{\cfttabpresnum}{Table\ }}
         }[] 
     \newlength{\mylenf}
