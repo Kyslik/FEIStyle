@@ -725,9 +725,15 @@
 \newcounter{listOfAppendix}
 
 \IfEqCase*{\FEIenglish}{
-    {0}{\def\@zoznamPri{Dodatky}}
-    {1}{\def\@zoznamPri{Appendix}}
-    }[]
+    {0}{
+        \def\@appendices{Dodatky}
+        \def\@appendix{Dodatok}
+    }
+    {1}{
+        \def\@appendices{Appendices}
+        \def\@appendix{Appendix}
+    }
+}[]
 
 \newcommand\FEIlistOfAppendix{
     \newpage
@@ -746,7 +752,7 @@
     \counterwithin{lstlisting}{section}
     \cleardoublepage
     \phantomsection 
-    \addcontentsline{toc}{section}{\@zoznamPri}
+    \addcontentsline{toc}{section}{\@appendices}
     \listofpriloh
 }
 
@@ -760,7 +766,7 @@
     \noindent\input{#2}
 }
         
-\newlistof{priloh}{pri}{\@zoznamPri}
+\newlistof{priloh}{pri}{\@appendices}
 \newcommand{\pridajPrilohu}[1]{
     \refstepcounter{priloh}
     \addcontentsline{pri}{priloh}{\protect\numberline{\Alph{section}} #1}\par
@@ -796,18 +802,11 @@
     \clearpage
     \fi
     \renewcommand \thesection{\Alph{section}}
+    \titleformat{\section}
+    {\normalfont\Large\bfseries}{\@appendix{} \thesection:}{1em}{}
     \setcounter{section}{0}
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
-    \renewcommand \thetable{\Alph{section}}
-    \setcounter{table}{0}
-    \counterwithin{table}{section}
-    \setcounter{figure}{0}
-    \counterwithin{figure}{section}
-    \setcounter{algorithm}{0}
-    \counterwithin{algorithm}{section}
-    \setcounter{lstlisting}{0}
-    \counterwithin{lstlisting}{section}
     % \@mainmatterfalse
 }
 %\makeatother
