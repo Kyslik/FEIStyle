@@ -1,4 +1,4 @@
-FILE = example
+FILE = thesis
 BUILD_DIR = .build
 
 LATEXMK_OPTIONS = -pdf -synctex=1 -output-directory=$(BUILD_DIR) -interaction=nonstopmode -silent
