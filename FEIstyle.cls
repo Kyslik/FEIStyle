@@ -523,16 +523,6 @@
     \newpage
 }
 
-\newcommand\FEIassignment[1]{   
-    \pagestyle{empty}
-    \setlength{\voffset}{-2.5cm}
-    \begin{center}
-        \makebox[\textwidth]{\includegraphics[width=\paperwidth]{#1}}
-    \end{center}
-    \setlength{\hoffset}{0cm} 
-    \setlength{\voffset}{0cm}
-}
-
 \newcommand\FEIabstract[1]{
     \pagestyle{empty}   
     \vspace*{-26.6pt}
