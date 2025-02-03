@@ -56,17 +56,28 @@
 
 \usepackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
 
-\usepackage{microtype}
+\usepackage[final, babel, nopatch=item]{microtype}
 \usepackage[utf8]{inputenc}
 % we should use ISO 690 & 690-2 http://www.fei.stuba.sk/sk/kniznica-fei/vzory-bibliografickych-odkazov-a-citovanie.html?page_id=1756 
 % package for biblatex https://github.com/michal-h21/biblatex-iso690
-\usepackage[backend=biber,style=iso-numeric,autolang=other,bibencoding=utf8,seconds=true]{biblatex}
+\usepackage[backend=biber,
+            sorting=none,
+            style=iso-numeric,
+            shortnumeration=true,
+            citestyle=numeric-comp,
+            maxnames=5,
+            minnames=1,
+            giveninits=true]{biblatex}
+\DefineBibliographyStrings{slovak}{
+  urlfrom = {Dostupné z}
+}
 
 \ifnum\FEIenglish=0
-    \usepackage[english,slovak]{babel}
+    \usepackage[english,main=slovak]{babel}
 \else
-    \usepackage[english]{babel}
+    \usepackage[main=english, slovak]{babel}
 \fi
+\languageattribute{slovak}{split}
 
 \usepackage[style=slovak]{csquotes}
 \usepackage[T1]{fontenc}
@@ -76,15 +87,19 @@
 % silence warnings of sectsty/sectsty.sty:
 %     'Command \underbar has changed.'
 %     'Command \underline has changed.'
+
 \usepackage{sectsty}
 \DeactivateWarningFilters[temp]
 
 \usepackage{chngcntr}
 \usepackage{tocloft}
 \usepackage{rotating}
-\usepackage[tmargin=3cm,bmargin=3cm,lmargin=2.75cm,rmargin=2.75cm]{geometry}
+\usepackage[a4paper, tmargin=3cm,bmargin=3cm,lmargin=2.75cm,rmargin=2.75cm]{geometry}
 \usepackage{xifthen}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{upgreek}
+\usepackage{isomath}
 \usepackage{ifmtarg}
 \usepackage{xstring}
 \usepackage[compact]{titlesec}
@@ -93,7 +108,6 @@
 \usepackage{lmodern}
 \usepackage{changepage}
 \usepackage{scrextend}
-\usepackage{xstring}
 \usepackage{xurl}
 \usepackage{enumitem}
 \usepackage{caption}
@@ -102,7 +116,9 @@
 \usepackage{algorithmic}
 \usepackage{tabularx}
 \usepackage{booktabs}
-% \usepackage{showframe} % debugging overflows
+\usepackage{pdfpages}
+\usepackage[all]{nowidow}
+%\usepackage{showframe} % debugging overflows
 
 % \cftsetpnumwidth{1.8em} % set the dots width in loX (f,t,l,a...) https://tex.stackexchange.com/q/369283/106389
 
@@ -313,7 +329,7 @@
 
 \IfEqCase*{\FEIenglish}{
    {0}{
-       \addto\captionsslovak{\renewcommand{\lstlistingname}{V\a'ypis}}
+       \addto\captionsslovak{\renewcommand{\lstlistingname}{V\a'ypis k\a'odu}}
        \renewcommand{\ALG@name}{Algoritmus}}
    {1}{
        \addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
@@ -594,7 +610,7 @@
 \newcommand\FEIlistOfAlgorithms{
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@zoznamAlg{Zoznam algoritmov}}
-        {1}{\def\@zoznamAlg{List of Algorithm}}
+        {1}{\def\@zoznamAlg{List of Algorithms}}
         }[]
     \renewcommand{\listalgorithmname}{\fontsize{20pt}{1.3}\selectfont \@zoznamAlg}
     \pagestyle{plain}
@@ -605,7 +621,7 @@
 
 \newcommand\FEIlistOfListings{    
     \IfEqCase*{\FEIenglish}{
-        {0}{\def\@zoznamList{Zoznam v\a'ypisov}}
+        {0}{\def\@zoznamList{Zoznam v\a'ypisov k\a'odov}}
         {1}{\def\@zoznamList{List of listings}}
         }[]
     \renewcommand{\lstlistlistingname}{\fontsize{20pt}{1.3}\selectfont \@zoznamList}
@@ -803,7 +819,7 @@
     \fi
     \renewcommand \thesection{\Alph{section}}
     \titleformat{\section}
-    {\normalfont\Large\bfseries}{\@appendix{} \thesection:}{1em}{}
+    {\normalfont\Large\bfseries}{\@appendix{} \thesection:}{1ex}{}
     \setcounter{section}{0}
     \setcounter{subsection}{0}
     \setcounter{subsubsection}{0}
