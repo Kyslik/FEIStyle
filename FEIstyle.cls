@@ -731,13 +731,12 @@
 \newcommand\FEIaiDeclaration[1]{
     \IfEqCase*{\FEIenglish}{
         {0}{\def\@aiDeclaration{Použitie nástrojov umelej inteligencie}}
-        {1}{\def\@aiDeclaration{The usage of artificial intelligence tools}}
+        {1}{\def\@aiDeclaration{Usage of artificial intelligence tools}}
         }[]
     \phantomsection
     \addcontentsline{toc}{subsection}{\@aiDeclaration}
     \subsection*{\@aiDeclaration}
     \input{#1}\par
-    \printbibliography
 }
 
 \newcounter{listOfAppendix}
