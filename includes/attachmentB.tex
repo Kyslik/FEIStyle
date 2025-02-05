@@ -1,9 +1,14 @@
+Dlhšie kódy, prípadne kompletné programy vypisujeme do dodatkov práce. Nasledujúci program v~jazyku Python vygeneruje súbor \verb|thesis.tex|, ktorý je funkčne
+totožný s~hlavným súborom tohto dokumentu.
+Stačí vyplniť prehľadný formulár pri volaní funkcie \verb|generate_thesis_tex| na konci kódu
+a~získate hlavný súbor vašej práce.
+
 \lstinputlisting[
   label={lst:sublime},
-  caption={Ukážka súboru sublime-project načítaného z~externého súboru pomocou makra \texttt{\textbackslash lstinputlisting}.},
-  language=,
+  caption={Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt{\textbackslash lstinputlisting}},
+  language=python,
   style=\detokenize{code-listing},
   %basicstyle=\normalfont\ttfamily,
   %showstringspaces=false
-]{\detokenize{fei.sublime-project}}
+]{\detokenize{includes/listings/generate_thesis_tex.py}}
 %\detokenize solves the problem of the conflict with babel and the Slovak hyphenation rule concerning the dash character.
