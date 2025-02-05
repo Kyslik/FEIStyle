@@ -1,25 +1,14 @@
-\begin{algorithm}
-\caption{Vypočítaj $y = x^n$}  
-\label{alg:calculation-1}                         
-\begin{algorithmic}                    
-    \REQUIRE $n \geq 0 \vee x \neq 0$
-    \ENSURE $y = x^n$
-    \STATE $y \Leftarrow 1$
-    \IF{$n < 0$}
-        \STATE $X \Leftarrow 1 / x$
-        \STATE $N \Leftarrow -n$
-    \ELSE
-        \STATE $X \Leftarrow x$
-        \STATE $N \Leftarrow n$
-    \ENDIF
-    \WHILE{$N \neq 0$}
-        \IF{$N$ is even}
-            \STATE $X \Leftarrow X \times X$
-            \STATE $N \Leftarrow N / 2$
-        \ELSE[$N$ is odd]
-            \STATE $y \Leftarrow y \times X$
-            \STATE $N \Leftarrow N - 1$
-        \ENDIF
-    \ENDWHILE
-\end{algorithmic}
-\end{algorithm}
+Dlhšie kódy, prípadne kompletné programy vypisujeme do dodatkov práce. Nasledujúci program v~jazyku Python vygeneruje súbor \verb|thesis.tex|, ktorý je funkčne
+totožný s~hlavným súborom tohto dokumentu.
+Stačí vyplniť prehľadný formulár pri volaní funkcie \verb|generate_thesis_tex| na konci kódu
+a~získate hlavný súbor vašej práce.
+
+\lstinputlisting[
+  label={lst:sublime},
+  caption={Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt{\textbackslash lstinputlisting}},
+  language=python,
+  style=\detokenize{code-listing},
+  %basicstyle=\normalfont\ttfamily,
+  %showstringspaces=false
+]{\detokenize{includes/listings/generate_thesis_tex.py}}
+%\detokenize solves the problem of the conflict with babel and the Slovak hyphenation rule concerning the dash character.

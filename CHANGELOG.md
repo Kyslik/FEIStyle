@@ -1,4 +1,11 @@
 # Changelog
+ - 2.0.0 (2025.02.05)
+   1. major changes in formatting — synchronize with the official Word template
+      while keeping the familiar look & feel of LaTeX
+   2. add support for manual glossaries (`\FEImanualListOfGlossaries`)
+   3. new command for declaration of AI tools usage (`\FEIaiDeclaration`)
+   4. add script for generating `thesis.tex`
+
  - 1.8.1 (2024.05.02)
    1. bring back hyperlinks for glossary references
 

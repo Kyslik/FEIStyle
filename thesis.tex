@@ -1,0 +1,129 @@
+\documentclass[bp]{FEIstyle}
+
+% Author of the thesis
+\FEIauthor{RNDr. Juraj Chlpík, PhD.}
+
+% Evidence number
+\FEIregNr{FEI-xxxx-xxxx}
+
+% Title
+\FEItitle{Rozšírená šablóna záverečnej práce
+na FEI STU v~Bratislave v~systéme \LaTeX}
+\FEItitleEn{Example \LaTeX\ document with long title}
+
+% Date
+\FEIdate{31}{12}{2024}
+
+% Keywords
+\FEIkeywords{záverečná práca, šablóna, \LaTeX, formátovanie textu, citácie}
+\FEIkeywordsEn{Final thesis, template, \LaTeX, text formatting, citations}
+
+% Further details
+\FEIstudyProgramme{názov študijného programu}
+\FEIstudyProgrammeEn{Study program in English}
+\FEIstudyField{názov študijného odboru}
+\FEIstudyFieldEn{Field of the study in English}
+\FEItrainingWorkplace{Názov školiaceho pracoviska}
+\FEItrainingWorkplaceEn{Training Work place}
+
+% Supervisor
+\FEIsupervisor{tituly Meno Priezvisko, tituly}
+
+% Consultant
+% -- if there is none, comment out the next line
+\FEIconsultant{tituly Meno Priezvisko, tituly}
+
+% Glossaries -- terms and abbreviations.
+% If you use automatic glossaries,
+% uncomment the next line.
+%\FEIglossaries{includes/glossary}
+
+% Bibliography database file
+\bibliography{includes/bibliography.bib}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%
+%%              %%
+%% FRONT MATTER %%
+%%              %%
+%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\FEIpdfInfo
+\FEIcover
+\FEItitlePage
+\includepdf[pages=-]{includes/assignment.pdf}
+\FEIthanks{includes/thanks}
+\FEIabstract{includes/abstract}
+\FEIabstractEn{includes/abstractEN}
+\FEIcontent
+%\FEIlistOfFiguresAndTables
+
+%% List of units and abbreviations
+%%
+%% Choose the method of typesetting the list of
+%% units and abbreviations.
+%% Uncomment only one of the two lines below!
+
+%% METHOD 1:
+%% ---------
+%% Automatically generated and sorted list of
+%% abbreviations with hyperlinks from the text.
+%% Edit includes/glossary.tex.
+%\FEIlistOfGlossaries
+%% METHOD 2:
+%% ---------
+%% Manual list -- must be manually filled and sorted,
+%% does not make hyperlinks from the text.
+%% Edit includes/manual_glossary.tex.
+\FEImanualListOfGlossaries{includes/manual_glossary}
+
+%% Lists of algorithms and listings
+\FEIlistOfAlgorithms
+\FEIlistOfListings
+
+%%%%%%%%%%%%%%%%%
+%%             %%
+%% MAIN MATTER %%
+%%             %%
+%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\FEIintroduction{includes/introduction}
+\FEIcore{includes/core}
+\FEIconclusion{includes/conclusion}
+
+%% Uncomment only if the document is writen in english
+%\FEIresume{includes/resume}
+
+%%%%%%%%%%%%%%%%%%
+%%              %%
+%% Bibliography %%
+%%              %%
+%%%%%%%%%%%%%%%%%%
+\FEIbibliography
+%% AI Declaration
+\FEIaiDeclaration{includes/ai_declaration}
+
+%%%%%%%%%%%%%%%%%%
+%%              %%
+%% BACK MATTER  %%
+%%              %%
+%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%% Attachment A
+\FEIappendix{Algoritmus\label{att:algorithms}}{includes/attachmentA}
+
+%% Attachment B
+\FEIappendix{Výpis dlhého kódu\label{att:listings}}{includes/attachmentB}
+
+%% Attachment C
+\FEIappendix{Slovníček pojmov\label{att:dictionary}}{includes/attachmentC}
+
+%% Attachement D
+%\FEIappendix{Súborová štruktúra projektu\label{att:files}}{includes/attachmentD}
+
+
+\end{document}
