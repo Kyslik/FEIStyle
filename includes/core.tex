@@ -48,24 +48,24 @@ Hlavným obsahom úvodnej časti sú formálne náležitosti práce a musia byť
 \subsubsection{Obálka, titulný list, zadanie}
 Začiatočné stránky práce automaticky generuje univerzitný
 informačný systém AIS vo formáte PDF.
-Môžeme ich do záverečnej práce vložiť pomocou príkazu \verb|\includepdf| z~balíčka \verb|pdfpages| 
-alebo využijeme makrá \verb|FEIcover| a~\verb|FEItitle| na vytvorenie obálky a prvej 
+Môžeme ich do záverečnej práce vložiť pomocou príkazu \verb|\includepdf| z~balíčka \verb|pdfpages|
+alebo využijeme makrá \verb|FEIcover| a~\verb|FEItitle| na vytvorenie obálky a prvej
 stránky práce.
 Aby boli všetky informácie aktuálne,
-treba venovať pozornosť vyplneniu údajových 
-premenných v~úvode hlavného súboru \verb|thesis.tex|. 
+treba venovať pozornosť vyplneniu údajových
+premenných v~úvode hlavného súboru \verb|thesis.tex|.
 
-Zadanie odporúčame vložiť pomocou spomínaného makra 
-\verb|\includepdf| tak, že najprv uložíme PDF súbor 
-so zadaním do priečinka \verb|/includes| a prepíšeme 
+Zadanie odporúčame vložiť pomocou spomínaného makra
+\verb|\includepdf| tak, že najprv uložíme PDF súbor
+so zadaním do priečinka \verb|includes| a prepíšeme
 názov súboru v argumente makra.
 
 \subsubsection{Poďakovanie}
 Nepovinná, ale veľmi obľúbená časť práce.
 Je umiestnené na samostatnej strane zväčša v~dolnej časti.
-Jej obsah je ponechaný na autora. 
-Obsah poďakovania sa nachádza v~súbore 
-\verb|/includes/thanks.tex| a~sadzbu má na starosti 
+Jej obsah je ponechaný na autora.
+Obsah poďakovania sa nachádza v~súbore
+\verb|includes/thanks.tex| a~sadzbu má na starosti
 príkaz \verb|\FEIthanks|.
 
 \subsubsection{Slovenský a anglický abstrakt}
@@ -76,56 +76,67 @@ bez pridanej interpretácie a kritiky.
 Mal by poskytovať čo najviac informácií obsiahnutých v~dokumente.
 
 Abstrakt si netreba zamieňať s termínmi anotácia,
-extrakt alebo resumé.
+extrakt alebo rezumé.
 Anotácia je stručná poznámka, alebo vysvetlenie,
 prípadne veľmi stručný opis dokumentu alebo jeho obsahu.
 Extrakt predstavuje časti dokumentu vybratých
 na reprezentáciu celku.
-Resumé obsahuje stručné zopakovanie významných prínosov
+Rezumé obsahuje stručné zopakovanie významných prínosov
 a~záverov v práci.
 Nachádza sa zvyčajne na konci dokumentu
 a~slúži na doplnenie orientácie čitateľa,
 ktorý študoval predchádzajúci text.
 Ak je práca napísaná v~anglickom jazyku,
-musí obsahovať resumé v~slovenčine.
-V~slovenskej práci nemusí byť resumé.
+musí obsahovať rezumé v~slovenčine.
+V~slovenskej práci nemusí byť rezumé.
 
 \paragraph{Účel a použitie abstraktov}
 \begin{itemize}\it
   \item \uv{Dobre vypracovaný abstrakt umožní čitateľom identifikovať
-  základný obsah dokumentu, rýchlo a presne stanoviť jeho 
-  relevanciu, a tak sa rozhodnúť, či potrebujú čítať celý 
+  základný obsah dokumentu, rýchlo a presne stanoviť jeho
+  relevanciu, a tak sa rozhodnúť, či potrebujú čítať celý
   dokument.}
 
-  \item \uv{Čitatelia, pre ktorých predstavuje dokument len okrajový 
-  záujem, často získajú z~abstraktu dostatok informácií a nemusia 
+  \item \uv{Čitatelia, pre ktorých predstavuje dokument len okrajový
+  záujem, často získajú z~abstraktu dostatok informácií a nemusia
   čítať celý dokument.}
 
-  \item \uv{Abstrakty sú často cenné aj pri automatickom vyhľadávaní 
-  v~plných textoch na získanie predbežných informácií a na 
+  \item \uv{Abstrakty sú často cenné aj pri automatickom vyhľadávaní
+  v~plných textoch na získanie predbežných informácií a na
   informačný prieskum.}
 \end{itemize}
 \begin{flushright}
 (Citované z normy STN ISO 214 \cite{iso214})
 \end{flushright}
 
-Podľa metodického usmernenia Ministerstva školstva, vedy, výskumu a športu SR č. 56/2011 (čl. 1, ods. 1) 
+Podľa metodického usmernenia Ministerstva školstva, vedy, výskumu a športu SR č. 56/2011 (čl. 1, ods. 1)
 \emph{\uv{abstrakt obsahuje informáciu o cieľoch práce,
 jej stručnom obsahu a~v~závere abstraktu
 sa charakterizuje splnenie cieľa,
 výsledky a~význam celej práce.
 Súčasťou abstraktu je 3 -- 5 kľúčových slov.
-Abstrakt sa píše súvisle ako jeden odsek a jeho rozsah je 
+Abstrakt sa píše súvisle ako jeden odsek a jeho rozsah je
 spravidla 100 až 500 slov}}~\cite{usmernenie562011}.
+
+Text slovenského a~anglického abstraktu sa nachádzajú
+v~súboroch \verb|attachment.tex| a~\verb|attachmentEN.tex| v~priečinku \verb|includes|.
+
+Do dokumentu ich vložia makrá šablóny
+\verb|\FEIabstract| a~\verb|\FEIabstractEN|
+v~hlavnom súbore \verb|thesis.tex|.
+Každé makro má jeden povinný parameter --
+cesta a~názov súboru s~textom abstraktu.
+Makrá zároveň vytlačia pod abstrakty
+v každom jazyku zoznam kľúčových slov.
 
 \subsubsection{Obsah a zoznamy}
 Obsah je povinný prehľad jednotlivých kapitol
 a~častí práce s~uvedením nadpisov a~strán.
-Začína na samostatnej stránke ako nová kapitola 
+Začína na samostatnej stránke ako nová kapitola
 s~nadpisom Obsah bez číslovania,
 ktorý sa ale v~samotnom prehľade kapitol nezobrazí.
 
-V~\LaTeX-u zabezpečuje generovanie obsahu príkaz \verb|\tableofcontents|, 
+V~\LaTeX-u zabezpečuje generovanie obsahu príkaz \verb|\tableofcontents|,
 ktorý v~mieste použitia vloží automatický zoznam kapitol s~číslami strán.
 Obsah vytvára na základe použitia nadpisov \verb|\section|,
 \verb|\subsection| a \verb|\subsubsection|.
@@ -147,10 +158,10 @@ Vytvorí totiž spojený zoznam obrázkov a tabuliek s jedným nadpisom.
 Ak zoznamy v práci nechceme, môžeme príslušné príkazy z~hlavného súboru \verb|thesis.tex| vymazať alebo ich označiť ako komentár.
 
 \subsubsection*{\normalsize Zoznam skratiek a značiek}
-V textových výstupoch vedecko-technických odborov sa používa 
-množstvo značiek a~skratiek najmä na označenie fyzikálnych 
+V textových výstupoch vedecko-technických odborov sa používa
+množstvo značiek a~skratiek najmä na označenie fyzikálnych
 veličín v matematických vzťahoch,
-ale aj zostručnenie textového prejavu najmä pri zložitých názvoch 
+ale aj zostručnenie textového prejavu najmä pri zložitých názvoch
 vedeckých metód, zariadení alebo javov.
 Sú to napríklad RTG (röntgenové žiarenie),
 AFM (mikroskop atómových síl),
@@ -160,7 +171,7 @@ AC (obvod striedavého prúdu) a~mnoho iných.
 Ak sa v práci objavia, musí ich autor pri ich prvom výskyte
 jasne zadefinovať,
 prípadne vysvetliť anglický preklad.
-Rovnako to platí pre všetky použité fyzikálne veličiny. 
+Rovnako to platí pre všetky použité fyzikálne veličiny.
 
 Aj keď je tento zoznam nepovinná súčasť práce,
 odporúčame ho zaradiť kvôli lepšej orientácii čitateľa.
@@ -169,17 +180,21 @@ značky uvádzame v~abecednom poradí.
 
 Šablóna ponúka dva spôsoby vytvorenia zoznamu a~práce so skratkami a~značkami v~texte.
 \begin{enumerate}
-\item Použitie nástrojov balíka \verb|glossary| umožňuje plne automatickú kontrolu nad veľkým množstvom skratiek. Skratky treba najprv definovať v externom súbore \verb|glossary.tex| a~potom ich môžeme v práci používať dvomi spôsobmi. Pri prvom výskyte použijeme skratku aj s~jej opisom, čo zariadi príkaz \verb|acrfull|. 
+\item Použitie nástrojov balíka \verb|glossary| umožňuje plne automatickú kontrolu nad veľkým množstvom skratiek. Skratky treba najprv definovať v externom súbore \verb|glossary.tex| a~potom ich môžeme v práci používať dvomi spôsobmi. Pri prvom výskyte použijeme skratku aj s~jej opisom, čo zariadi príkaz \verb|acrfull|.
 Pri ďalších výskytoch v texte už stačí používať iba skrátený tvar pomocou príkazu \verb|acrshort|.
 
 Po prvom skompilovaní je potrebné spustiť externý program \verb|makeglossaries| a~text skompilovať znova, prípadne kvôli správnemu radeniu strán v~obsahu, treba kompiláciu spustiť aj tretíkrát.
 Podobná procedúra sa vyžaduje aj pri práci s~citáciami v systéme Bib\LaTeX.
-Makro \verb|\FEIlistOfGlossaries| vytvorí automaticky zoradený zoznam  podľa abecedy.
+Makro \verb|\FEIlistOfGlossaries| vytvorí abecedne zoradený zoznam.
 
 Ak sa rozhodneme pre túto možnosť,
 treba v hlavnom súbore \verb|thesis.tex| odstrániť
-znak komentára pred príkazmi \verb|\FEIglossaries{includes/glossary}|
-a~\verb|\FEIlistOfGlossaries|. Pozor, tieto dva riadky sú v zdrojovom kóde na rôznych miestach, nepriemiestňujeme ich.
+znak komentára pred príkazmi
+\verb|\FEIglossaries{includes/glossary}|
+a~\verb|\FEIlistOfGlossaries|. Pozor, tieto dva
+riadky sa v súbore \verb|thesis.tex|
+nachádzajú na rôznych miestach.
+Nepremiestňujeme ich.
 
 Balík \verb|glossaries| je nesporne praktická pomôcka, plnohodnotne však funguje iba v anglickom jazyku.
 Pri jeho používaní narazíme na problém so skratkami, ktoré pochádzajú z anglických slov.
@@ -192,7 +207,7 @@ Viac sa o možnostiach balíka dozvieme z tutoriálu na stránke \href{https://w
 Automatické riešenie v predchádzajúcom bode úplne zlyháva pri práci s veličinami, ktorých zoznam predstavuje praktickú pomôcku najmä vo fyzikálnych a~matematických oblastiach techniky. Na označovanie veličín používame rôzne symboly a ich modifikácie, napríklad písmená gréckej abecedy ($\alpha, \omega, \xi$), symboly so šípkami v prípade vektorov ($\vec r, \vec\varphi, \vec\imath$), preškrtnuté h ($\hbar$), zdvojené symboly ako $\mathbb Z$, prípadne aj niečo takéto: $\aleph_0$, čo je hebrejské písmeno alef.
 
 Súbor \verb|manual_glossary.tex| obsahuje príklad, ako by mohol takýto ručne vyrobený zoznam vyzerať.
-Makro 
+Makro
 \verb|\FEImanualListOfGlossaries|, ktorého parameter je cesta a názov spomínaného súboru, zariadi samotnú sadzbu.
 Zoznam si môžeme postupne vytvárať pri písaní a~udržiavať ho v abecednom poradí.
 \end{enumerate}
@@ -200,8 +215,8 @@ Zoznam si môžeme postupne vytvárať pri písaní a~udržiavať ho v abecednom
 \subsubsection*{\normalsize Zoznamy algoritmov a výpisov kódov programov}
 Tieto typy zoznamov vytvoria makrá \verb|\FEIlistOfAlgorithms|, \verb|\FEIlistOfListings| a~sú špecifické pre informatické odbory.
 
-Ak v práci nemáme výpisy kódov alebo algoritmy, 
-bude potrebné riadky s týmito príkazmi vymazať alebo označiť ako komentár. O~uvádzaní častí kódov 
+Ak v práci nemáme výpisy kódov alebo algoritmy,
+bude potrebné riadky s týmito príkazmi vymazať alebo označiť ako komentár. O~uvádzaní častí kódov
 a~zápisov algoritmov píšeme v kapitole \ref{sec:listings}.
 
 \subsection{Hlavná textová časť}
@@ -209,16 +224,16 @@ Samotný autorský obsah práce začína až tu.
 Tradične text členíme na úvod, jadro a~záver,
 pričom úvod a~záver sú samostatné kapitoly,
 ktoré nečíslujeme a~je vhodné,
-ak ich označíme nadpismi \emph{Úvod} a~\emph{Záver}. 
+ak ich označíme nadpismi \emph{Úvod} a~\emph{Záver}.
 Strednú časť -- jadro -- neoznačujeme.
 
 \subsubsection{Úvod}
-Prvá kapitola hlavnej časti práce má názov úvod, nečíslujeme ju. 
-Ide o~ucelený text v~rozsahu niekoľkých súvislých odsekov textu, 
+Prvá kapitola hlavnej časti práce má názov úvod, nečíslujeme ju.
+Ide o~ucelený text v~rozsahu niekoľkých súvislých odsekov textu,
 v~ktorých stručne a~výstižne charakterizujeme stav poznania
 a~praxe v~danej oblasti,
 oboznámime čitateľa s~cieľmi a~závermi práce.
-Nosnou myšlienkou úvodu okrem vovedenia čitateľa do problematiky 
+Nosnou myšlienkou úvodu okrem uvedenia čitateľa do problematiky
 je jasná motivácia autora a~jeho postoje,
 ktoré viedli k~spracovaniu témy práce [3].
 
@@ -232,13 +247,12 @@ Aby sme sa tomu vyhli,
 necháme si jeho napísanie až na záver,
 keď už bude väčšina hlavného obsahu práce hotová.
 
-Obsah úvodu sa nachádza v súbore \verb|\includes\introduction.tex|
-a~správnu sadzbu zariadi makro \verb|\FEIintroduction{includes/introduction}|, 
-ktorého parameter je meno spomínaného súboru bez prípony.
+Text úvodu sa nachádza v súbore \verb|includes/introduction.tex|
+a~jeho sadzbu zariadi makro \verb|\FEIintroduction{includes/introduction}|.
 
 \subsubsection{Jadro}
 Táto časť práce \emph{nezačína} nadpisom \emph{Jadro}.
-Samotný obsah jadra členíme zvyčajne na niekoľko číslovaných 
+Obsah jadra členíme zvyčajne na niekoľko číslovaných
 kapitol počínajúc číslom 1.
 Prvá kapitola býva prehľad súčasného stavu problematiky,
 ale môže mať aj iný názov,
@@ -246,7 +260,7 @@ napríklad \emph{Teoretická časť,} alebo rovno názov oblasti,
 o~ktorej sa v nej bude písať
 (trebárs \emph{Metóda prenosových matíc}).
 
-Pri písaní strednej časti práce nemusíme postupovať úplne 
+Pri písaní strednej časti práce nemusíme postupovať úplne
 striktne podľa tohto návodu.
 Treba však pamätať na to,
 aby sme jasne oddelili poznatky,
@@ -256,7 +270,7 @@ od poznatkov a~výsledkov samotnej práce autora.
 Nemusia byť oddelené fyzicky v~rôznych odsekoch,
 či kapitolách, z~textu však musí byť jasné,
 ktoré výsledky sú originálne a~ktoré sú prebrané.
-Odporúčaná štruktúra tejto časti je na 
+Odporúčaná štruktúra tejto časti je na
 strane~\pageref{sec:StrukturaPrace}.
 
 Samotný obsah jadra sa nachádza v~súbore \verb|includes/core.tex|.
@@ -267,9 +281,9 @@ môžeme jednotlivé kapitoly uložiť do samostatných
 súborov a tie načítať do \verb|core.tex|
 pomocou \TeX-ového príkazu \verb|\input|.
 
-\subsubsection*{\normalsize Súčasný stav riešenej problematiky 
+\subsubsection*{\normalsize Súčasný stav riešenej problematiky
 doma a~v~zahraničí}
-Podľa zvyklostí by malo približne 30\,\% práce obsahovať prehľad 
+Podľa zvyklostí by malo približne 30\,\% práce obsahovať prehľad
 súčasného stavu a~poznatkov v~oblasti,
 ktorej sa týka predkladaná práca.
 Ide o~veľmi dôležitý aspekt,
@@ -277,11 +291,11 @@ ktorým študent preukáže,
 že je schopný problematiku naštudovať,
 porozumieť jej a~napísať o~nej súvislý text.
 Dokáže na základe existujúcich poznatkov vysvetliť javy,
-ktoré v~práci študuje. 
+ktoré v~práci študuje.
 
-Kľúčová činnosť pri príprave textu je štúdium prác publikovaných 
+Kľúčová činnosť pri príprave textu je štúdium prác publikovaných
 u~nás a~v~zahraničí.
-Nejde iba o~to, že autor píše myšlienky, ktoré sa kdesi dozvedel, 
+Nejde iba o~to, že autor píše myšlienky, ktoré sa kdesi dozvedel,
 mal by tiež poznať ich primárne zdroje,
 správne s~nimi pracovať a~citovať ich.
 Dôležitý prínos študenta spočíva v~spájaní viacerých poznatkov
@@ -293,23 +307,23 @@ Bakalárska a diplomová práca má jasne uvedené ciele v zadaní práce. Nie j
 \subsubsection*{\normalsize Metodika práce a metódy skúmania}
 V experimentálnych prácach býva v tejto časti podrobne zdokumentované prístrojové vybavenie, riadiaci a simulačný softvér, laboratórne podmienky a podobne. Metodické usmernenie [3] odporúča nasledujúci obsah tejto časti práce: a) charakteristika objektu skúmania, b) pracovné postupy, c) spôsob získavania údajov a ich zdroje, d) použité metódy vyhodnotenia a interpretácie výsledkov, e) štatistické metódy.
 
-\subsubsection*{\normalsize Výsledky práce a diskusia.}
-Študent zaujme k získaným výsledkom jasné postoje, 
+\subsubsection*{\normalsize Výsledky práce a diskusia}
+Študent zaujme k získaným výsledkom jasné postoje,
 porovnáva ich s inými autormi, prípadne navrhuje ich ďalšie aplikácie.
 Zhodnotí a~komentuje ich na základe štatistického spracovania dát (smerodajné odchýlky, priemery, regresie a podobne).
-Odporúčame, aby táto časť tvorila 30 až 40 percent záverečnej práce. 
+Odporúčame, aby táto časť tvorila 30 až 40 percent záverečnej práce.
 Môžeme ju rozdeliť na dve samostatné podkapitoly: sumarizáciu výsledkov a~diskusiu formou eseje.
 
 \subsubsection{Záver}
 Záver práce predstavuje samostatnú nečíslovanú kapitolu
 v~rozsahu niekoľkých odsekov alebo strán.
-Obsahuje zhrnutie výsledkov vo vzťahu k~stanoveným cieľom~[3]. 
+Obsahuje zhrnutie výsledkov vo vzťahu k~stanoveným cieľom~[3].
 Rovnako, ako pri úvode, treba si dať
 aj na kompozícii záveru zvlášť záležať.
 Väčšina čitateľov si prečíta v~prvom rade úvod a~záver práce,
 aby zistili, či im stojí za to pustiť sa do podrobnejšieho
 štúdia celého textu.
-Aj oponent vychádza najmä z dobre spracovaného záveru. 
+Aj oponent vychádza najmä z dobre spracovaného záveru.
 
 Jasne deklarujeme splnenia cieľov a naznačíme ďalšie možné smerovanie študovanej problematiky. Vyjadrujeme sa pozitívne. Ak sa nepodarilo úplne naplniť niektorú z~pôvodných predstáv, nerozpisujeme sa o tom.
 
@@ -326,24 +340,24 @@ Zároveň je pre viditeľné svetlo priehľadný,
 čo nebýva pri polovodičoch bežné.
 Optické a~elektrické vlastnosti vrstvy TiO$_2$
 často závisia od parametrov technologického procesu.}
-Z~dôvodu havárie zariadenia sa nepodarilo takéto vzorky získať 
+Z~dôvodu havárie zariadenia sa nepodarilo takéto vzorky získať
 a~v~skutočnosti sme mohli pracovať iba
 s~tradičnými SiO$_2$ vrstvami.%
 \footnote{Oxid kremičitý sa v~mikroelektronike používa
 ako nevodivá izolačná vrstva.
 Jeho materiálové vlastnosti sú veľmi dobre preskúmané
 a~všeobecne známe.
-S~jeho amorfnou formou sa v~každodennom živote bežne stretávame, 
+S~jeho amorfnou formou sa v~každodennom živote bežne stretávame,
 je to obyčajné sklo.}
 Vzniknutú situáciu zhodnotíme v~závere vecne a~pravdivo:
 
 \begin{quote}
-  \emph{Aj napriek poruche technologického zariadenia sme 
-  dokázali zabezpečiť náhradné vzorky a realizovať merania 
-  optických vlastností tenkých vrstiev termálneho 
+  \emph{Aj napriek poruche technologického zariadenia sme
+  dokázali zabezpečiť náhradné vzorky a realizovať merania
+  optických vlastností tenkých vrstiev termálneho
   SiO$_\mathit{2}$.
-  Poznatky, ktoré sme získali pri práci s~pokročilými 
-  experimentálnymi zariadeniami následne využijeme vo výskume 
+  Poznatky, ktoré sme získali pri práci s~pokročilými
+  experimentálnymi zariadeniami následne využijeme vo výskume
   materiálových vlastností TiO$_\mathit{2}$ vrstiev.
   V~diskusii sme naznačili možné rozšírenie existujúcich
   metód na tento druh materiálu.}
@@ -355,12 +369,12 @@ stane sa záverečná práca neobhájiteľnou.
 Nasledujúci príklad je ukážka takejto nevhodnej formulácie:
 
 \begin{quote}
-  \emph{Počas prípravy tenkých vrstiev došlo k neočakávanej 
+  \emph{Počas prípravy tenkých vrstiev došlo k neočakávanej
   poruche technologického zariadenia,
   ktorá znemožnila výrobu plánovaných vzoriek.
   Merania optických parametrov TIO$_\mathit2$
   sme preto nerealizovali.
-  Veríme, že experimenty s~náhradnými vzorkami tenkých vrstiev 
+  Veríme, že experimenty s~náhradnými vzorkami tenkých vrstiev
   termálneho SiO$_\mathit2$ pomôžu v~budúcnosti
   aj pri výskume iných materiálov.}
 \end{quote}
@@ -383,12 +397,12 @@ Nasledujúca ukážka je síce optimistická,
 avšak do textu práce taktiež nevhodná:
 
 \begin{quote}
-  \emph{Vďaka drobnej poruche technologického zariadenia sme 
-  mohli realizovať merania optických vlastností tenkých vrstiev 
-  termálneho SiO$_\mathit2$ a~získať tak unikátne výsledky. 
-  Nesmierne bohaté skúsenosti s~najkvalitnejšími meracími 
+  \emph{Vďaka drobnej poruche technologického zariadenia sme
+  mohli realizovať merania optických vlastností tenkých vrstiev
+  termálneho SiO$_\mathit2$ a~získať tak unikátne výsledky.
+  Nesmierne bohaté skúsenosti s~najkvalitnejšími meracími
   aparatúrami využijeme aj v~nadväzujúcom výskume.
-  Rozšírenie nadobudnutých kompetencií na iné materiály 
+  Rozšírenie nadobudnutých kompetencií na iné materiály
   považujeme za najväčší prínos predkladanej práce.}
 \end{quote}
 
@@ -398,7 +412,7 @@ ktoré v~skutočnosti nemajú zvláštny význam.
 Je totiž málo pravdepodobné,
 aby s~SiO$_2$ vznikli unikátne výsledky.
 Text obsahuje nevhodné absolútne kvantifikátory
-(\emph{nesmierne bohaté skúsenosti, najkvalitnejšie aparatúry, 
+(\emph{nesmierne bohaté skúsenosti, najkvalitnejšie aparatúry,
 najväčší prínos});
 bagatelizuje nehodu, dokonca jej ďakuje
 (\emph{vďaka drobnej poruche}),
@@ -408,17 +422,17 @@ Nadužívaním cudzích slov (\emph{kompetencie})
 autori zväčša maskujú rôzne nedostatky,
 napríklad vlastnú neistotu.
 
-Zapamätáme si, že vedecký text musí byť jasný, pravdivý a vecný. 
+Zapamätáme si, že vedecký text musí byť jasný, pravdivý a vecný.
 Očistíme ho od akýchkoľvek citových výlevov v prvom rade tým,
-že sa vyhýbame extrémnym kvantifikátorom. Nepoužívame ani tieto: 
+že sa vyhýbame extrémnym kvantifikátorom. Nepoužívame ani tieto:
 \emph{všetci, nikdy, žiaden, každý jeden,}
 pokiaľ nepíšeme matematické vety alebo logické výrazy.
-Ak sa napríklad nepodarilo naprogramovať ani jeden fungujúci kód, 
+Ak sa napríklad nepodarilo naprogramovať ani jeden fungujúci kód,
 nenapíšeme,
 že \emph{žiaden program, ktorý sme sa snažili vytvoriť nefunguje}.
-Povieme to miernejšie: \emph{snaha o~vytvorenie funkčného 
+Povieme to miernejšie: \emph{snaha o~vytvorenie funkčného
 programu viedla k~menej presvedčivým výsledkom}.
-Negatívnu skutočnosť formulujeme pozitívne. 
+Negatívnu skutočnosť formulujeme pozitívne.
 
 Ani pozitívne prínosy zbytočne nepreceňujeme.
 Necháme ich, nech sa chvália samé.
@@ -428,6 +442,12 @@ vďaka perfektne pripraveným vzorkám},
 napíšeme vecne:
 \emph{Jednotlivé merania boli úspešné aj
 vďaka kvalitným vzorkám.}
+
+Súbor so záverom v~priečinku \verb|includes| má
+názov \verb|conclusion.tex|
+a~do dokumentu sa dostane prostredníctvom makra
+\verb|\FEIconclusion{includes/conclusion}|
+v~hlavnom súbore projektu \verb|thesis.tex|.
 
 \subsubsection{Zoznam použitej literatúry}
 Citované zdroje označujeme v texte číslom v hranatých zátvorkách. Ide o poradové číslo uvedenia publikácií tak, ako sa postupne s nimi v texte pracuje.
@@ -484,7 +504,7 @@ Pravidlá písania a úpravy písomností~\cite{stn016910}.
 
 \subsubsection*{Rozmery strany}
 Veľkosť bežnej textovej strany záverečnej práce je A4,
-t. j. 21\,cm $\times$ 29,7\,cm.
+t.~j. 21\,cm $\times$ 29,7\,cm.
 Pravý a~ľavý okraj majú šírku 2,75\,cm,
 horný a~dolný okraj majú výšku 3\,cm.
 Päta stránky, v~ktorej sa nachádza číslo strany,
@@ -496,9 +516,9 @@ dôvodov zmenšené na 2\,cm.
 \subsubsection*{Písmo a riadkovanie}
 Základný font šablóny je normálny rez tzv. antikvového písma
 s~veľkosťou 12\,pt.
-V~tejto šablóne je to Computer modern.
+V~tejto šablóne je to Computer Modern.
 Vhodné sú aj iné fonty s pätkami ako Times, Georgia, Palatino a~podobne.
-Na obálke a~titulnom liste používame bezpätkový (grotesk) font Latin modern. 
+Na obálke a~titulnom liste používame bezpätkový (grotesk) font Latin Modern.
 Jednotlivé typy odsekov (nadpisy, poznámky a~pod.)
 majú jednotný typ písma,
 odlišnosti vyjadrujeme rezom (polotučné písmo, kurzíva)
@@ -515,7 +535,7 @@ Podkapitoly sú \verb|\subsection| a~\verb|\subsubsection|.
 Číslovanie kapitol a podkapitol je viacúrovňové typu X.Y.Z, kde X je číslo kapitoly, Y je číslo podkapitoly a Z je číslo časti podkapitoly.
 Číslovanie vyšších úrovní nie je definované.
 Tvar a forma nadpisov zodpovedá norme STN ISO 2145: 1978 Dokumentácia.
-Číslovanie oddielov a~pododdielov písaných dokumentov ~\cite{iso2145}.
+Číslovanie oddielov a~pododdielov písaných dokumentov~\cite{iso2145}.
 
 Nová kapitola začína vždy na novej strane.
 Príkaz \verb|\section| spôsobí okrem sadzby čísla a názvu kapitoly aj ukončenie predošlej kapitoly, vysádzanie všetkých plávajúcich objektov (obrázky, tabuľky, výpisy kódu), ktoré sa nepodarilo umiestniť na príslušné miesto v texte, a prejde na novú stranu.
@@ -524,7 +544,7 @@ Príkaz \verb|\section| spôsobí okrem sadzby čísla a názvu kapitoly aj ukon
 Záverečná práca na FEI STU v~Bratislave musí byť napísaná
 buď po slovensky alebo po anglicky.
 Ak je jazyk práce angličtina, musí po závere nasledovať
-resumé v~slovenskom jazyku.
+rezumé v~slovenskom jazyku.
 
 Záverečná práca univerzitného štúdia sa vyznačuje
 vysokou jazykovou úrovňou.
@@ -532,11 +552,11 @@ Gramatické a štylistické chyby sú neprípustné.
 Študent by mal tejto stránke diela venovať patričnú
 pozornosť a~podľa možností nechať rukopis prejsť
 kvalifikovanou jazykovou kontrolou.
-Najmä bakalárska práca predstavuje v~živote väčšiny študentov 
+Najmä bakalárska práca predstavuje v~živote väčšiny študentov
 prvý rozsiahlejší autorský útvar,
 ktorý má významný vplyv na jeho ďalší život a~kariéru.
 
-Aj keď väčšina textových editorov dokáže odhaľovať preklepy, 
+Aj keď väčšina textových editorov dokáže odhaľovať preklepy,
 neporadí si s~komplikovanejšou gramatikou a~štylistikou.
 Treba sa riadiť najmä pravidlami slovenského pravopisu,
 slovníkmi slovenského jazyka a~ďalšími zdrojmi,
@@ -544,24 +564,24 @@ ktoré možno nájsť na webových stránkach
 Jazykovedného ústavu Ľudovíta Štúra SAV.%
 \footnote{\href{https://www.juls.savba.sk/}{\tt www.juls.savba.sk}}
 Využiť môžeme aj jazykovú poradňu,
-ktorú poskytuje ústav bezplatne a~to buď telefonicky alebo 
+ktorú poskytuje ústav bezplatne a~to buď telefonicky alebo
 prostredníctvom emailovej komunikácie.
 Cenným zdrojom informácií môže byť aj Jazyková poradňa
 denníka SME v spolupráci
 s~Jazykovedným ústavom Ľudovíta Štúra SAV%
 \footnote{\href{https://jazykovaporadna.sme.sk/}{\tt jazykovaporadna.sme.sk}}
-alebo online slovníky slovenského jazyka,% 
+alebo online slovníky slovenského jazyka,%
 \footnote{\href{https://slovnik.juls.savba.sk/}{\tt slovnik.juls.savba.sk}}
 prípadne národný jazykový korpus.%
 \footnote{\href{https://korpus.sk/}{\tt korpus.sk}}
 
-Pri písaní práce dbáme najmä na pravopisné javy ako sú písanie 
+Pri písaní práce dbáme najmä na pravopisné javy ako sú písanie
 tvrdého a~mäkkého y/i vo vybraných slovách,
 v~príponách a~koncovkách pri skloňovaní
 (pekný muž, ale pekní muži),
 v~číslovkách (rozprávali sme sa so siedmimi v~poradí
 -- skončili siedmi v~poradí,
-ale hrali sme sa so siedmymi deťmi -- detí bolo sedem), atď. 
+ale hrali sme sa so siedmymi deťmi -- detí bolo sedem), atď.
 Rovnako dôležité je správne písanie rodov,
 skloňovanie a časovanie.
 
@@ -572,8 +592,8 @@ Popri gramatike je podstatná aj štylistická tvorba viet,
 ktorú musí študent univerzity zvládať na vysokej úrovni.
 
 \subsubsection{Delenie slov}
-Tzv. \emph{textové procesory} ako MS Word, LibreOffice, OpenOffice 
-a~ponúkajú automatické delenie slov na konci riadka.
+Tzv. \emph{textové procesory} ako MS Word, LibreOffice a~Apache OpenOffice
+ponúkajú automatické delenie slov na konci riadka.
 Systém na sadzbu textu \LaTeX\ má túto funkciu automaticky zapnutú a~jej slovenská lokalizácia je veľmi kvalitne spracovaná.
 
 Vo veľkej väčšine prípadov je delenie
@@ -584,11 +604,11 @@ Väčšinou máme možnosť do procesu zasiahnuť
 a~ručne kontrolovať delenie slov na miestach,
 s ktorými si softvér nevie poradiť.
 Príkaz na preferované rozdelenie slova je \verb|\-|.
-Napríklad slovo \verb|predstave\-nie| \LaTeX\ 
+Napríklad slovo \verb|predstave\-nie| \LaTeX\
 preferovane rozdelí v mieste prípony.
 
 V každom prípade je žiadúce slová na konci riadka deliť
-a\ túto možnosť nevypínať. 
+a\ túto možnosť nevypínať.
 Prospieva to práci ako po technickej,
 tak aj po estetickej stránke.
 Odseky obsahujú menej dier,
@@ -602,9 +622,9 @@ nepoužívanie delenia slov má vplyv na vznik tzv. riek,
 čo je náhle striedanie dlhých a~krátkych riadkov.
 Pravý okraj textu je nepekne zubatý.
 
-Pravidlá rozdeľovania slov na konci riadka sú pomerne zložité. 
+Pravidlá rozdeľovania slov na konci riadka sú pomerne zložité.
 Základné pravidlo, ktoré si pamätáme zo základnej školy,
-je, že slová delíme na slabiky pred spoluhláskou alebo medzi 
+je, že slová delíme na slabiky pred spoluhláskou alebo medzi
 dvomi spoluhláskami.
 Ak si nie sme istí, uprednostňujeme delenie v mieste,
 kde sa ku koreňu slova pripájajú predpony alebo prípony,
@@ -619,7 +639,7 @@ Napríklad slovo \emph{predstavenie}
 delíme na slabiky takto: \emph{pred-sta-ve-nie}.
 Pri rozdeľovaní slov uprednostňujeme model
 \emph{pred-stavenie}, výnimočne aj \emph{pred-stave-nie}.
-V slove \emph{výklenok} sa uplatňuje pravidlo morfologického 
+V slove \emph{výklenok} sa uplatňuje pravidlo morfologického
 delenia pred delením v~mieste zhluku spoluhlások.
 Sylabická stavba tohto slova je \emph{vý-kle-nok},
 nie \emph{výk-le-nok},
@@ -635,7 +655,7 @@ a~nedokážeme tu obsiahnuť všetky jej detaily.
 Väčšinou sa môžeme spoľahnúť na softvér,
 že slová rozdelí správne.
 V prípade pochybností využijeme externé pomôcky spomenuté
-v~úvode tejto kapitoly. 
+v~úvode tejto kapitoly.
 
 Slová spojené spojovníkom rozdeľujeme v~mieste spojovníka tak,
 že spojovník napíšeme na konci aj na začiatku riadka.
@@ -661,22 +681,22 @@ Hovoríme o predložkách k, o, v, s, z,
 ktoré by nemali ostať osamotené na konci riadka.
 Do tejto kategórie patria aj spojky a, i.
 Jednopísmenové slová pripájame k~nasledujúcemu slovu pomocou
-tzv. \emph{nezlomiteľnej medzery},
+tzv. \emph{nedeliteľnej medzery},
 čo je špeciálny netlačiteľný znak.
-V kódovaní utf-8 má číslo 00A0 (ASCII 160)
+V kódovaní UTF-8 má číslo 00A0 (ASCII 160)
 a~hovorí textovému procesoru,
 že na tomto mieste nesmie byť za žiadnych okolností
 koniec riadka.
 V programe MS Word ho zadáme použitím klávesovej skratky
-Ctr-Shift-Medzera.
-V \LaTeX-u\ zapíšeme nezlomiteľnú medzeru s~premenlivou šírkou 
+Ctrl-Shift-Medzera.
+V \LaTeX-u\ zapíšeme nedeliteľnú medzeru s~premenlivou šírkou
 ako symbol vlnovka (\verb|~|)
-Napríklad slovné spojenie \emph{v~priestore} napíšeme takto: 
+Napríklad slovné spojenie \emph{v~priestore} napíšeme takto:
 \verb|v~priestore|.
 Na rozdiel od Wordu, \LaTeX\ takéto medzery nevkladá automaticky
 a treba to urobiť ručne.
 
-Existuje viacero medzier, ktoré sú tiež nezlomiteľné a~majú pevnú šírku.
+Existuje viacero medzier, ktoré sú tiež nedeliteľné a~majú pevnú šírku.
 Najpoužívanejšia tzv. úzka medzera a zapíšeme ju ako \verb|\,|.
 Takýto typ medzery používame pri zápise hodnôt fyzikálnych veličín a vkladáme ju medzi číslo a jednotku.
 
@@ -691,9 +711,9 @@ Vo vete \emph{Elektrostatické pole je fyzikálne pole,
 ktoré tvoria elektrické náboje, ktoré sú v pokoji}
 je dvakrát použitá spojka ktoré,
 čo je síce prípustné, avšak nie príliš estetické.
-Vetu môžeme opraviť takto: 
+Vetu môžeme opraviť takto:
 \emph{Elektrostatické pole je fyzikálne
-pole tvorené elektrickými nábojmi, ktoré sú v pokoji.} 
+pole tvorené elektrickými nábojmi, ktoré sú v pokoji.}
 Ak sa chceme vyhnúť trpnému rodu,
 môžeme vetu preformulovať nasledujúcim spôsobom:
 \emph{Elektrostatické pole tvoria elektrické náboje,
@@ -701,7 +721,7 @@ ktoré sú v~pokoji.}
 Vypadol síce pojem fyzikálne pole,
 ale zmysel vety zostal nezmenený.
 
-Správne a~plynulo bude veta vyzerať aj v~tomto tvare: 
+Správne a~plynulo bude veta vyzerať aj v~tomto tvare:
 \emph{Elektrostatické pole je fyzikálne pole,
 ktoré tvoria elektrické náboje v pokoji.}
 V prípade potreby môžeme vetu napísať aj inak:
@@ -713,7 +733,7 @@ Obmieňame štruktúru po sebe nasledujúcich viet:
 že predpoklad o~zvyšovaní pohyblivosti nosičov náboja
 s~teplotou bol správny.
 Na začiatku práce sme hovorili o~tom,
-že toto tvrdenie podporíme hodnovernými experimentálnymi dátami.} 
+že toto tvrdenie podporíme hodnovernými experimentálnymi dátami.}
 Obe súvetia sú podraďovacie so spojkou že.
 Aby sme sa vyhli opakovaniu rovnakého typu viet,
 môžeme prvú vetu prepísať:
@@ -730,7 +750,7 @@ s~rastúcou teplotou podporíme hodnovernými
 experimentálnymi dátami.
 Merania ho potvrdili.}
 Tento malý trik je nečakane účinný a~prispieva k~lepšiemu
-toku myšlienok. 
+toku myšlienok.
 
 Pozor, v~texte pozostávajúcom z~krátkych jednoduchých viet
 je niekoľkoriadkové súvetie desivé:
@@ -742,7 +762,7 @@ nosičov náboja so zvyšujúcou sa teplotou,
 pokiaľ berieme do úvahy výsledky meraní,
 formulovali správne.}
 
-Aby bol písaný text zaujímavý a~udržal čitateľov záujem, 
+Aby bol písaný text zaujímavý a~udržal čitateľov záujem,
 používame stredne dlhé súvetia pozostávajúce maximálne
 z~dvoch až troch viet.
 Občas text oživíme jednoduchou krátkou vetou.
@@ -751,30 +771,30 @@ aby táto činnosť nebola príliš schematická.
 
 \subsection{Anglický jazyk}
 Šablóna FEIstyle podporuje slovenský a anglický jazyk.
-Pre prácu v anlgickom jazyku je potrebné túto skutočnosť nastaviť v preambule hlavného súboru \verb|thesis.tex| ako nepovinný parameter \verb|en| príkazu definície šablóny
+Pre prácu v anglickom jazyku je potrebné túto skutočnosť nastaviť v preambule hlavného súboru \verb|thesis.tex| ako nepovinný parameter \verb|en| príkazu definície šablóny
 \begin{trivlist}
 \item \texttt{\textbackslash documentclass[bp,en]\{FEIstyle\}}
 \end{trivlist}
 Prvý parameter určuje, či ide o bakalársku (\verb|bp|) alebo diplomovú (\verb|dp|) prácu.
 
-Anglická práca musí obsahovať po závere resumé a na to je potrebné odstrániť komentár pred príkazom
+Anglická práca musí obsahovať po závere rezumé a na to je potrebné odstrániť komentár pred príkazom
 \verb|\FEIresume{includes/resume}|.
 
 Na jazykovú lokalizáciu používame balík \verb|babel|.
 Ak sa v práci písanej v slovenčine nachádzajú výrazy v angličtine,
 uvedieme takýto text do makra \verb|\foreignlanguage|, čím zabezpečíme správne medzery a~delenie slov.
-Napríklad pri zavádzaní skratky AI môžeme napísať, že ide o anglický výraz pre umelú inteligencie \foreignlanguage{english}{Artificial Inteligence}.
+Napríklad pri zavádzaní skratky AI môžeme napísať, že ide o anglický výraz pre umelú inteligencie \foreignlanguage{english}{Artificial Intelligence}.
 Zapíšeme ho nasledujúcim spôsobom:
 \begin{verbatim}
-\foreignlanguage{english}{Artificial Inteligence}
+\foreignlanguage{english}{Artificial Intelligence}
 \end{verbatim}
 
 Ak nastavíme parametrom \verb|en| anglický jazyk ako hlavný, stane sa slovenčina cudzím jazykom.
 
 \subsection{Použitie umelej inteligencie}\label{sec:utilizingAI}
 Na optimalizáciu formulácie myšlienok môžeme využiť služby
-umelej inteligencie (AI, z~ang. \emph{\foreignlanguage{english}{artificial inteligence}}) a~tzv. veľkých jazykových modelov (LLM, z~ang. \emph{\foreignlanguage{english}{large language model}}). 
-Umelá inteligencia dokáže kontrolovať rozsiahlejšie časti prác, 
+umelej inteligencie (AI, z~ang. \emph{\foreignlanguage{english}{artificial intelligence}}) a~tzv. veľkých jazykových modelov (LLM, z~ang. \emph{\foreignlanguage{english}{large language model}}).
+Umelá inteligencia dokáže kontrolovať rozsiahlejšie časti prác,
 vyhľadáva chyby a navrhuje vhodnejšie
 formulácie na základe pravidiel,
 ktoré sme aplikovali v predchádzajúcom texte.
@@ -790,9 +810,9 @@ vrátane najznámejšieho ChatGPT.
 Napriek tomu predstavujú služby AI silný nástroj pri tvorbe pôvodného obsahu, zvlášť užitočné sú tzv. generatívne umelé inteligencie (GAI),
 ktoré dokážu vytvárať výstupy takmer na nerozoznanie od tvorby človeka.
 Ich správna aplikácia nepochybne prispieva k~vyššej jazykovej a obsahovej kvalite záverečných prác.
-Treba však mať na pamäti, že záverečná práca má byť 
-pôvodné autorské dielo študenta a všetky časti, 
-ktoré nepochádzajú od autora musia byť riadne 
+Treba však mať na pamäti, že záverečná práca má byť
+pôvodné autorské dielo študenta a všetky časti,
+ktoré nepochádzajú od autora musia byť riadne
 zdokumentované a deklarované v~zozname použitých zdrojov.
 V žiadnom prípade sa neodporúča, aby
 GAI formulovala pôvodné myšlienky
@@ -814,21 +834,30 @@ Ide o nasledujúce činnosti: preklady medzi jazykmi, úpravy a reformulácie te
 V závere práce, uvedieme za zoznamom literatúry
 časti textu vytvorené s~pomocou AI, spôsob ich využitia a použitý nástroj AI (Opatrenie \cite{opatrenie12024}, čl. VI., ods. 2).
 
-V hlavnom súbore záverečnej práce \verb|thesis.tex| je príkaz na načítanie súboru \verb|aiDeclaration.tex| z~priečinka \verb|includes|.
-Všetky výskyty použitia nástrojov AI zapíšeme do pripraveného prostredia \verb|trivlist| v tomto súbore.
-Formát obsah jednotlivých záznamov je naznačený v prílohe opatrenia číslo 1/2024-O.
+V hlavnom súbore záverečnej práce \verb|thesis.tex| je príkaz
+\verb|\FEIaiDeclaration| na načítanie súboru \verb|ai_declaration.tex| z~priečinka \verb|includes|.
+Každý výskyt použitia nástrojov AI zapíšeme ako
+položku \verb|\item| do pripraveného prostredia
+\verb|trivlist| v tomto súbore.
+Formát a~obsah jednotlivých záznamov je naznačený v prílohe opatrenia číslo 1/2024-O.
 Záznamy obsahujú tieto prvky:
 \begin{trivlist}
   \item Názov spoločnosti (dátum), Názov nástroja, čast práce, účel použitia.
 \end{trivlist}
 
-Predchádzajúci vzorec vygeneroval nástroj ChatGPT 4o od firmy OpenAI dňa 2. 2. 2025 na základe peštudovania spomínaného opatrenia. V deklarácii použitia umelej inteligencie sa zapíšeme tento záznam:
+Predchádzajúci vzorec vygeneroval nástroj ChatGPT 4o od firmy
+OpenAI dňa 2. 2. 2025 na základe analýzy spomínaného opatrenia.
+V deklarácii použitia umelej inteligencie sa zapíšeme tento
+záznam:
 \begin{trivlist}
-  \item OpenAI (2025), ChatGPT 4o, časť \ref{sec:utilizingAI}, generovanie vzorca záznamu použitia AI.
+  \item OpenAI (2025), ChatGPT 4o, časť \ref{sec:utilizingAI},
+  generovanie vzorca záznamu použitia AI.
 \end{trivlist}
 
-Súčasná verzia šablóny FEIstyle neobsahuje nástroje na automatizáciu záznamov činnosti AI.
-Preto ich treba zapisovať ručne do súboru \verb|includes/aiDeclaration.tex|.
+Súčasná verzia šablóny FEIstyle nedisponuje nástrojmi na
+automatizáciu záznamov činnosti AI.
+Preto ich treba zapisovať ručne do súboru
+\verb|includes/ai_declaration.tex|.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -844,7 +873,7 @@ ktorý bude správne sádzať matematické rovnice.
 \LaTeX, ako jeho nadstavba, má sadzbu rovníc takpovediac
 v~genetickej výbave.
 Autori textov z prírodovedeckej a technickej komunity siahajú po tomto nástroji
-práve z~dôvodu bezkonkurenčnej práce s~rovnicami pri tvorbe 
+práve z~dôvodu bezkonkurenčnej práce s~rovnicami pri tvorbe
 vedeckého alebo akademického obsahu.
 
 Matematické rovnice používame v tlačenom texte dvomi spôsobmi:
@@ -853,7 +882,7 @@ Matematické rovnice používame v tlačenom texte dvomi spôsobmi:
 a~vtedy ju spravidla aj číslujeme, aby sme sa na ňu mohli
 ďalej odvolávať.
 
-\subsubsection{Rovnica v textovom riadku (vložená rovnica)}
+\subsubsection{Rovnica v textovom riadku}
 Riešenie kvadratickej rovnice s koeficientami $a,b,c$
 a~s~neznámou $x$ vypočítame pomocou známeho vzťahu
 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
@@ -866,10 +895,10 @@ $$
 
 Očividný rozdiel je vo veľkosti zlomku a~znaku odmocniny,
 môžeme si všimnúť aj malé rozdiely v~medzerách,
-vo vertikálnom zarovnávaní, atď. 
+vo vertikálnom zarovnávaní, atď.
 
 Vložené rovnice v~rámci textového riadku zapisujeme pomocou
-znaku \$. 
+znaku \$.
 Matematický zápis ohraničíme znakmi dolára sprava aj zľava.
 Napríklad zápis \verb|$y = ax^2 + bx + c$| vytvorí rovnicu $y = ax^2 + bx + c$. Rovnakú funkciu ako znak dolára má dvojica znakov \verb|\(...\)|.
 
@@ -878,7 +907,7 @@ veľkosť sily $F$, hmotnosť $m$, čas $t$ a~podobne.
 Všetky veličiny sme zapísali takto: \verb|$F$|,
 \verb|$m$|, \verb|$t$|.
 
-\subsubsection{Zobrazená rovnica (displayed equation)}
+\subsubsection{Zobrazená rovnica}
 Matematický text ohraničený dvomi znakmi dolára zľava
 a~dvomi dolármi sprava interpretuje kompilátor \LaTeX-u
 ako zobrazenú rovnicu, ktorú vysádza do zvláštneho odseku
@@ -902,15 +931,15 @@ vytvorí rovnicu s číslom uzavretým v zátvorkách:
   y = ax^2 + bx + c
 \end{equation}
 
-Program \LaTeX čísluje rovnice automaticky od čísla 1.
+Program \LaTeX\ čísluje rovnice automaticky od čísla 1.
 
 \subsubsection{Zásady matematickej sadzby}
-Pravidlá sadzby matematických, fyzikálnych veličín a~ich vzťahov 
+Pravidlá sadzby matematických, fyzikálnych veličín a~ich vzťahov
 sumarizuje medzinárodná norma u~nás známa pod označením
 STN ISO 80 000: 2022 Veličiny a~jednotky \cite{iso800001, iso800002}.
 Označenie fyzikálnych a~matematických veličín píšeme vždy
 šikmým rezom písma.
-Čísla, názvy funkcií a~jednotky fyzikálnych veličín zapisujeme 
+Čísla, názvy funkcií a~jednotky fyzikálnych veličín zapisujeme
 normálnym rezom.
 Správny zápis elektrického napätia s veľkosťou 5,07 voltu
 vyzerá takto:
@@ -931,7 +960,7 @@ Rovnicu (\ref{Eq:quantity}) sme zapísali v zdrojovom kóde nasledujúcim spôso
 \TeX\ v~matematickom móde automaticky sádže veličiny kurzívou.
 Ak chceme, aby bola jednotka V vzpriamená, použijeme
 v~matematickom móde príkaz \verb|\mathrm{}|. Medzery okolo znaku rovnosti sú taktiež automatické.
-Zaujímavá je desatinná čiarka, ktorú musíme uzavrieť do 
+Zaujímavá je desatinná čiarka, ktorú musíme uzavrieť do
 zložených zátvoriek, aby sme potlačili automatickú sadzbu
 medzery za čiarkou.
 V~anglicky hovoriacich krajinách sa ako desatinný oddeľovač
@@ -943,7 +972,7 @@ v~tabuľke 1.
 
 \begin{table}[h]
 \centering
-\caption{Prehľad najčastejších chýb pri nesprávnom zápise 
+\caption{Prehľad najčastejších chýb pri nesprávnom zápise
 skalárnej fyzikálnej veličiny.
 Správny zápis predstavuje rovnica (\ref{Eq:quantity}).}
 \vspace{12pt}
@@ -965,7 +994,7 @@ Správny zápis predstavuje rovnica (\ref{Eq:quantity}).}
 \paragraph{Dôležité pravidlá písania rovníc}
 \begin{itemize}
 
-    \item Značky veličín píšeme šikmým rezom písma (kurzívou): 
+    \item Značky veličín píšeme šikmým rezom písma (kurzívou):
     $x$, $y$, $a$, $F$, $P$, $W$.
 
     \item Fyzikálne jednotky píšeme vzpriameným písmom:
@@ -974,16 +1003,16 @@ Správny zápis predstavuje rovnica (\ref{Eq:quantity}).}
     \item Čísla píšeme vzpriameným písmom:
     $1$; $2$; $3$; $1\,024$; $3{,}14$ a podobne.
 
-    \item Skratky matematických funkcií píšeme vzpriameným 
+    \item Skratky matematických funkcií píšeme vzpriameným
     písmom: $\sin(\alpha + \beta)$, $\cos\omega t$,
     $\log_a x = \frac{\ln x}{\ln a}$, $\mathrm{e^{i\uppi}}=-1$.
 
-    \item Označenia nemenných konštánt sú tiež vzpriamené 
+    \item Označenia nemenných konštánt sú tiež vzpriamené
     písmená: $\uppi$, $\mathrm i$, $\mathrm e$ --
     tri základné matematické konštanty --
-    Ludolfovo číslo, komplexná jednotka a~Eulerovo číslo. 
+    Ludolfovo číslo, komplexná jednotka a~Eulerovo číslo.
     Niektoré konštanty sa zo zvyku môžu písať kurzívou,
-    napríklad $\pi$ alebo dielektrická konštanta $\varepsilon_0$. 
+    napríklad $\pi$ alebo dielektrická konštanta $\varepsilon_0$.
     Komplexná jednotka je však vždy vzpriamená:
     $\mathrm i^2 = -1$.
 
@@ -998,8 +1027,8 @@ Správny zápis predstavuje rovnica (\ref{Eq:quantity}).}
     \item Vektory uvádzame buď polotučným šikmým rezom
     ($\vectorsym a$, $\vectorsym b$, $\vectorsym F$)
     alebo šikmým netučným rezom so šípkou nad symbolom:
-    $\vec a$, $\vec b$, $\vec F$
-    Treba si vybrať jeden spôsob a~ten používať v~celej práci. 
+    $\vec a$, $\vec b$, $\vec F$.
+    Treba si vybrať jeden spôsob a~ten používať v~celej práci.
 
     Označenia matíc a tenzorov zapisujeme polotučným šikmým rezom:
     $$\matrixsym M = \left( \begin{array}{cc}
@@ -1007,15 +1036,15 @@ Správny zápis predstavuje rovnica (\ref{Eq:quantity}).}
                             m_{21} & m_{22}
                         \end{array}\right)
     $$
-    Prvky matice $m_{ij}$ sú skalárne veličiny, preto sú to 
+    Prvky matice $m_{ij}$ sú skalárne veličiny, preto sú to
     netučné šikmé písmená.
 
     \item Ak treba z nejakého dôvodu odlíšiť tenzor
     od bežnej matice, môžeme tenzory označiť dvomi čiarkami:
     $\overline{\overline T}$.
 
-    \item Značku úplného diferenciálu píšeme vzpriameným rezom: 
-    $\mathrm dy$ je úplný diferenciál veličiny $y$. 
+    \item Značku úplného diferenciálu píšeme vzpriameným rezom:
+    $\mathrm dy$ je úplný diferenciál veličiny $y$.
 
     \item Derivácia dráhy podľa času:
     $v = \frac{\mathrm ds}{\mathrm dt}$.
@@ -1044,12 +1073,12 @@ a~$\varepsilon_0$ je elektrická konštanta.
 
 Aby sme zhrnuli predchádzajúce pravidlá, detailnejšie opíšeme spôsob zápisu jednotlivých prvkov
 v~rovnici (\ref{Eq:CoulombVec}).
-Skalárne veličiny veľkosť náboja a~vzájomná vzdialenosť sú 
+Skalárne veličiny veľkosť náboja a~vzájomná vzdialenosť sú
 napísané kurzívou,
-vektorové veličiny sila a~polohový vektor sú polotučným rezom. 
+vektorové veličiny sila a~polohový vektor sú polotučným rezom.
 Všetky čísla (indexy a~násobok 4 v~menovateli)
 píšeme normálnym rezom.
-Konštanty $\pi$ a $\varepsilon_0$ sú podľa zvyklosti vysádzané 
+Konštanty $\pi$ a $\varepsilon_0$ sú podľa zvyklosti vysádzané
 šikmým rezom.
 Norma v~súčasnosti odporúča vzpriamené písmo:
 $\uppi$, $\upvarepsilon_0$, čo možno dosiahnuť použitím balíka
@@ -1075,19 +1104,19 @@ Zdrojový kód rovnice \eqref{Eq:CoulombVec}:
 \end{verbatim}
 Všimnite si, že niekedy argument funkcie nemusí byť
 uzavretý zloženými zátvorkami (\verb|\mathrm e| je vo výsledku rovnaký ako \verb|\mathrm{e}|).
-Tento fenomén je dôsledok priebeha kompilácie \TeX-u na úrovní jednotlivých tzv. procesorov.
+Tento fenomén je dôsledok priebehu kompilácie na úrovni tzv. procesorov \TeX-u.
 Parameter bez zátvorky funguje správne vtedy,
 ak je parameter práve jeden \emph{token}.%
-\footnote{Čo je token? Je ot akási najmenšia časť spracovaného
-kódu, ktorý vstupuje to tzv. \emph{token procesora}
+\footnote{Čo je token? Je to akási najmenšia časť spracovaného
+kódu, ktorý vstupuje do tzv. \emph{token procesora}
 počas kompilácie.
-Tokeny sú písmená, čísla, ale aj jednoduchý príkaz, 
-napr. \texttt{\textbackslash mathrm} je jeden token. 
-Problematika je príliš komplexná, ale pre pochopenie
-toho, čo sa deje v \TeX-u deje, dôležitá.
+Tokeny sú písmená, čísla, ale aj jednoduchý príkaz,
+napr. \texttt{\textbackslash mathrm} je jeden token.
+Problematika je síce komplexná, ale na pochopenie
+toho, čo sa v~\TeX-u deje, dôležitá.
 Existuje veľmi pekná kniha od Petra Olšáka \TeX book naruby z roku 2001 \cite{Olsak2001Texbook}.
-Keďže sa už nedá zohnať, autor sa rozhodol, že ju sprístupní pre širokú verejnosť v digitálnej forme na stránke 
-\href{https://petr.olsak.net/tbn.html}{{petr.olsak.net/tbn.html}}.
+Keďže sa už nedá zohnať, autor sa rozhodol, že ju sprístupní pre širokú verejnosť v digitálnej forme na stránke
+\href{https://petr.olsak.net/tbn.html}{\texttt{petr.olsak.net/tbn.html}}.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1096,12 +1125,12 @@ Keďže sa už nedá zohnať, autor sa rozhodol, že ju sprístupní pre širok�
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Obrázky}
-V akademickej oblasti prírodných a~technických vied sa v~záverečných prácach 
+V akademickej oblasti prírodných a~technických vied sa v~záverečných prácach
 objavujú v~pomerne veľkom počte aj netextové grafické objekty. Patria sem grafy, schémy, diagramy, fotografie,
 prípadne iné dvojrozmerné vizualizácie obsahu.
 Nehovoríme o~ozdobných grafických prvkoch,
 tie do práce tohto typu nepatria.
-Obsahové grafické prvky budeme spoločne nazývať slovom obrázok. 
+Obsahové grafické prvky budeme spoločne nazývať slovom obrázok.
 Obrázok môže byť súčasť textového odseku,
 ale tejto možnosti sa vyhýbame,
 ak to nie je úplne nevyhnutné.
@@ -1114,17 +1143,17 @@ Pod každým obrázkom je textové označenie,
 začínajúce skratkou slova obrázok (Obr.) a~nasleduje
 poradové číslo obrázku v práci.
 
-Na obrázku \ref{fig:measurement} je znázornený proces správneho merania výšky dieťaťa. 
+Na obrázku \ref{fig:measurement} je znázornený proces správneho merania výšky dieťaťa.
 Grafický objekt je súčasťou plávajúceho prostredia \verb|figure|.
 Samotnú grafiku pripravíme v externom editore,
 exportujeme ju do niektorého z bežných formátov (JPG, PNG, PDF)
 a~jej vloženie do finálneho PDF súboru
 záverečnej práce zariadi makro
 \verb|\includegraphics| z~balíka \verb|graphix|.
-Automatické číslovanie má na starosti príkazu \verb|\caption|,
+Automatické číslovanie má na starosti príkaz \verb|\caption|,
 ktorého argument je text pod obrázkom.
 \begin{verbatim}
-\begin{figure}[h!]
+\begin{figure}[!ht]
     \centering
     \includegraphics[scale=1.00]{img/Measurement.png}
     \caption{Pravidelné meranie výšky dieťaťa}
@@ -1160,18 +1189,18 @@ To nebýva žiaduce a žiaľ, nemáme príliš veľa možností, ako takýto vý
 Pomôže zmena rozmerov obrázku, prípadne jeho premiestnenie inam v zdrojovom kóde.
 Odporúča sa, aby sa prostredie \verb|\begin{figure}...\end{figure}| nachádzalo mimo textového odseku, t. j. treba ho od okolitého textu oddeliť minimálne jedným prázdnym riadkom zhora aj zdola.
 
-Na ovládanie umiestnenia plávajúceho objektu môžeme použiť tieto 
-parametre \verb|h| (here) -- umiestnenie v mieste výskytu, 
-\verb|t| (top) -- umiestnenie na stránke hore, \verb|b| (bottom) -- 
-umiestnenie na stránke dole, \verb|p| (page) -- umiestnenie 
-na samostatnej stránke na konci kapitoly. Prvé tri 
+Na ovládanie umiestnenia plávajúceho objektu môžeme použiť tieto
+parametre \verb|h|~(here) -- umiestnenie v mieste výskytu,
+\verb|t|~(top) -- umiestnenie na stránke hore, \verb|b|~(bottom) --
+umiestnenie na stránke dole, \verb|p|~(page) -- umiestnenie
+na samostatnej stránke na konci kapitoly. Prvé tri
 parametre môžu byť doplnené znakom výkričníka (\verb|!|),
-ktorý požiadavku zosilňuje. 
+ktorý požiadavku zosilňuje.
 Jednotlivé parametre možno aj kombinovať.
 Napríklad inštrukcia \verb|[!ht]| znamená, že chceme mať
 obrázok na tom mieste, kde sa nachádza v zdrojovom kóde
 a~ak to za žiadnu cenu nie je možné,
-trebárs z~dôvodu nedostatku mieste pred koncom strany,
+trebárs z~dôvodu nedostatku miesta pred koncom strany,
 môže sa obrázok nachádzať aj v~hornej časti stránky.
 Ani to však nemusí stačiť a~obrázok napokon nájdeme
 na konci dokumentu.
@@ -1188,7 +1217,7 @@ práce bez nutnosti detailného čítania hlavného textu.
 Ak opis pod obrázkom pozostáva iba z~jednej vety,
 prípadne ide o~heslo bez vetnej štruktúry,
 nepíšeme zaň bodku.
-V prípade viacerých viet už bodku alebo príslušné interpunkčné 
+V~prípade viacerých viet už bodku alebo príslušné interpunkčné
 znamienka použijeme na konci každej vety,
 aj poslednej.
 V príklade na obrázku \ref{fig:measurement} je text bez bodky
@@ -1202,14 +1231,14 @@ V~\LaTeX-u je automatické číslovanie obrázkov zabezpečené v definícii mak
 
 Odvolávanie sa na číslo obrázku rieši dvojica príkazov \verb|\label| a~\verb|\ref|.
 Prvý príkaz zistí prítomnosť najbližšieho číselného
-registra a priradí k nemu menovku, ktorú zadáme do argumetnu. 
+registra a priradí k nemu menovku, ktorú zadáme do argumentu.
 Napríklad obrázok \ref{fig:measurement} má menovku \verb|fig:measurement|. Menovku volí autor textu, môže byť ľubovoľná, musí však začínať písmenom a nesmie obsahovať špeciálne znaky, ktoré majú v \TeX-u kategóriu vykonateľných príkazov (napr. \verb|\|, \verb|%|, \verb|#|, \verb|$|, zátvorky a podobne). Tiež treba venovať pozornosť tomu, aby sa rovnaká menovka nevyskytla v~texte v príkaze \verb|\label| viackrát, pretože by došlo k jej preťaženiu a znefunkčneniu odkazov.
 
-Z praktických dôvodov sa ustálila prax začínať menovku skratkou typu číslovanej položky: \verb|fig| pre obrázok, \verb|eq| pri rovniciach, \verb|tab| ako menovka tabuľky, \verb|sec| v~prípade nadposu, atď.
+Z praktických dôvodov sa ustálila prax začínať menovku skratkou typu číslovanej položky: \verb|fig| pre obrázok, \verb|eq| pri rovniciach, \verb|tab| ako menovka tabuľky, \verb|sec| v~prípade nadpisu, atď.
 
 \subsection{Grafy}
-Grafmi budeme nazývať zobrazenie vedeckých dát 
-najčastejšie vo forme dvojrozmerného grafu 
+Grafmi budeme nazývať zobrazenie vedeckých dát
+najčastejšie vo forme dvojrozmerného grafu
 závislosti dvoch alebo viacerých veličín.
 Príklad takéhoto objektu je na obrázku \ref{fig:Graph1}.
 Grafická reprezentácia vedeckých dát musí byť
@@ -1227,13 +1256,13 @@ Tomu treba prispôsobiť všetky zásady pri tvorbe grafov.
 \subsubsection{Formát súboru}
 Vektorové formáty SVG alebo PDF sú ideálna voľba pri exporte
 z~grafických programov, napr. z~Excelu alebo Originu.
-Ak takúto možnosť nemáme, treba grafy z externého softvéru 
+Ak takúto možnosť nemáme, treba grafy z externého softvéru
 exportovať do bitmapového formátu, najlepšie PNG.
-Stratový formát JPEG nie je na čiarovú grafiku vhodný. 
+Stratový formát JPEG nie je na čiarovú grafiku vhodný.
 Rozlíšenie bitmapového súboru by malo byť minimálne 600 dpi,
 aby boli čiary ostré.
 Znamená to, že ak predpokladáme veľkosť obrázku
-$10\,\mathrm{cm} \times 7{,}5\mathrm{cm}$,
+$10\,\mathrm{cm} \times 7{,}5\,\mathrm{cm}$,
 musí mať aspoň 2\,363\,px $\times$ 1\,772\,px (pixelov).
 
 \subsubsection{Písmo a hrúbka čiar}
@@ -1254,14 +1283,14 @@ aby boli viditeľné aj po vytlačení na bežnej tlačiarni.
 Formálne prvky grafu sú osi s~dielikmi a~číslami,
 názvy osí s~uvedením veličín, násobkov a~jednotiek,
 mriežka a~legenda.
-Medzi obsahové prvky zaraďujeme znázornené hodnoty vo forme 
+Medzi obsahové prvky zaraďujeme znázornené hodnoty vo forme
 bodov alebo čiar.
 Graf môže obsahovať aj názov grafu
 a~doplňujúce texty,
-prípadne ďalšie grafické prvky na zvýraznenie niektorých bodov, 
+prípadne ďalšie grafické prvky na zvýraznenie niektorých bodov,
 oblastí a~podobne.
 
-Bežný graf pozostáva zväčša z~dvoch navzájom kolmých číselných 
+Bežný graf pozostáva zväčša z~dvoch navzájom kolmých číselných
 osí – z~ľavej zvislej a~spodnej vodorovnej,
 ktoré sa pretínajú v~ľavom dolnom rohu.
 Na spodnej osi sa nachádzajú hodnoty nezávislej veličiny,
@@ -1284,10 +1313,10 @@ Hranaté zátvorky sa v knižnej tlači na tento účel nepoužívajú.
 Os musí byť jasne rozdelená dielikmi,
 ktoré sú kolmé na os a~predstavujú okrúhle hodnoty
 zobrazovanej veličiny.
-V blízkosti hlavných dielikov sa nachádzajú čísla prislúchajúce 
+V blízkosti hlavných dielikov sa nachádzajú čísla prislúchajúce
 hodnote dieliku.
 Táto hodnota sa potom násobí s údajom v~zátvorke
-v~opise osi a~spolu tvoria hodnoty zobrazenej fyzikálnej 
+v~opise osi a~spolu tvoria hodnoty zobrazenej fyzikálnej
 veličiny aj s~jednotkou.
 
 \subsubsection{Viacero grafov v jednom obrázku}
@@ -1299,7 +1328,7 @@ musí byť príslušnosť jednotlivých bodov a~čiar k~osiam jasná
 z~legendy.
 Legendu možno zahrnúť aj do textu pod obrázkom.
 
-Graf znázorňujúci experimentálne hodnoty fyzikálnych veličín 
+Graf znázorňujúci experimentálne hodnoty fyzikálnych veličín
 zvykne byť uzavretý zhora aj sprava tak,
 ako na obrázku \ref{fig:Graph1}.
 Dve prekrížené otvorené osi sa používajú zväčša
@@ -1308,7 +1337,7 @@ v~prípade teoretického nákresu matematickej funkcie $y = f(x)$.
 \subsection{Tabuľky}
 Sumarizácia dát vo forme tabuliek prispieva
 k~sprehľadneniu obsahu, zjednodušuje text
-a~umožňuje autorovi zamerať sa pri formulácii myšlienok na 
+a~umožňuje autorovi zamerať sa pri formulácii myšlienok na
 obsahovú stránku práce.
 Tabuľka, podobne ako obrázok, patrí medzi plávajúce objekty
 a preto nemusí byť umiestnená priamo na mieste v dokumente,
@@ -1318,12 +1347,12 @@ ale často býva aj súčasťou prílohy dokumentu,
 najmä ak je rozsiahlejšia.
 
 Zameriame sa teraz iba na tabuľky s~výsledkami meraní,
-ktoré sa v~záverečných prácach vyskytujú najčastejšie. 
+ktoré sa v~záverečných prácach vyskytujú najčastejšie.
 
 Tabuľku označujeme slovom Tabuľka,
 za ktorým nasleduje poradové číslo tabuľky podľa výskytu
 v~texte.
-Za číslom môže nasledovať dvojbodka a~text s~opisom obsahu 
+Za číslom môže nasledovať dvojbodka a~text s~opisom obsahu
 tabuľky.
 V~prípade, že označenie neobsahuje opisný text,
 dvojbodku vynecháme.
@@ -1348,7 +1377,7 @@ nad tabuľku (pozri napríklad tabuľku~\ref{tab:template}).
   \end{tabular}
 \end{table}
 
-Na tabuľky sa odvolávame pomocou ich čísla použitím dvojice makier 
+Na tabuľky sa odvolávame pomocou ich čísla použitím dvojice makier
 \verb|\label| a~\verb|\ref|.
 Spôsob odkazovania je podobný ako v prípade obrázkov,
 o~ktorom sme podrobne hovorili v časti \ref{sec:figPlacement}.
@@ -1358,13 +1387,13 @@ Jednoduchá tabuľka obsahuje hlavičku a~niekoľko
 údajových riadkov.
 Vzhľad tabuľky je otázka estetických preferencií autora.
 Príliš veľa grafických prvkov znižuje obsahovú hodnotu a čitateľnosť tabuľky.
-Formát, ktorý sme vybrali je inšpirovaný trendami
+Formát, ktorý sme vybrali je inšpirovaný trendmi
 v~knižnej sadzbe.
-Tabuľka je zhora a~zdola ohraničená vodorovnými čiarami 
-\verb|\toprule| a~\verb|\bottomrule| z~knižnice \verb|booktabs|. 
+Tabuľka je zhora a~zdola ohraničená vodorovnými čiarami
+\verb|\toprule| a~\verb|\bottomrule| z~knižnice \verb|booktabs|.
 Podobne je čiarou \verb|\midrule| oddelená hlavička tabuľky
 a~prípadne aj päta, ak ju použijeme.
-Zvislé čiary sa používajú iba vo výnimočných prípadoch, 
+Zvislé čiary sa používajú iba vo výnimočných prípadoch,
 napríklad ak je tabuľka rozdelená na
 dve evidentne oddelené časti.
 Prípadne môžeme čiarou oddeliť prvý stĺpec s~opisom označenia riadka (tabuľka \ref{tab:LED}).
@@ -1373,14 +1402,14 @@ Tabuľka pôsobí harmonicky,
 ak je text v~prvom stĺpci zarovnaný doľava
 a~v~poslednom stĺpci doprava.
 
-Prvý riadok môže byť vysádzaný polotučným 
+Prvý riadok môže byť vysádzaný polotučným
 rezom (bold),
 ak obsahuje tzv. hlavičku, teda názvy stĺpcov alebo názvy
-a~jednotky veličín, ktorých hodnoty sú v~konkrétnom stĺpci. 
+a~jednotky veličín, ktorých hodnoty sú v~konkrétnom stĺpci.
 Označenie veličín symbolom ($U$, $I$, $R$, $P$, a~pod.)
 nepíšeme v~hlavičke tučným písmom,
 aby sme dodržali pravidlo o~tom,
-že veličiny by mali byť v~celom dokumente označené symbolom 
+že veličiny by mali byť v~celom dokumente označené symbolom
 rovnakého tvaru a typu.
 
 \begin{table}[h!]
@@ -1396,13 +1425,13 @@ rovnakého tvaru a typu.
     LED 1 & $450 \pm 5$ & $20\pm2$ & $3\pm1$ & modrá\\
     LED 2 & $525 \pm 5$ & $25\pm3$ & $50\pm4$ & zelená\\
     LED 3 & $615 \pm 5$ & $15\pm1$ & $2\pm1$ & oranžová\\
-    LED 4 & $630 \pm 5$ & $20\pm2$ & $5\pm1$ & modrá\\
+    LED 4 & $630 \pm 5$ & $20\pm2$ & $5\pm1$ & červená\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsubsection{Obsah tabuľky}
-Tabuľka s nameranými hodnotami obsahuje v~prvom riadku označenie 
+Tabuľka s nameranými hodnotami obsahuje v~prvom riadku označenie
 veličín a~to buď slovom alebo symbolom.
 Za veličinou nasleduje jednotka v~okrúhlej zátvorke.
 Hranaté zátvorky na tento účel nepoužívame.
@@ -1411,7 +1440,7 @@ Ide o zaužívanú formu v~medzinárodnej vedeckej komunite na pomenovanie tzv. 
 Takto označujeme aj osi grafov rôznych relatívnych veličín.
 
 Pred jednotkou môže byť označenie násobku
-a~dielu a~to ako v~symbolickej forme (kA, nm, MW), 
+a~dielu a~to ako v~symbolickej forme (kA, nm, MW),
 tak aj vo forme dekadického exponentu ($10^3$, $10^{-9}$, $10^6$).
 Vyhýbame sa zápisom v~tvare 1E-3 alebo 10-3,
 pretože sú mätúce.
@@ -1438,13 +1467,13 @@ Existuje niekoľko balíčkov, ktoré umožňujú zahrnúť časti kódov do tex
 Prostredie \verb|lstlisting| vytvorí blok kódu s~menovkou Výpis kódu s~číslom výpisu.
 Makro \verb|\FEIlistOfListings| na začiatku dokumentu vygeneruje zoznam všetkých výpisov,
 ktorý nie je povinnou súčasťou práce,
-býva však dobrým zvykom uvádzať ho najmä v~informatických študijných odboroch.
+býva však dobrým zvykom uvádzať ho najmä v~informatických študijných programoch.
 
 Ukážka kódu je vo výpise~\ref{lst:main-c}.
-V dodatku \ref{att:listings} nájdeme príklad výpisu obsahu externého textového súboru. 
-Ďalšie podrobnosti možno nájť v~dokumentácií k~balíčkom%
+V dodatku \ref{att:listings} nájdeme príklad výpisu obsahu externého textového súboru.
+Ďalšie podrobnosti možno nájsť v~dokumentácii k~balíčkom%
 \footnote{\href{https://ctan.org/pkg/listings}{\texttt{ctan.org/pkg/listings}}}
-alebo v~tutoriáli služby Overleaf% 
+alebo v~tutoriáli služby Overleaf%
 \footnote{\texttt{\href{https://www.overleaf.com/learn/latex/Code_listing}{www.overleaf.com/learn/latex/Code\_listing}}}.
 
 \begin{lstlisting}[,
@@ -1468,12 +1497,12 @@ main()
 }
 \end{lstlisting}
 
-\subsection*{Algotitmy}
+\subsection*{Algoritmy}
 Dvojica balíkov%
 \footnote{\href{https://ctan.org/pkg/algorithms}{\texttt{ctan.org/pkg/algorithms}}}
 \verb|algorithm|
-a~\verb|algorythic| uľahčuje zápis algoritmizácie pomocou tzv. pseudokódov.
-Tieto nástroje sa uplatňujú najmä v prípade teoretických prác v~oblasti informatiky a~softvérového inžinierstva. 
+a~\verb|algorithmic| uľahčuje zápis algoritmizácie pomocou tzv. pseudokódov.
+Tieto nástroje sa uplatňujú najmä v prípade teoretických prác v~oblasti informatiky a~softvérového inžinierstva.
 Šablóna FEIstyle načíta balíky automaticky a~tiež definuje makro \verb|\FEIlistOfAlgorithms|, ktoré na začiatku vytvorí zoznam všetkých algoritmov, v~záverečnej práci.
 Príkaz možno vynechať alebo označiť riadok ako poznámku znakom \verb|%|, zoznam sa tak nevytvorí. Ako príklad uvádzame algoritmus \ref{alg:calculation-1} v~dodatku \ref{att:algorithms}.
 
@@ -1494,10 +1523,10 @@ Citát je doslovná reprodukcia prevzatého textu,
 ktorý môžeme v~práci použiť dvomi spôsobmi.
 Buď ako súčasť odseku textu,
 alebo celý citovaný text vysádžeme v~samostatnom odseku.
-V oboch prípadoch je zvykom citovaný text uzavrieť do úvodzoviek 
+V oboch prípadoch je zvykom citovaný text uzavrieť do úvodzoviek
 a~zvýrazniť šikmým rezom písma.
 Za citovaným textom uvedieme meno autora,
-prípadne názov diela, rok a nasleduje číslo bibliografického 
+prípadne názov diela, rok a nasleduje číslo bibliografického
 zdroja v~hranatých zátvorkách uvádzajúce poradie
 v~zozname použitej literatúry v~závere práce.
 
@@ -1510,18 +1539,18 @@ Samostatne vysádzaný citát uzavrieme v \LaTeX-u do prostredia
 
 Citácia je nepriamo prebraná a~prerozprávaná
 časť citovanej práce.
-Môže to byť vedecká myšlienka, odkaz na výsledky výskumu, 
+Môže to byť vedecká myšlienka, odkaz na výsledky výskumu,
 dôležitý poznatok, matematický vzťah a~podobne.
-Schopnosť študenta pracovať s~literatúrou a~s~externými zdrojmi 
+Schopnosť študenta pracovať s~literatúrou a~s~externými zdrojmi
 je dôležitý moment pri hodnotení spôsobilosti uchádzača
 o~vysokoškolský titul.
 Tomuto aspektu práce treba preto venovať patričnú pozornosť.
 
 Užitočný prehľad spôsobov citácií ponúkajú autorky
-Beáta Bellérová a~Lucia Lichnerová v~článku v~časobise ITLib~\cite{Lichnerova2023Nove}.
+Beáta Bellérová a~Lucia Lichnerová v~článku v~časopise ITLib~\cite{Lichnerova2023Nove}.
 
 \subsection{Odkazy na citované diela}
-Vo vedecko-technických oblastiach, do ktorých patria aj študijné odbory na našej fakulte, je zvykom používať numerický systém citovania. Jednotlivé zdroje sú očíslované podľa poradia výskytu v texte, pričom číslo zdroja uvádzame v hranatých zátvorkách.
+Vo vedecko-technických oblastiach, do ktorých patria aj študijné programy na našej fakulte, je zvykom používať numerický systém citovania. Jednotlivé zdroje sú očíslované podľa poradia výskytu v texte, pričom číslo zdroja uvádzame v hranatých zátvorkách.
 Citovanie sa riadi technickou normou STN ISO 690: 2022 Informácie a dokumentácia: Návod na tvorbu bibliografických odkazov na informačné pramene a~ich citovanie~\cite{iso690}.
 
 Systém \LaTeX\ umožňuje pracovať s citáciami niekoľkými spôsobmi.
@@ -1530,32 +1559,32 @@ ktorý sa nachádza v hlavnom priečinku projektu záverečnej práce.
 Súbor obsahuje bibliografické záznamy citovaných diel
 v špecifickom formáte.
 Každý záznam začína jedinečným identifikátorom, ktorý zvyčajne
-volíme tak, aby sme si ho jednoducho pamätali. 
+volíme tak, aby sme si ho jednoducho pamätali.
 Ak totiž v texte chceme dielo citovať, napíšeme makro \verb|\cite{identifikator}| a~v~práci sa automaticky objaví poradové číslo citovaného diela v hranatej zátvorke.
 Číslo citácii pridelí externý program \textsl{biber},
 ktorý prejde celý dokument, identifikuje výskyty makra \verb|\cite|, zoradí citované diela podľa výskytu v~práci,
-ptidelí im čísla a vytvorí podklady na zoznam literatúry na konci práce.
-Pri ďalšom spustení kompilátora \TeX-u dôjde k~nahradeniu makier 
-\verb|\cite| číslami v hranatých zátvorkách a makro šablóny 
-\verb|\FEIbibliography| vytvorí zoznam literatúry s nadpisom 
+pridelí im čísla a vytvorí podklady na zoznam literatúry na konci práce.
+Pri ďalšom spustení kompilátora \TeX-u dôjde k~nahradeniu makier
+\verb|\cite| číslami v hranatých zátvorkách a makro šablóny
+\verb|\FEIbibliography| vytvorí zoznam literatúry s nadpisom
 prvej úrovne Literatúra.
 
-Pri použití bibliografie odporúčame použiť dávkový súbor 
-\texttt{Makefile} alebo spustiť externý program \texttt{biber} 
+Pri použití bibliografie odporúčame použiť dávkový súbor
+\texttt{Makefile} alebo spustiť externý program \texttt{biber}
 po prvej kompilácii a~potom skompilovať dokument ešte dvakrát.
 Posledná kompilácia zabezpečí správne čísla strán v obsahu.
 Online nástroj Overleaf robí všetky potrebné kroky v jednom behu,
 kompiláciu tu stačí spustiť iba raz.
 
 \subsection{Bibliografické záznamy}
-V zozname použitej literatúry v~závere práce sa nachádzajú 
+V zozname použitej literatúry v~závere práce sa nachádzajú
 podrobné záznamy použitých zdrojov.
-Sú to najmä mená autorov, názov článku alebo číslo kapitoly 
-knihy, názov časopisu alebo knihy, vydavateľ, rok vydania, 
+Sú to najmä mená autorov, názov článku alebo číslo kapitoly
+knihy, názov časopisu alebo knihy, vydavateľ, rok vydania,
 strana, na ktorej sa nachádza citovaný článok a podobne.
-V~prípade webových stránok je potrebné uviesť internetovú adresu 
+V~prípade webových stránok je potrebné uviesť internetovú adresu
 a~dátum, kedy sme informáciu zo stánky čerpali.
-Dôležité je, aby boli informácie na základe týchto detailov 
+Dôležité je, aby boli informácie na základe týchto detailov
 ľahko a jednoznačne dohľadateľné.
 Norma STN ISO 690: 2022 tiež definuje formu takéhoto zoznamu~\cite{iso690}.
 
@@ -1572,7 +1601,7 @@ Môžeme ho vytvoriť ručne alebo použiť niektorý zo systémov na správu pu
 
 Nasledujúci bibliografický záznam
 \begin{trivlist}
-  \item STEINEROVÁ, J. Princípy formovania vzdelania 
+  \item STEINEROVÁ, J. Princípy formovania vzdelania
   v~informačnej vede. \textit{Pedagogická revue.} 2000, \textbf{2}(3), 8--16.
 \end{trivlist}
 vyzerá v zdrojovom súbore \texttt{bibliography.bib} takto:
@@ -1601,16 +1630,16 @@ Odporúča sa však aby obsahoval priezvisko prvého autora, rok vydania a prvé
 Jednotlivé položky databázového záznamu sú oddelené čiarkou,
 za posledným poľom už čiarka nie je.
 
-Každý typ záznamu má iné požiadavky na polia. 
+Každý typ záznamu má iné požiadavky na polia.
 Niektoré základné vlastnosti opíšeme v nasledujúcom texte.
 Viac informácií možno získať v príslušnej dokumentácii~\cite{Hoftich2022iso690}.
 
 \subsubsection{Prvky bibliografického záznamu}
-Zoznam použitej literatúry obsahuje informácie o jednotlivých zdrojoch. Je potrebné mať na pamäti, aby záznamy boli jasné, stručné a jednoznačne identifikovateľné. Bežne zorientovaný čitateľ práce, ktorý sa pohybuje v okruhu tém práce by mal byť schopný identifikovať jednotlivé diela na prvé pozretie. Prípadný záujemca o detailné štúdium problematiky by si mal vedieť na základe záznamu vyhľadať citovanú publikáciu buď na internete alebo v knižnici. Týmito pravidlami sa riadime pri vytváraní zoznamu použitej literatúry. 
+Zoznam použitej literatúry obsahuje informácie o jednotlivých zdrojoch. Je potrebné mať na pamäti, aby záznamy boli jasné, stručné a jednoznačne identifikovateľné. Bežne zorientovaný čitateľ práce, ktorý sa pohybuje v okruhu tém práce by mal byť schopný identifikovať jednotlivé diela na prvé pozretie. Prípadný záujemca o detailné štúdium problematiky by si mal vedieť na základe záznamu vyhľadať citovanú publikáciu buď na internete alebo v knižnici. Týmito pravidlami sa riadime pri vytváraní zoznamu použitej literatúry.
 
-Uvedieme niekoľko jednoduchých a~najčastejších príkladov bežného 
+Uvedieme niekoľko jednoduchých a~najčastejších príkladov bežného
 spôsobu citovania.
-Snaha je, aby sme sa prirodzene naučili formy uvádzania 
+Snaha je, aby sme sa prirodzene naučili formy uvádzania
 bibliografických záznamov v~našej oblasti vedy a techniky
 a~dokázali vytvoriť správnu databázu zdrojov v systéme Bib\LaTeX.
 
@@ -1623,7 +1652,7 @@ Za zoznamom autorov nasleduje bodka.
 author = {Meno1 Priezvisko1 and Meno2 Priezvisko2 and Meno3 Prizvisko3}
 \end{verbatim}
 Autorov zapisujeme ako \verb|Meno Priezvisko| a~oddeľujeme ich kľúčovým slovom and.
-Môžeme tiež použiť obrátený \verb|Priezvisko, Meno and|\dots s~čiarkou medzi priezviskom a~menom.
+Môžeme tiež použiť obrátený tvar \verb|Priezvisko, Meno and|\dots s~čiarkou medzi priezviskom a~menom.
 
 \subsubsection*{Názov}
 Názov článku píšeme normálnym písmom.
@@ -1640,7 +1669,7 @@ Pri každej publikácii musí byť uvedený aspoň rok vydania
 vo formáte YYYY, t. j. 2024.
 V prípade online zdrojov treba uvádzať aj presný dátum,
 kedy sme zdroj použili.
-Vkladáme ho do hranatých zátvoriek s~kľúčovým slovom cit. 
+Vkladáme ho do hranatých zátvoriek s~kľúčovým slovom cit.
 Odporúčame použiť formát [cit. YYYY-MM-DD].
 Ak sme teda informáciu z webovej stránky získali dňa
 14. mája 2023,
@@ -1653,8 +1682,8 @@ year = {2024}
 date = {2024-12-31}
 \end{verbatim}
 
-\subsubsection*{Dosupnosť}
-Myslí sa tým dostupnosť na internete najmä prostredníctvom webu. 
+\subsubsection*{Dostupnosť}
+Myslí sa tým dostupnosť na internete najmä prostredníctvom webu.
 Uvádzame buď úplnú webovú adresu alebo DOI číslo.
 Nepíšeme oba údaje, preferujeme DOI.
 Tento údaj sa nachádza zväčša na konci záznamu za kľúčovým výrazom Dostupné na.
@@ -1669,11 +1698,11 @@ Ak uvedieme viacero polí, Bib\LaTeX\ zväčša vyberie iba jedno
 podľa preferencií špecifikovaných v~definičnom súbore.
 
 \subsubsection*{Ročník alebo zväzok a číslo časopisu}
-Vedecké periodiká vychádzajú v tzv. zväzkoch (angl. \foreignlanguage{english}{\it volume}). 
+Vedecké periodiká vychádzajú v tzv. zväzkoch (angl. \foreignlanguage{english}{\it volume}).
 Zväzky sa môžu deliť na čísla
-(angl. \foreignlanguage{english}{\it issue} alebo 
+(angl. \foreignlanguage{english}{\it issue} alebo
 \foreignlanguage{english}{\it number}).
-Zväzok a číslo zapisujeme buď pomocou skratiek vol. a~iss. 
+Zväzok a číslo zapisujeme buď pomocou skratiek vol. a~iss.
 (prípadne no. podľa skutočného členenia jednotlivých vydaní konkrétneho časopisu),
 alebo preferujeme zaužívanú skrátenú formu,
 pri ktorej nepoužijeme slovné skratky,
@@ -1710,15 +1739,15 @@ Ak je článok dostupný online, je dobré, ak sa v zápise objaví aj webová a
 Prvý príklad je z~časti
 \ref{sec:citExample} odkazuje na článok s názvom Princípy formovania vzdelania v informačnej vede od autorky Jely Steinerovej, ktorý vyšiel v roku 2000 v 3. čísle 2. ročníka časopisu Pedagogická revue. Článok sa v časopise nachádza na stranách 8 až 16.
 
-V druhom príklade skratka et. al. (skratka latínského \textit{et alii}, vo význame a~iní) za menom autora znamená, že článok má viacero autorov (bežne viac než 6) a nemusíme ich všetkých uvádzať.
-V slovenských textoch sa môže použiť aj skratka a~kol. (a~kolektív).
+V druhom príklade skratka et. al. (skratka latinského slovného spojenia \textit{et alii}, vo význame a~iní) za menom autora znamená, že článok má viacero autorov (bežne viac než 5) a nemusíme ich všetkých uvádzať.
+V slovenských textoch sa môže použiť skratka a~kol. (a~kolektív).
 
 Tretí príklad je príklad online časopisu, ktorý možno nájsť na internete. Príznak [online] a~dátum citovania [cit. 2023-01-10] sa objaví v zozname literatúry, keď v súbore \verb|bibliography.bib| použijeme pole \verb|urldate|.
 
 \begin{enumerate}
 \item STEINEROVÁ, J. Princípy formovania vzdelania v informačnej vede. \textit{Pedagogická revue}. 2000, \textbf{2}(3), 8–16.
 \item BEŇAČKA, J. et al. A better cosine approximate solution to pendulum equation. \textit{International Journal of Mathematical Education in Science and Technology}, 2009, \textbf{40}(2), 206–215.
-\item HOGGAN, D. B. Challenges, Strategies, and Tools for Research Scientists. Electronic Journal of \textit{Academic and Special Librarianship} [online]. 2009, \textbf{3}(3). [cit. 2023-01-10]. Dostupné z: \texttt{http://southernlibrarianship.icaap.org/content/ v03n03/Hoggan\_d01.htm}. ISSN 1525-321X. 
+\item HOGGAN, D. B. Challenges, Strategies, and Tools for Research Scientists. Electronic Journal of \textit{Academic and Special Librarianship} [online]. 2009, \textbf{3}(3). [cit. 2023-01-10]. Dostupné z: \texttt{http://southernlibrarianship.icaap.org/content/ v03n03/Hoggan\_d01.htm}. ISSN 1525-321X.
 \end{enumerate}
 
 \subsubsection*{\normalsize Zápis v zdrojovom .bib súbore}
@@ -1737,7 +1766,7 @@ Tretí príklad je príklad online časopisu, ktorý možno nájsť na internete
   author  = {Ján Benačka and others},
   title   = {A better cosine approximate solution to pendulum
              equation},
-  journal = {International Journal of Mathematical Education in Science 
+  journal = {International Journal of Mathematical Education in Science
              and Technology},
   volume  = {40},
   number  = {2},
@@ -1749,7 +1778,7 @@ Tretí príklad je príklad online časopisu, ktorý možno nájsť na internete
 @article{Hoggan2002Challenges,
   author  = {Danielle Bodrero Hoggan},
   journal = {Electronic Journal of Academic and Special Librarianship},
-  title   = {Challenges, Strategies, and Tools for Research Scientists: 
+  title   = {Challenges, Strategies, and Tools for Research Scientists:
              Using Web-Based Information Resources},
   year    = {2002},
   number  = {3},
@@ -1793,11 +1822,11 @@ Tretí príklad je príklad online časopisu, ktorý možno nájsť na internete
 \end{verbatim}
 
 \subsection{Záverečná a~vedecko-kvalifikačná práca, správa}
-AUTOR. \textit{Názov práce}. Mesto, Rok vypracovania. Typ práce. Inštitúcia 
+AUTOR. \textit{Názov práce}. Mesto, Rok vypracovania. Typ práce. Inštitúcia
 
 \subsubsection*{\normalsize Príklady}
 \begin{enumerate}
-  \item MIKULÁŠIKOVÁ, M. \textit{Didaktické pomôcky pre praktickú výučbu na hodinách výtvarnej výchovy pre 2. stupeň základných škôl.} Nitra, 1999. Diplomová práca. Univerzita Konštantína filozofa
+  \item MIKULÁŠIKOVÁ, M. \textit{Didaktické pomôcky pre praktickú výučbu na hodinách výtvarnej výchovy pre 2. stupeň základných škôl.} Nitra, 1999. Diplomová práca. Univerzita Konštantína Filozofa
 
   \item BAUMGARTNER, J. et al. \textit{Ochrana a udržiavanie genofondu zvierat, šľachtenie zvierat.} Nitra, 1998. Výskumná správa. VÚŽV.
 \end{enumerate}
@@ -1811,7 +1840,7 @@ AUTOR. \textit{Názov práce}. Mesto, Rok vypracovania. Typ práce. Inštitúcia
   address = {Nitra},
   year    = {1999},
   type    = {Diplomová práca},
-  school  = {Univerzita Konštantína filozofa},
+  school  = {Univerzita Konštantína Filozofa},
 }
 
 @report{Baumgarntner1998Ochrana,
@@ -1827,9 +1856,9 @@ AUTOR. \textit{Názov práce}. Mesto, Rok vypracovania. Typ práce. Inštitúcia
 
 \subsection{Príspevok v zborníku konferencie, časť knihy}
 Ak citujeme iba jednu kapitolu knihy,
-prípadne ide o~príspevok z~neperiodického zborníka, 
+prípadne ide o~príspevok z~neperiodického zborníka,
 uvedieme za názvom príspevku (kapitoly)
-kľúčové slovo In:, po dvojbodke nasleduje zoznam editorov zborníka a názov zborníka alebo knihy: 
+kľúčové slovo In:, po dvojbodke nasleduje zoznam editorov zborníka a názov zborníka alebo knihy:
 \begin{trivlist}
   \item TVORCOVIA. Názov príspevku. In: EDITORI (ed.). \textit{Názov zborníka.} Mesto: Vydavateľ, Rok vydania, zväzok, s. rozsah strán, zv. číslo. ISBN. ISSN. Dostupnosť.
 \end{trivlist}
@@ -1837,7 +1866,7 @@ kľúčové slovo In:, po dvojbodke nasleduje zoznam editorov zborníka a názov
 \subsubsection*{\normalsize Príklady}
 \begin{enumerate}
   \item ZEMÁNEK, P. The machines for ``green works'' in vineyards and their economical evaluation. In: \textit{9th International Conference: proceedings. Vol. 2. Fruit Growing and viticulture.} Lednice: Mendel University of Agriculture a Forestry, 2001, zv. 2, s. 262–268. ISBN 80-7157-524-0.
-  
+
   \item CHLPÍK, J.; KURTULÍK, M.; KOTOROVÁ, S.; CIRÁK, J. Spectroscopic ellipsometry of Au nanoparticles layers. In: SITEK, J.; VAJDA, J.; JAMNICKÝ, I. (ed.). \textit{AIP Conference Proceedings.} 2024, zv. 3054, s. 080004. Č. 1. ISSN 0094-243X. Dostupné z doi: 10.1063/5.0187526.
 \end{enumerate}
 
@@ -1876,7 +1905,7 @@ kľúčové slovo In:, po dvojbodke nasleduje zoznam editorov zborníka a názov
 \subsection{Webová stránka, sociálna sieť, video}
 Pri multimediálnom online obsahu často nepoznáme autora,
 prípadne je komplikované zistiť názov webovej stránky.
-Snažíme sa teda zahrnúť čo najviac jednoznačných informácií, 
+Snažíme sa teda zahrnúť čo najviac jednoznačných informácií,
 najmä webovú adresu, dátum publikovania a dátum citovania.
 \begin{trivlist}
   \item TVORCOVIA. \textit{Názov obsahu} [online]. Platforma, dátum publikovania [cit. dátum citovania]. Dostupnosť.
@@ -1886,7 +1915,7 @@ najmä webovú adresu, dátum publikovania a dátum citovania.
 \begin{enumerate}
   \item VALKO, P. \textit{M31, M32 a jeden Starlink k tomu} [online]. Facebook, 2024-08-30 [cit. 2024-09-06]. Dostupné z: \texttt{https://www.facebook.com/share/p/S93xZoz9Rbnh
   dQ7M}.
-  
+
   \item \textit{Why lenses can't make perfect images} [online]. Youtube, 2017-10-18 [cit. 2024-08-25]. Dostupné z: \texttt{https://youtu.be/DDoryfCXxPI?si=hC5Kuuf4p3OxOOsm}.
 \end{enumerate}
 
@@ -1935,3 +1964,14 @@ K normám nemusíme uvádzať autorov, ak ide o slovenskú normu STN, netreba an
   year      = {2022},
 }
 \end{verbatim}
+
+% LocalWords:  zostručnenie Bib vý nok výk le ok ax bx ds dt dx Eq CoulombVec
+% LocalWords:  eq px lrrrr FWHM Full Width rrrr kA Technology HOGGAN Challenges
+% LocalWords:  Strategies Tools Research Scientists Electronic Academic Special
+% LocalWords:  Librarianship Hoggan OBERT TIMKO SIEKEL MIKULÁŠIKOVÁ BAUMGARTNER
+% LocalWords:  VÚŽV ed ZEMÁNEK machines green works vineyards their economical
+% LocalWords:  evaluation th Conference proceedings Fruit Growing viticulture
+% LocalWords:  Mendel University Agriculture Forestry CHLPÍK KURTULÍK KOTOROVÁ
+% LocalWords:  CIRÁK Spectroscopic ellipsometry nanoparticles layers SITEK doi
+% LocalWords:  JAMNICKÝ VALKO Starlink Facebook dQ Why lenses can perfect
+% LocalWords:  images Youtube
