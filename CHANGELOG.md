@@ -1,4 +1,7 @@
 # Changelog
+ - 2.0.1 (2025.02.07)
+   1. add a few abbreviations to example thesis
+
  - 2.0.0 (2025.02.05)
    1. major changes in formatting — synchronize with the official Word template
       while keeping the familiar look & feel of LaTeX
