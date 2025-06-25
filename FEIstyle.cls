@@ -8,6 +8,12 @@
     \def\typPrace{Dizerta\v{c}n\a'a pr\a'aca}
     \def\typPraceTemp{dizerta\v{c}n\'{u} pr\'{a}cu}
     \def\typPraceTempII{dizerta\v{c}nej pr\'{a}ce}}
+\DeclareOption{dizproj}{\def\typPraceSkr{dizproj}
+    \def\isThesis{1}
+    \def\typPraceEn{Thesis for dissertation examination}
+    \def\typPrace{P\'{i}somn\'{a} pr\'{a}ca k dizerta\v{c}nej sk\'{u}\v{s}ke}
+    \def\typPraceTemp{p\'{i}somn\'{a} pr\'{a}ca k dizerta\v{c}nej sk\'{u}\v{s}ke}
+    \def\typPraceTempII{p\'{i}somnej pr\'{a}ce k dizerta\v{c}nej sk\'{u}\v{s}ke}}
 \DeclareOption{dp}{\def\typPraceSkr{d}
     \def\isThesis{1}
     \def\typPraceEn{Master's thesis}
