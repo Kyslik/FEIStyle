@@ -1,0 +1,339 @@
+\RequirePackage{keyval}
+\RequirePackage{xstring}
+\RequirePackage{textcase}
+% For list of figures and tables
+\RequirePackage{tocloft}
+
+% Default definitions
+\def\FEIlanguage{slovak}
+\def\FEIthesisType{bp}
+\def\FEIauthor{}
+\def\FEIregNr{}
+\def\FEItitle{}
+\def\FEITeXtitle{}
+\def\FEItitleEn{}
+\def\FEITeXtitleEn{}
+\def\FEIyear{}
+\def\FEIkeywords{}
+\def\FEITeXkeywords{}
+\def\FEIkeywordsEn{}
+\def\FEITeXkeywordsEn{}
+\def\FEIsupervisor{}
+\def\FEIconsultant{}
+\def\FEIstudyProgramme{}
+\def\FEIstudyProgrammeEn{}
+\def\FEIstudyField{}
+\def\FEIstudyFieldEn{}
+\def\FEItrainingWorkplace{}
+\def\FEItrainingWorkplaceEn{}
+\def\FEIuniversity{Slovenská technická univerzita v Bratislave}
+\def\FEIfaculty{Fakulta elektrotechniky a informatiky}
+\def\FEIregNrString{{Evidenčné číslo: \FEIregNr}}
+\def\FEItitleString{\FEITeXtitle}
+\def\FEIthesisTypeString{Bakalárska práca}
+\def\FEIstudyProgrString{Študijný program:}
+\def\FEIstudyFieldString{Študijný odbor:}
+\def\FEItrainWorkpString{Školiace pracovisko:}
+\def\FEIsupervisorString{Školiteľ:}
+\def\FEIconsultantString{Konzultant:}
+\def\FEIstudyProgrammeName{\FEIstudyProgramme}
+\def\FEIstudyFieldName{\FEIstudyField}
+\def\FEItrainingWorkplaceName{\FEItrainingWorkplace}
+\def\FEIassignmentPath{}
+\def\FEIacknowledgementsPath{}
+\def\FEIabstractPath{}
+\def\FEIabstractEnPath{}
+
+% FEIsetup metadata keyval settings
+\long\def\FEIsetup#1{%
+  \setkeys{FEIstyle}{#1}
+  \FEIdefineStrings}
+\define@key{FEIstyle}{language}{%
+  \def\FEIlanguage{#1}}
+\define@key{FEIstyle}{type}{%
+  \IfEqCase*{#1}
+  {
+    {bp}{\def\FEIthesisType{#1}}
+    {dp}{\def\FEIthesisType{#1}}
+    {dizp}{\def\FEIthesisType{#1}}
+  }
+  [
+  \PackageWarning{FEIstyle}{Incorrect thesis type.
+    Suppoted values: bp, dp, dizp.}
+  \def\FEIthesisType{bp}]}
+\define@key{FEIstyle}{author}{%
+  \def\FEIauthor{#1}}
+\define@key{FEIstyle}{regnr}{%
+  \def\FEIregNr{#1}}
+\define@key{FEIstyle}{title}{%
+  \def\FEItitle{#1}}
+\define@key{FEIstyle}{TeXtitle}{%
+  \def\FEITeXtitle{#1}}
+\define@key{FEIstyle}{titleEn}{%
+  \def\FEItitleEn{#1}}
+\define@key{FEIstyle}{TeXtitleEn}{%
+  \def\FEITeXtitleEn{#1}}
+\define@key{FEIstyle}{year}{%
+  \def\FEIyear{#1}}
+\define@key{FEIstyle}{keywords}{%
+  \def\FEIkeywords{#1}}
+\define@key{FEIstyle}{TeXkeywords}{%
+  \def\FEITeXkeywords{#1}}
+\define@key{FEIstyle}{keywordsEn}{%
+  \def\FEIkeywordsEn{#1}}
+\define@key{FEIstyle}{TeXkeywordsEn}{%
+  \def\FEITeXkeywordsEn{#1}}
+\define@key{FEIstyle}{supervisor}{%
+  \def\FEIsupervisor{#1}}
+\define@key{FEIstyle}{consultant}{%
+  \def\FEIconsultant{#1}}
+\define@key{FEIstyle}{studyProgramme}{%
+  \def\FEIstudyProgramme{#1}}
+\define@key{FEIstyle}{studyProgrammeEn}{%
+  \def\FEIstudyProgrammeEn{#1}}
+\define@key{FEIstyle}{studyField}{%
+  \def\FEIstudyField{#1}}
+\define@key{FEIstyle}{studyFieldEn}{%
+  \def\FEIstudyFieldEn{#1}}
+\define@key{FEIstyle}{trainingWorkplace}{%
+  \def\FEItrainingWorkplace{#1}}
+\define@key{FEIstyle}{trainingWorkplaceEn}{%
+  \def\FEItrainingWorkplaceEn{#1}}
+\define@key{FEIstyle}{assignment}{%
+  \def\FEIassignmentPath{#1}}
+\define@key{FEIstyle}{acknowledgements}{%
+  \def\FEIacknowledgementsPath{#1}}
+\define@key{FEIstyle}{abstract}{%
+  \def\FEIabstractPath{#1}}
+\define@key{FEIstyle}{abstractEn}{%
+  \def\FEIabstractEnPath{#1}}
+
+
+\BeforeBeginEnvironment{document}{\FEIinternalSetup}
+\def\FEIinternalSetup{
+  \hypersetup{pdfinfo={
+      Title={\FEItitle},
+      Author={\FEIauthor},
+      % Subject={\typPrace},
+      Keywords={\FEIkeywords}
+    }}
+  \AtBeginDocument{
+    \FEIcover
+    \FEItitlePage
+    \IfEq{\FEIassignmentPath}
+    {}
+    {
+      \PackageWarningNoLine{FEIstylethesis}{Missing
+        assignment in \string\FEIsetup. Assignment won't be typeset}
+    }{
+      \includepdf[pages=-]{\FEIassignmentPath}
+    }
+    \IfEq{\FEIacknowledgementsPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+        acknowledgements in \string\FEIsetup. Acknowledgements won't be typeset}}{
+      \FEIacknowledgements{\FEIacknowledgementsPath}}
+    \IfEq{\FEIabstractPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+        abstract in \string\FEIsetup. Abstract won't be typeset}}{
+      \FEIabstract{\FEIabstractPath}}
+    \IfEq{\FEIabstractEnPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+        abstractEn in \string\FEIsetup. English version of abstract won't be typeset}}{
+      \FEIabstractEn{\FEIabstractEnPath}}
+    \FEItoc
+  }
+}
+
+% Localization
+\def\FEIdefineStrings{
+\IfEqCase*{\FEIlanguage}{
+  {slovak}{
+    \def\FEIuniversity{Slovenská technická univerzita v Bratislave}
+    \def\FEIfaculty{Fakulta elektrotechniky a informatiky}
+    \def\FEIregNrString{{Evidenčné číslo: \FEIregNr}}
+    \def\FEItitleString{\FEITeXtitle}
+    \IfEqCase*{\FEIthesisType}{
+      {bp}{\def\FEIthesisTypeString{Bakalárska práca}}
+      {dp}{\def\FEIthesisTypeString{Diplomová práca}}
+      {dizp}{\def\FEIthesisTypeString{Dizertačná práca}}
+    }[]
+    \def\FEIstudyProgrString{Študijný program:}
+    \def\FEIstudyFieldString{Študijný odbor:}
+    \def\FEItrainWorkpString{Školiace pracovisko:}
+    \def\FEIsupervisorString{Školiteľ:}
+    \def\FEIconsultantString{Konzultant:}
+    \def\FEIstudyProgrammeName{\FEIstudyProgramme}
+    \def\FEIstudyFieldName{\FEIstudyField}
+    \def\FEItrainingWorkplaceName{\FEItrainingWorkplace}
+    \def\FEIacknowledgementsString{Poďakovanie}
+    \def\FEIabstractString{Abstrakt}
+    \def\FEIkeywordsString{Kľúčové slová}
+    \def\FEIlistOfFiguresAndTablesString{Zoznam obrázkov a tabuliek}
+  }
+  {english}{
+    \def\FEIuniversity{Slovenská technická univerzita v Bratislave}
+    \def\FEIfaculty{Fakulta elektrotechniky a informatiky}
+    \def\FEIregNrString{{Evidenčné číslo: \FEIregNr}}
+    \def\FEItitleString{\FEITeXtitle}
+    \IfEqCase*{\FEIthesisType}{
+      {bp}{\def\FEIthesisTypeString{Bachelor's thesis}}
+      {dp}{\def\FEIthesisTypeString{Master's thesis}}
+      {dizp}{\def\FEIthesisTypeString{Dissertation thesis}}
+    }[]
+    \def\FEIstudyProgrString{Study Programme:}
+    \def\FEIstudyFieldString{Study Field:}
+    \def\FEItrainWorkpString{Training Workplace:}
+    \def\FEIsupervisorString{Supervisor:}
+    \def\FEIconsultantString{Consultant:}
+    \def\FEIstudyProgrammeName{\FEIstudyProgrammeEn}
+    \def\FEIstudyFieldName{\FEIstudyFieldEn}
+    \def\FEItrainingWorkplaceName{\FEItrainingWorkplaceEn}
+    \def\FEIacknowledgementsString{Acknowledgements}
+    \def\FEIabstractString{Abstract}
+    \def\FEIkeywordsString{Keywords}
+    \def\FEIlistOfFiguresAndTablesString{List of Figures and Tables}
+  }
+}[]
+}
+
+\def\FEIheaderSize{14.5pt}
+\def\FEIsideMarginSize{2.75cm}
+
+\newcommand\FEIcover{
+  \pagestyle{empty}
+  \newgeometry{tmargin=2cm,bmargin=1.8cm,lmargin=\FEIsideMarginSize,rmargin=\FEIsideMarginSize}
+  \begin{sffamily}
+    \begin{center}
+      {\fontsize{\FEIheaderSize}{0}\selectfont\bfseries \MakeTextUppercase{\FEIuniversity}\\[11.3pt] \FEIfaculty}
+    \end{center}
+    \vspace{11.5mm}
+    % \ifthenelse{\boolean{isThesis}}
+    % {
+      \fontsize{12.5pt}{0}\selectfont\noindent\FEIregNrString
+    % }{}
+    \vspace{51.5mm}
+    \begin{center}
+      {\fontsize{20.5pt}{18.2pt}\selectfont\bfseries\nointerlineskip\FEItitleString\par}\vspace{29pt}
+      {\fontsize{\FEIheaderSize}{0}\selectfont\bfseries \FEIthesisTypeString}
+    \end{center}
+    \vspace{\fill}
+    \begin{flushleft}
+      {\fontsize{\FEIheaderSize}{0}\selectfont\bfseries
+        \FEIyear
+        \hfill
+        \FEIauthor}
+    \end{flushleft}
+  \end{sffamily}
+  \restoregeometry
+  \newpage    
+}
+
+\newcommand\FEItitlePage{
+  \setcounter{page}{1}
+  \pagestyle{empty}
+  \newgeometry{tmargin=3.024cm,bmargin=2.775cm,lmargin=\FEIsideMarginSize,rmargin=\FEIsideMarginSize}
+  \begin{sffamily}
+    \begin{center}
+      {\fontsize{14pt}{1.3}\selectfont \bfseries \MakeTextUppercase{\FEIuniversity}\\[9.4pt] \FEIfaculty}
+    \end{center}
+    \vspace{9mm}
+    {
+      % \ifthenelse{\boolean{isThesis}}
+      % {
+        \fontsize{12pt}{1.3}\selectfont \FEIregNrString
+      % }{}
+    }
+    \vspace{40.9mm}
+    \begin{center}
+      {\fontsize{20pt}{18.1pt}\selectfont\bfseries\FEItitleString\par}\vspace{22pt}
+      {\fontsize{14pt}{0}\selectfont\bfseries\FEIthesisTypeString}
+    \end{center}
+    \vspace{\fill}
+    {\fontsize{12pt}{14pt}\selectfont
+      \begin{tabbing}
+        \hspace*{5cm}\= \kill
+        \FEIstudyProgrString \> \FEIstudyProgrammeName \\
+        % \ifthenelse{\boolean{isThesis}}
+        % {
+          \FEIstudyFieldString{} \> \FEIstudyFieldName{} \\
+          \FEItrainWorkpString \> \FEItrainingWorkplaceName \\
+          \FEIsupervisorString \> \FEIsupervisor \\
+          \IfEq{\FEIconsultant}{}{}{\FEIconsultantString \> \FEIconsultant
+          \IfEq{\FEIconsultant}{\FEIsupervisor}{\PackageWarningNoLine{FEIstylethesis}{Consultant
+              shouldn't be the same person as the supervisor. You should probably
+              remove consultant from \string\FEIsetup}}{}}
+        % }
+  %       % {\@tempCourse \> \parbox[t]{9cm}{\@skolaCourse\vspace{1ex}} \\ %TODO use this for abstract minipage
+  %       %   \@tempLecturer \> \@skolaLecturer \\
+  %       %   \@tempTa \> \@skolaTa \\
+  %       % }
+      \end{tabbing}
+    }
+    \vspace{3.43cm}
+    \begin{flushleft}
+      {\fontsize{12pt}{0}\selectfont \bfseries
+        \FEIyear
+        \hfill
+        \FEIauthor}
+    \end{flushleft}
+  \end{sffamily}
+  \restoregeometry
+  \newpage
+}
+
+\newcommand\FEIacknowledgements[1]{
+  \pagestyle{empty}
+  \vspace*{\stretch{1}}
+  \section*{\fontsize{16pt}{1.3}\selectfont \FEIacknowledgementsString}
+  \vspace{1pt}
+  \input{#1}
+  \vspace{7.1pt}
+  \newpage
+}
+
+\newcommand\FEIabstractGeneric[4]{
+  \pagestyle{empty}   
+  \vspace*{-26.6pt}
+  \section*{\fontsize{20pt}{1.3}\selectfont #2}
+  \vspace{0.45cm}
+  
+  \noindent\input{#1}
+  
+  \vspace{0.8cm}
+  \noindent \textbf{#3}
+  
+  \vspace{0.3cm}
+  \noindent #4
+  \clearpage
+}
+    
+\newcommand\FEIabstractEn[1]{
+  \FEIabstractGeneric{#1}{\FEIabstractString}{\FEIkeywordsString}{\FEITeXkeywordsEn}
+}
+
+\newcommand\FEIabstract[1]{
+  \FEIabstractGeneric{#1}{\FEIabstractString}{\FEIkeywordsString}{\FEITeXkeywords}
+}
+
+\newcommand\FEItoc{ 
+  %\pagestyle{plain}
+  \addtocontents{toc}{\protect\thispagestyle{plain}}
+  \tableofcontents
+  \newpage
+}
+
+\newcommand\FEIlistOfFiguresAndTables{ 
+  % \pagestyle{plain}
+
+  \renewcommand{\cftfigpresnum}{\figurename~}
+  \renewcommand{\cfttabpresnum}{\tablename~}
+  \newlength{\mylenf}
+  \settowidth{\mylenf}{\cftfigpresnum}
+  \setlength{\cftfignumwidth}{\dimexpr\mylenf+3em}
+  \setlength{\cfttabnumwidth}{\dimexpr\mylenf+3em}
+  
+  \section*{\fontsize{20pt}{1.3}\selectfont \FEIlistOfFiguresAndTablesString}
+  \phantomsection
+  \@starttoc{lof}
+  \bigskip
+  \@starttoc{lot}
+  %\newpage
+  %\pagestyle{plain}
+}

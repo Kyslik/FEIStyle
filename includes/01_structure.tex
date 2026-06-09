@@ -1,0 +1,490 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                            %%
+%% Štruktúra záverečnej práce %%
+%%                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Štruktúra záverečnej práce}\label{sec:StrukturaPrace}
+Za záverečnú prácu považujeme bakalársku, diplomovú
+a~dizertačnú prácu \cite{zakon1312002}.
+Práca napísaná v~slovenskom jazyku má tieto časti \cite{vyhlaska2332011, usmernenie562011}:
+\begin{enumerate}
+    \item Úvodná časť
+    \begin{enumerate}
+        \item obal
+        \item titulný list
+        \item zadanie
+        \item poďakovanie (nepovinné)
+        \item abstrakt v slovenskom jazyku
+        \item abstrakt v anglickom jazyku
+        \item obsah
+        \item zoznam ilustrácií, obrázkov (nepovinné)
+        \item zoznam tabuliek (nepovinné)
+        \item zoznam skratiek a značiek (odporúčané)
+    \end{enumerate}
+    \item Hlavná textová časť
+    \begin{enumerate}
+        \item úvod
+        \item jadro
+        \begin{itemize}
+            \item súčasný stav riešenej problematiky doma a v zahraničí
+            \item cieľ práce
+            \item metodika práce a metódy skúmania
+            \item výsledky práce
+            \item diskusia
+        \end{itemize}
+        \item záver
+        \item zoznam použitej literatúry
+    \end{enumerate}
+    \item Záverečná časť
+    \begin{enumerate}
+        \item dodatky (podľa potreby)
+        \item prílohy (podľa potreby)
+    \end{enumerate}
+\end{enumerate}
+
+\section{Úvodná časť práce}
+Hlavným obsahom úvodnej časti sú formálne náležitosti práce a musia byť zaradené v~poradí podľa zoznamu v~úvode tejto kapitoly.
+
+\subsection{Obálka, titulný list, zadanie}
+Začiatočné stránky práce automaticky generuje univerzitný
+informačný systém AIS vo formáte PDF.
+Môžeme ich do záverečnej práce vložiť pomocou príkazu \verb|\includepdf| z~balíčka \verb|pdfpages|
+alebo využijeme makrá \verb|FEIcover| a~\verb|FEItitle| na vytvorenie obálky a prvej
+stránky práce.
+Aby boli všetky informácie aktuálne,
+treba venovať pozornosť vyplneniu údajových
+premenných v~úvode hlavného súboru \verb|thesis.tex|.
+
+Zadanie odporúčame vložiť pomocou spomínaného makra
+\verb|\includepdf| tak, že najprv uložíme PDF súbor
+so zadaním do priečinka \verb|includes| a prepíšeme
+názov súboru v argumente makra.
+
+\subsection{Poďakovanie}
+Nepovinná, ale veľmi obľúbená časť práce.
+Je umiestnené na samostatnej strane zväčša v~dolnej časti.
+Jej obsah je ponechaný na autora.
+Obsah poďakovania sa nachádza v~súbore
+\verb|includes/thanks.tex| a~sadzbu má na starosti
+príkaz \verb|\FEIthanks|.
+
+\subsection{Slovenský a anglický abstrakt}
+Definícia abstraktu vychádza z technickej normy STN ISO 214 Dokumentácia.
+Abstrakty (referáty) pre publikácie a dokumentáciu \cite{iso214}.
+Termín abstrakt je skrátené, presné vyjadrenie obsahu
+bez pridanej interpretácie a kritiky.
+Mal by poskytovať čo najviac informácií obsiahnutých v~dokumente.
+
+Abstrakt si netreba zamieňať s termínmi anotácia,
+extrakt alebo rezumé.
+Anotácia je stručná poznámka, alebo vysvetlenie,
+prípadne veľmi stručný opis dokumentu alebo jeho obsahu.
+Extrakt predstavuje časti dokumentu vybratých
+na reprezentáciu celku.
+Rezumé obsahuje stručné zopakovanie významných prínosov
+a~záverov v práci.
+Nachádza sa zvyčajne na konci dokumentu
+a~slúži na doplnenie orientácie čitateľa,
+ktorý študoval predchádzajúci text.
+Ak je práca napísaná v~anglickom jazyku,
+musí obsahovať rezumé v~slovenčine.
+V~slovenskej práci nemusí byť rezumé.
+
+\subsubsection{Účel a použitie abstraktov}
+\begin{itemize}\it
+  \item \uv{Dobre vypracovaný abstrakt umožní čitateľom identifikovať
+  základný obsah dokumentu, rýchlo a presne stanoviť jeho
+  relevanciu, a tak sa rozhodnúť, či potrebujú čítať celý
+  dokument.}
+
+  \item \uv{Čitatelia, pre ktorých predstavuje dokument len okrajový
+  záujem, často získajú z~abstraktu dostatok informácií a nemusia
+  čítať celý dokument.}
+
+  \item \uv{Abstrakty sú často cenné aj pri automatickom vyhľadávaní
+  v~plných textoch na získanie predbežných informácií a na
+  informačný prieskum.}
+\end{itemize}
+\begin{flushright}
+(Citované z normy STN ISO 214 \cite{iso214})
+\end{flushright}
+
+Podľa metodického usmernenia Ministerstva školstva, vedy, výskumu a športu SR č. 56/2011 (čl. 1, ods. 1)
+\emph{\uv{abstrakt obsahuje informáciu o cieľoch práce,
+jej stručnom obsahu a~v~závere abstraktu
+sa charakterizuje splnenie cieľa,
+výsledky a~význam celej práce.
+Súčasťou abstraktu je 3 -- 5 kľúčových slov.
+Abstrakt sa píše súvisle ako jeden odsek a jeho rozsah je
+spravidla 100 až 500 slov}}~\cite{usmernenie562011}.
+
+Text slovenského a~anglického abstraktu sa nachádzajú
+v~súboroch \verb|attachment.tex| a~\verb|attachmentEN.tex| v~priečinku \verb|includes|.
+
+Do dokumentu ich vložia makrá šablóny
+\verb|\FEIabstract| a~\verb|\FEIabstractEN|
+v~hlavnom súbore \verb|thesis.tex|.
+Každé makro má jeden povinný parameter --
+cesta a~názov súboru s~textom abstraktu.
+Makrá zároveň vytlačia pod abstrakty
+v každom jazyku zoznam kľúčových slov.
+
+\subsection{Obsah a zoznamy}
+Obsah je povinný prehľad jednotlivých kapitol
+a~častí práce s~uvedením nadpisov a~strán.
+Začína na samostatnej stránke ako nová kapitola
+s~nadpisom Obsah bez číslovania,
+ktorý sa ale v~samotnom prehľade kapitol nezobrazí.
+
+V~\LaTeX-u zabezpečuje generovanie obsahu príkaz \verb|\tableofcontents|,
+ktorý v~mieste použitia vloží automatický zoznam kapitol s~číslami strán.
+Obsah vytvára na základe použitia nadpisov \verb|\section|,
+\verb|\subsection| a \verb|\subsubsection|.
+Toto makro vytvorí v~pracovnom adresári pomocný textový súbor
+s~príponou .toc a~na základe neho generuje finálnu podobu obsahu.
+Z~toho dôvodu je potrebné kompilátor \LaTeX-u
+spustiť minimálne dvakrát za sebou.
+
+V tejto šablóne má na starosti vytvorenie obsahu makro \verb|\FEIcontent|.
+
+\subsection*{\normalsize Zoznam ilustrácií,
+obrázkov a tabuliek}
+Sú to nepovinné prehľady tzv. plávajúcich objektov.
+\LaTeX\ pozná na tento účel dva príkazy: \verb|\listoffigures| a~\verb|\listoftables|. Šablóna FEIstyle ponúka alternatívne makrá \verb|\FEIlistOfFigures| a~\verb|\FEIlistOfTables|, ktoré okrem toho nastavia požadovaný typ stránky bez číslovania.
+
+Zvlášť užitočný je príkaz \verb|\FEIlistOfFiguresAndTables|.
+Vytvorí totiž spojený zoznam obrázkov a tabuliek s jedným nadpisom.
+
+Ak zoznamy v práci nechceme, môžeme príslušné príkazy z~hlavného súboru \verb|thesis.tex| vymazať alebo ich označiť ako komentár.
+
+\subsection*{\normalsize Zoznam skratiek a značiek}
+V textových výstupoch vedecko-technických odborov sa používa
+množstvo značiek a~skratiek najmä na označenie fyzikálnych
+veličín v matematických vzťahoch,
+ale aj zostručnenie textového prejavu najmä pri zložitých názvoch
+vedeckých metód, zariadení alebo javov.
+Sú to napríklad RTG (röntgenové žiarenie),
+AFM (mikroskop atómových síl),
+TEM (transmisný elektrónový mikroskop),
+IR (infračervené žiarenie),
+AC (obvod striedavého prúdu) a~mnoho iných.
+Ak sa v práci objavia, musí ich autor pri ich prvom výskyte
+jasne zadefinovať,
+prípadne vysvetliť anglický preklad.
+Rovnako to platí pre všetky použité fyzikálne veličiny.
+
+Aj keď je tento zoznam nepovinná súčasť práce,
+odporúčame ho zaradiť kvôli lepšej orientácii čitateľa.
+Zoznam má podobu slovníka,
+značky uvádzame v~abecednom poradí.
+
+Šablóna ponúka dva spôsoby vytvorenia zoznamu a~práce so skratkami a~značkami v~texte.
+\begin{enumerate}
+\item Použitie nástrojov balíka \verb|glossary| umožňuje plne automatickú kontrolu nad veľkým množstvom skratiek. Skratky treba najprv definovať v externom súbore \verb|glossary.tex| a~potom ich môžeme v práci používať dvomi spôsobmi. Pri prvom výskyte použijeme skratku aj s~jej opisom, čo zariadi príkaz \verb|acrfull|.
+Pri ďalších výskytoch v texte už stačí používať iba skrátený tvar pomocou príkazu \verb|acrshort|.
+
+Po prvom skompilovaní je potrebné spustiť externý program \verb|makeglossaries| a~text skompilovať znova, prípadne kvôli správnemu radeniu strán v~obsahu, treba kompiláciu spustiť aj tretíkrát.
+Podobná procedúra sa vyžaduje aj pri práci s~citáciami v systéme Bib\LaTeX.
+Makro \verb|\FEIlistOfGlossaries| vytvorí abecedne zoradený zoznam.
+
+Ak sa rozhodneme pre túto možnosť,
+treba v hlavnom súbore \verb|thesis.tex| odstrániť
+znak komentára pred príkazmi
+\verb|\FEIglossaries{includes/glossary}|
+a~\verb|\FEIlistOfGlossaries|. Pozor, tieto dva
+riadky sa v súbore \verb|thesis.tex|
+nachádzajú na rôznych miestach.
+Nepremiestňujeme ich.
+
+Balík \verb|glossaries| je nesporne praktická pomôcka, plnohodnotne však funguje iba v anglickom jazyku.
+Pri jeho používaní narazíme na problém so skratkami, ktoré pochádzajú z anglických slov.
+V slovenskom texte však musíme používať ich terminologické ekvivalenty.
+Aj keď si nakoniec vytvoríme slovenský zoznam skratiek, ich automatické použitie bude limitované pri skloňovaní alebo časovaní jednotlivých výrazov.
+
+Viac sa o možnostiach balíka dozvieme z tutoriálu na stránke \href{https://www.ctan.org/pkg/glossaries}{\texttt{www.ctan.org/pkg/ glossaries}}
+
+\item Skratky zadáme manuálne.
+Automatické riešenie v predchádzajúcom bode úplne zlyháva pri práci s veličinami, ktorých zoznam predstavuje praktickú pomôcku najmä vo fyzikálnych a~matematických oblastiach techniky. Na označovanie veličín používame rôzne symboly a ich modifikácie, napríklad písmená gréckej abecedy ($\alpha, \omega, \xi$), symboly so šípkami v prípade vektorov ($\vec r, \vec\varphi, \vec\imath$), preškrtnuté h ($\hbar$), zdvojené symboly ako $\mathbb Z$, prípadne aj niečo takéto: $\aleph_0$, čo je hebrejské písmeno alef.
+
+Súbor \verb|manual_glossary.tex| obsahuje príklad, ako by mohol takýto ručne vyrobený zoznam vyzerať.
+Makro
+\verb|\FEImanualListOfGlossaries|, ktorého parameter je cesta a názov spomínaného súboru, zariadi samotnú sadzbu.
+Zoznam si môžeme postupne vytvárať pri písaní a~udržiavať ho v abecednom poradí.
+\end{enumerate}
+
+\subsection*{\normalsize Zoznamy algoritmov a výpisov kódov programov}
+Tieto typy zoznamov vytvoria makrá \verb|\FEIlistOfAlgorithms|, \verb|\FEIlistOfListings| a~sú špecifické pre informatické odbory.
+
+Ak v práci nemáme výpisy kódov alebo algoritmy,
+bude potrebné riadky s týmito príkazmi vymazať alebo označiť ako komentár. O~uvádzaní častí kódov
+a~zápisov algoritmov píšeme v kapitole \ref{sec:listings}.
+
+\section{Hlavná textová časť}
+Samotný autorský obsah práce začína až tu.
+Tradične text členíme na úvod, jadro a~záver,
+pričom úvod a~záver sú samostatné kapitoly,
+ktoré nečíslujeme a~je vhodné,
+ak ich označíme nadpismi \emph{Úvod} a~\emph{Záver}.
+Strednú časť -- jadro -- neoznačujeme.
+
+\subsection{Úvod}
+Prvá kapitola hlavnej časti práce má názov úvod, nečíslujeme ju.
+Ide o~ucelený text v~rozsahu niekoľkých súvislých odsekov textu,
+v~ktorých stručne a~výstižne charakterizujeme stav poznania
+a~praxe v~danej oblasti,
+oboznámime čitateľa s~cieľmi a~závermi práce.
+Nosnou myšlienkou úvodu okrem uvedenia čitateľa do problematiky
+je jasná motivácia autora a~jeho postoje,
+ktoré viedli k~spracovaniu témy práce [3].
+
+Nepísané pravidlo hovorí,
+že úvod a~záver práce sa píšu až ako posledné.
+Tento poznatok vyplýva z~praxe a~má dva dôvody:
+1.~na začiatku nemusí byť úplne zrejmé, čo všetko sa v~práci naozaj objaví;
+2.~úvod predstavuje samostatnú literárnu formu,
+na ktorej sa neskúsený autor zasekne už na začiatku.
+Aby sme sa tomu vyhli,
+necháme si jeho napísanie až na záver,
+keď už bude väčšina hlavného obsahu práce hotová.
+
+Text úvodu sa nachádza v súbore \verb|includes/introduction.tex|
+a~jeho sadzbu zariadi makro \verb|\FEIintroduction{includes/introduction}|.
+
+\subsection{Jadro}
+Táto časť práce \emph{nezačína} nadpisom \emph{Jadro}.
+Obsah jadra členíme zvyčajne na niekoľko číslovaných
+kapitol počínajúc číslom 1.
+Prvá kapitola býva prehľad súčasného stavu problematiky,
+ale môže mať aj iný názov,
+napríklad \emph{Teoretická časť,} alebo rovno názov oblasti,
+o~ktorej sa v nej bude písať
+(trebárs \emph{Metóda prenosových matíc}).
+
+Pri písaní strednej časti práce nemusíme postupovať úplne
+striktne podľa tohto návodu.
+Treba však pamätať na to,
+aby sme jasne oddelili poznatky,
+ktoré pochádzajú od iných autorov,
+a~sú súčasťou všeobecného prehľadu,
+od poznatkov a~výsledkov samotnej práce autora.
+Nemusia byť oddelené fyzicky v~rôznych odsekoch,
+či kapitolách, z~textu však musí byť jasné,
+ktoré výsledky sú originálne a~ktoré sú prebrané.
+Odporúčaná štruktúra tejto časti je na
+strane~\pageref{sec:StrukturaPrace}.
+
+Samotný obsah jadra sa nachádza v~súbore \verb|includes/core.tex|.
+Do hlavného dokumentu \verb|thesis.tex| ho načíta makro \verb|\FEIcore{includes/core}|.
+Parameter makra je názov súboru bez prípony.
+Ak je \verb|core.tex| príliš obsiahly,
+môžeme jednotlivé kapitoly uložiť do samostatných
+súborov a tie načítať do \verb|core.tex|
+pomocou \TeX-ového príkazu \verb|\input|.
+
+\subsection*{\normalsize Súčasný stav riešenej problematiky
+doma a~v~zahraničí}
+Podľa zvyklostí by malo približne 30\,\% práce obsahovať prehľad
+súčasného stavu a~poznatkov v~oblasti,
+ktorej sa týka predkladaná práca.
+Ide o~veľmi dôležitý aspekt,
+ktorým študent preukáže,
+že je schopný problematiku naštudovať,
+porozumieť jej a~napísať o~nej súvislý text.
+Dokáže na základe existujúcich poznatkov vysvetliť javy,
+ktoré v~práci študuje.
+
+Kľúčová činnosť pri príprave textu je štúdium prác publikovaných
+u~nás a~v~zahraničí.
+Nejde iba o~to, že autor píše myšlienky, ktoré sa kdesi dozvedel,
+mal by tiež poznať ich primárne zdroje,
+správne s~nimi pracovať a~citovať ich.
+Dôležitý prínos študenta spočíva v~spájaní viacerých poznatkov
+z~rôznych zdrojov do nového celku.
+
+\subsection*{\normalsize Cieľ práce}
+Bakalárska a diplomová práca má jasne uvedené ciele v zadaní práce. Nie je preto nutné uvádzať samostatnú kapitolu, kde budú ciele ešte raz vymenované. Je však žiadúce, ak sa zmienka o jednotlivých cieľoch v texte vyskytuje a poukazuje sa na ich splnenie, nesplnenie, prípadne ak hlavné ciele pozostávajú z čiastkových cieľov, treba ich jasne špecifikovať.
+
+\subsection*{\normalsize Metodika práce a metódy skúmania}
+V experimentálnych prácach býva v tejto časti podrobne zdokumentované prístrojové vybavenie, riadiaci a simulačný softvér, laboratórne podmienky a podobne. Metodické usmernenie [3] odporúča nasledujúci obsah tejto časti práce: a) charakteristika objektu skúmania, b) pracovné postupy, c) spôsob získavania údajov a ich zdroje, d) použité metódy vyhodnotenia a interpretácie výsledkov, e) štatistické metódy.
+
+\subsection*{\normalsize Výsledky práce a diskusia}
+Študent zaujme k získaným výsledkom jasné postoje,
+porovnáva ich s inými autormi, prípadne navrhuje ich ďalšie aplikácie.
+Zhodnotí a~komentuje ich na základe štatistického spracovania dát (smerodajné odchýlky, priemery, regresie a podobne).
+Odporúčame, aby táto časť tvorila 30 až 40 percent záverečnej práce.
+Môžeme ju rozdeliť na dve samostatné podkapitoly: sumarizáciu výsledkov a~diskusiu formou eseje.
+
+\subsection{Záver}
+Záver práce predstavuje samostatnú nečíslovanú kapitolu
+v~rozsahu niekoľkých odsekov alebo strán.
+Obsahuje zhrnutie výsledkov vo vzťahu k~stanoveným cieľom~[3].
+Rovnako, ako pri úvode, treba si dať
+aj na kompozícii záveru zvlášť záležať.
+Väčšina čitateľov si prečíta v~prvom rade úvod a~záver práce,
+aby zistili, či im stojí za to pustiť sa do podrobnejšieho
+štúdia celého textu.
+Aj oponent vychádza najmä z dobre spracovaného záveru.
+
+Jasne deklarujeme splnenia cieľov a naznačíme ďalšie možné smerovanie študovanej problematiky. Vyjadrujeme sa pozitívne. Ak sa nepodarilo úplne naplniť niektorú z~pôvodných predstáv, nerozpisujeme sa o tom.
+
+Ako príklad použijeme nepríjemnú modelovú situáciu,
+ktorá môže počas výskumu nastať.
+Povedzme, že cieľ záverečnej práce bol odmerať
+optické parametre tenkých TiO$_2$ vrstiev.%
+\footnote{TiO$_2$ je chemická značka oxidu titaničitého,
+ktorý sa používa napríklad pri solárnych článkoch
+ako priehľadná vrchná elektróda.
+Ide totiž o~typ oxidu s~vlastnosťami polovodičov,
+čiže môže za určitých podmienok viesť elektrický prúd.
+Zároveň je pre viditeľné svetlo priehľadný,
+čo nebýva pri polovodičoch bežné.
+Optické a~elektrické vlastnosti vrstvy TiO$_2$
+často závisia od parametrov technologického procesu.}
+Z~dôvodu havárie zariadenia sa nepodarilo takéto vzorky získať
+a~v~skutočnosti sme mohli pracovať iba
+s~tradičnými SiO$_2$ vrstvami.%
+\footnote{Oxid kremičitý sa v~mikroelektronike používa
+ako nevodivá izolačná vrstva.
+Jeho materiálové vlastnosti sú veľmi dobre preskúmané
+a~všeobecne známe.
+S~jeho amorfnou formou sa v~každodennom živote bežne stretávame,
+je to obyčajné sklo.}
+Vzniknutú situáciu zhodnotíme v~závere vecne a~pravdivo:
+
+\begin{quote}
+  \emph{Aj napriek poruche technologického zariadenia sme
+  dokázali zabezpečiť náhradné vzorky a realizovať merania
+  optických vlastností tenkých vrstiev termálneho
+  SiO$_\mathit{2}$.
+  Poznatky, ktoré sme získali pri práci s~pokročilými
+  experimentálnymi zariadeniami následne využijeme vo výskume
+  materiálových vlastností TiO$_\mathit{2}$ vrstiev.
+  V~diskusii sme naznačili možné rozšírenie existujúcich
+  metód na tento druh materiálu.}
+\end{quote}
+
+Ak priznáme, že zariadenie sa pokazilo
+a tým pádom sme nesplnili ciele,
+stane sa záverečná práca neobhájiteľnou.
+Nasledujúci príklad je ukážka takejto nevhodnej formulácie:
+
+\begin{quote}
+  \emph{Počas prípravy tenkých vrstiev došlo k neočakávanej
+  poruche technologického zariadenia,
+  ktorá znemožnila výrobu plánovaných vzoriek.
+  Merania optických parametrov TIO$_\mathit2$
+  sme preto nerealizovali.
+  Veríme, že experimenty s~náhradnými vzorkami tenkých vrstiev
+  termálneho SiO$_\mathit2$ pomôžu v~budúcnosti
+  aj pri výskume iných materiálov.}
+\end{quote}
+
+Text obsahuje tri zápory, je pesimistický,
+s~nejasným výhľadom do budúcnosti.
+Cítiť z~neho sklamanie a~frustráciu zo vzniknutej situácie,
+ktorá sa javí ako neriešiteľná.
+Jednoznačne sme priznali nesplnenie cieľa.
+Aj keď sme urobili úspešné náhradné merania,
+z~textu to nie je zrejmé.
+Záverečné tvrdenie o~možnosti využitia výsledkov
+v~sebe navonok ukrýva istú nádej,
+v~skutočnosti však iba potvrdzuje to,
+že chceme mať toto fiasko čím skôr za sebou.
+
+Pozor ale aj na prílišnú pozitivitu.
+Tá môže, paradoxne, nedostatky ešte viac zvýrazniť.
+Nasledujúca ukážka je síce optimistická,
+avšak do textu práce taktiež nevhodná:
+
+\begin{quote}
+  \emph{Vďaka drobnej poruche technologického zariadenia sme
+  mohli realizovať merania optických vlastností tenkých vrstiev
+  termálneho SiO$_\mathit2$ a~získať tak unikátne výsledky.
+  Nesmierne bohaté skúsenosti s~najkvalitnejšími meracími
+  aparatúrami využijeme aj v~nadväzujúcom výskume.
+  Rozšírenie nadobudnutých kompetencií na iné materiály
+  považujeme za najväčší prínos predkladanej práce.}
+\end{quote}
+
+V tomto príklade vidieť prílišnú snahu zahladiť škody
+a~vychvaľovať sa výsledkami,
+ktoré v~skutočnosti nemajú zvláštny význam.
+Je totiž málo pravdepodobné,
+aby s~SiO$_2$ vznikli unikátne výsledky.
+Text obsahuje nevhodné absolútne kvantifikátory
+(\emph{nesmierne bohaté skúsenosti, najkvalitnejšie aparatúry,
+najväčší prínos});
+bagatelizuje nehodu, dokonca jej ďakuje
+(\emph{vďaka drobnej poruche}),
+čím na ňu zbytočne upozorňuje;
+zámerne sa nezmieňuje o~pôvodných TiO$_2$ vrstvách.
+Nadužívaním cudzích slov (\emph{kompetencie})
+autori zväčša maskujú rôzne nedostatky,
+napríklad vlastnú neistotu.
+
+Zapamätáme si, že vedecký text musí byť jasný, pravdivý a vecný.
+Očistíme ho od akýchkoľvek citových výlevov v prvom rade tým,
+že sa vyhýbame extrémnym kvantifikátorom. Nepoužívame ani tieto:
+\emph{všetci, nikdy, žiaden, každý jeden,}
+pokiaľ nepíšeme matematické vety alebo logické výrazy.
+Ak sa napríklad nepodarilo naprogramovať ani jeden fungujúci kód,
+nenapíšeme,
+že \emph{žiaden program, ktorý sme sa snažili vytvoriť nefunguje}.
+Povieme to miernejšie: \emph{snaha o~vytvorenie funkčného
+programu viedla k~menej presvedčivým výsledkom}.
+Negatívnu skutočnosť formulujeme pozitívne.
+
+Ani pozitívne prínosy zbytočne nepreceňujeme.
+Necháme ich, nech sa chvália samé.
+Namiesto prehnaného zdôrazňovania:
+\emph{Úžasné výsledky všetkých meraní sme dosiahli
+vďaka perfektne pripraveným vzorkám},
+napíšeme vecne:
+\emph{Jednotlivé merania boli úspešné aj
+vďaka kvalitným vzorkám.}
+
+Súbor so záverom v~priečinku \verb|includes| má
+názov \verb|conclusion.tex|
+a~do dokumentu sa dostane prostredníctvom makra
+\verb|\FEIconclusion{includes/conclusion}|
+v~hlavnom súbore projektu \verb|thesis.tex|.
+
+\subsection{Zoznam použitej literatúry}
+Citované zdroje označujeme v texte číslom v hranatých zátvorkách. Ide o poradové číslo uvedenia publikácií tak, ako sa postupne s nimi v texte pracuje.
+
+Po kapitole \emph{Záver} nasleduje ďalšia nečíslovaná kapitola
+s~názvom \emph{Literatúra},
+ktorá obsahuje číslovaný zoznam všetkých
+citovaných literárnych zdrojov v spomínanom poradí.
+Forma tohto zoznamu je pomerne komplikovaná a~podrobne
+ju opisuje norma ISO 690: 2023 Dokumentácia -- Bibliografické odkazy -- Obsah, forma a štruktúra \cite{iso690}.
+Citovanie je v~\LaTeX-u vynikajúco vyriešené.
+V~tomto dokumente citujeme pomocou nadstavby Bib\LaTeX.
+Podrobne sa citáciám budeme venovať v~\ref{sec:citation}. kapitole.
+
+\section{Záverečná časť}
+Na záver práce uvádzame dodatky a prílohy.
+Prílohy práce sú zväčša materiály,
+ktoré majú odlišný formát voči samotnej práci.
+Sú to napríklad pamäťové nosiče,
+dátové súbory, veľkoformátové mapy, výkresy a podobne.
+Každú prílohu treba jasne označiť, očíslovať a~nazvať.
+Zoznam príloh potom uvedieme v~jednom z~dodatkov.
+
+Do tzv. dodatkov umiestňujeme informácie,
+ktoré kvôli rozsahu nemôžu byť v hlavnom texte práce.
+Sú to napríklad údajové listy k~použitým prístrojom
+a~zariadeniam, zdĺhavejšie matematické odvodenia,
+rozsiahlejšie kódy programov, dokumentácia
+k~vytvoreným programom, definície neštandardných objektov,
+ktoré v práci používame,
+série rozsiahlych výsledkov alebo meraní
+a~ich grafy, fotografie a podobne.
+
+Jednotlivé kapitoly v~dodatkoch číslujeme veľkými písmenami, čísla podkapitol majú formu A.1, B.3.2, atď.
+Na tento účel vytvoríme pre každý dodatok samostatný súbor v~priečinku \verb|includes/|, odporúčame názov súboru v~tvare \verb|attachmentA.tex| alebo podobne.
+Každý dodatok je potom potrebné načítať v~hlavnom súbore \verb|thesis.tex| nasledujúcim spôsobom:
+\begin{verbatim}
+\FEIappendix{Názov prílohy\label{att:A}}{includes/attachmentA}
+\end{verbatim}
+Prvý parameter makra je názov dodatku a ten sa nesmie nachádzať v~zdrojovom súbore \verb|attachemntA.tex|.

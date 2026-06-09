@@ -1,0 +1,370 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                          %%
+%% Formát a jazyk dokumentu %%
+%%                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Formát a jazyk}\label{sec:formatLanguage}
+% TODO: Treba upravit nizsie
+\section{Formát dokumentu}
+Rozmery stránky, typy písma, veľkosti, riadkovanie,
+medzery medzi odsekmi, formát nadpisov, obrázkov, tabuliek,
+rovníc a~ďalšie vizuálne parametre záverečnej práce
+rešpektujú do maximálnej miery normu STN 01 6910: 2023
+Pravidlá písania a úpravy písomností~\cite{stn016910}.
+
+\subsection*{Rozmery strany}
+Veľkosť bežnej textovej strany záverečnej práce je A4,
+t.~j. 21\,cm $\times$ 29,7\,cm.
+Pravý a~ľavý okraj majú šírku 2,75\,cm,
+horný a~dolný okraj majú výšku 3\,cm.
+Päta stránky, v~ktorej sa nachádza číslo strany,
+je od spodnej hrany stránky vzdialená o~1,25\,cm.
+Šírka textu je 15,5\,cm, jeho výška 23,7\,cm.
+Horný a~dolný okraj obálky sú z~estetických
+dôvodov zmenšené na 2\,cm.
+
+\subsection*{Písmo a riadkovanie}
+Základný font šablóny je normálny rez tzv. antikvového písma
+s~veľkosťou 12\,pt.
+V~tejto šablóne je to Computer Modern.
+Vhodné sú aj iné fonty s pätkami ako Times, Georgia, Palatino a~podobne.
+Na obálke a~titulnom liste používame bezpätkový (grotesk) font Latin Modern.
+Jednotlivé typy odsekov (nadpisy, poznámky a~pod.)
+majú jednotný typ písma,
+odlišnosti vyjadrujeme rezom (polotučné písmo, kurzíva)
+alebo veľkosťou.
+
+Parameter \verb|\linespread| má hodnotu 1,25, t.~j.
+vzdialenosť riadkov textu vo veľkosti 12\,pt je 15,6\,pt.
+
+\subsection*{Nadpisy}
+Šablóna záverečnej práce FEIstyle je založená na
+štandardnej šablóne \LaTeX-u article.
+Nadpis najvyššej úrovne je \verb|\section| zodpovedajúci kapitole.
+Podkapitoly sú \verb|\subsection| a~\verb|\subsubsection|.
+Číslovanie kapitol a podkapitol je viacúrovňové typu X.Y.Z, kde X je číslo kapitoly, Y je číslo podkapitoly a Z je číslo časti podkapitoly.
+Číslovanie vyšších úrovní nie je definované.
+Tvar a forma nadpisov zodpovedá norme STN ISO 2145: 1978 Dokumentácia.
+Číslovanie oddielov a~pododdielov písaných dokumentov~\cite{iso2145}.
+
+Nová kapitola začína vždy na novej strane.
+Príkaz \verb|\section| spôsobí okrem sadzby čísla a názvu kapitoly aj ukončenie predošlej kapitoly, vysádzanie všetkých plávajúcich objektov (obrázky, tabuľky, výpisy kódu), ktoré sa nepodarilo umiestniť na príslušné miesto v texte, a prejde na novú stranu.
+
+\section{Jazyk a gramatika}
+Záverečná práca na FEI STU v~Bratislave musí byť napísaná
+buď po slovensky alebo po anglicky.
+Ak je jazyk práce angličtina, musí po závere nasledovať
+rezumé v~slovenskom jazyku.
+
+Záverečná práca univerzitného štúdia sa vyznačuje
+vysokou jazykovou úrovňou.
+Gramatické a štylistické chyby sú neprípustné.
+Študent by mal tejto stránke diela venovať patričnú
+pozornosť a~podľa možností nechať rukopis prejsť
+kvalifikovanou jazykovou kontrolou.
+Najmä bakalárska práca predstavuje v~živote väčšiny študentov
+prvý rozsiahlejší autorský útvar,
+ktorý má významný vplyv na jeho ďalší život a~kariéru.
+
+Aj keď väčšina textových editorov dokáže odhaľovať preklepy,
+neporadí si s~komplikovanejšou gramatikou a~štylistikou.
+Treba sa riadiť najmä pravidlami slovenského pravopisu,
+slovníkmi slovenského jazyka a~ďalšími zdrojmi,
+ktoré možno nájsť na webových stránkach
+Jazykovedného ústavu Ľudovíta Štúra SAV.%
+\footnote{\href{https://www.juls.savba.sk/}{\tt www.juls.savba.sk}}
+Využiť môžeme aj jazykovú poradňu,
+ktorú poskytuje ústav bezplatne a~to buď telefonicky alebo
+prostredníctvom emailovej komunikácie.
+Cenným zdrojom informácií môže byť aj Jazyková poradňa
+denníka SME v spolupráci
+s~Jazykovedným ústavom Ľudovíta Štúra SAV%
+\footnote{\href{https://jazykovaporadna.sme.sk/}{\tt jazykovaporadna.sme.sk}}
+alebo online slovníky slovenského jazyka,%
+\footnote{\href{https://slovnik.juls.savba.sk/}{\tt slovnik.juls.savba.sk}}
+prípadne národný jazykový korpus.%
+\footnote{\href{https://korpus.sk/}{\tt korpus.sk}}
+
+Pri písaní práce dbáme najmä na pravopisné javy ako sú písanie
+tvrdého a~mäkkého y/i vo vybraných slovách,
+v~príponách a~koncovkách pri skloňovaní
+(pekný muž, ale pekní muži),
+v~číslovkách (rozprávali sme sa so siedmimi v~poradí
+-- skončili siedmi v~poradí,
+ale hrali sme sa so siedmymi deťmi -- detí bolo sedem), atď.
+Rovnako dôležité je správne písanie rodov,
+skloňovanie a časovanie.
+
+Veľmi komplexná a~dôležitá zložka gramatiky
+je písanie čiarok v~súvetiach.
+
+Popri gramatike je podstatná aj štylistická tvorba viet,
+ktorú musí študent univerzity zvládať na vysokej úrovni.
+
+\subsection{Delenie slov}
+Tzv. \emph{textové procesory} ako MS Word, LibreOffice a~Apache OpenOffice
+ponúkajú automatické delenie slov na konci riadka.
+Systém na sadzbu textu \LaTeX\ má túto funkciu automaticky zapnutú a~jej slovenská lokalizácia je veľmi kvalitne spracovaná.
+
+Vo veľkej väčšine prípadov je delenie
+v~súlade s~pravidlami jazyka.
+Môžu sa vyskytnúť sporné okolnosti,
+kedy počítač nerozdelí slovo správne.
+Väčšinou máme možnosť do procesu zasiahnuť
+a~ručne kontrolovať delenie slov na miestach,
+s ktorými si softvér nevie poradiť.
+Príkaz na preferované rozdelenie slova je \verb|\-|.
+Napríklad slovo \verb|predstave\-nie| \LaTeX\
+preferovane rozdelí v mieste prípony.
+
+V každom prípade je žiadúce slová na konci riadka deliť
+a\ túto možnosť nevypínať.
+Prospieva to práci ako po technickej,
+tak aj po estetickej stránke.
+Odseky obsahujú menej dier,
+textová oblasť stránky je vyplnená homogénnejšie,
+čo prispieva k~lepšej čitateľnosti.
+V prípade, že používame zarovnávanie do bloku tak,
+ako aj v~tomto dokumente,
+je prítomnosť dier v~odseku značne rušivá.
+Ak používame zarovnanie textu doľava,
+nepoužívanie delenia slov má vplyv na vznik tzv. riek,
+čo je náhle striedanie dlhých a~krátkych riadkov.
+Pravý okraj textu je nepekne zubatý.
+
+Pravidlá rozdeľovania slov na konci riadka sú pomerne zložité.
+Základné pravidlo, ktoré si pamätáme zo základnej školy,
+je, že slová delíme na slabiky pred spoluhláskou alebo medzi
+dvomi spoluhláskami.
+Ak si nie sme istí, uprednostňujeme delenie v mieste,
+kde sa ku koreňu slova pripájajú predpony alebo prípony,
+prípadne v~mieste spojenia slov v~zloženom slove.
+
+Pri slovách utvorených predponou alebo príponou
+uprednostňujeme morfologické delenie
+pred rozdelením koreňa slova.
+Najskôr sa snažíme deliť slovo za predponou,
+ak to nejde, skúsime to pred príponou.
+Napríklad slovo \emph{predstavenie}
+delíme na slabiky takto: \emph{pred-sta-ve-nie}.
+Pri rozdeľovaní slov uprednostňujeme model
+\emph{pred-stavenie}, výnimočne aj \emph{pred-stave-nie}.
+V slove \emph{výklenok} sa uplatňuje pravidlo morfologického
+delenia pred delením v~mieste zhluku spoluhlások.
+Sylabická stavba tohto slova je \emph{vý-kle-nok},
+nie \emph{výk-le-nok},
+pretože slovo pozostáva z troch častí: predpony \emph{vý},
+koreňa \emph{kle} a prípony \emph{nok}.
+Mohli by sme namietať, že prípona je \emph{ok},
+pomocou ktorej bolo vytvorené podstatné meno zo slovesa
+klenúť alebo z~prídavného mena klenutý,
+kde identifikujeme koreň \emph{klen}.
+V skutočnosti je však príponou \emph{-nok}.
+Morfológia je pomerne komplexná problematika,
+a~nedokážeme tu obsiahnuť všetky jej detaily.
+Väčšinou sa môžeme spoľahnúť na softvér,
+že slová rozdelí správne.
+V prípade pochybností využijeme externé pomôcky spomenuté
+v~úvode tejto kapitoly.
+
+Slová spojené spojovníkom rozdeľujeme v~mieste spojovníka tak,
+že spojovník napíšeme na konci aj na začiatku riadka.
+Slovo \emph{vedecko-pedagogický} môžeme rozdeliť takto:
+\emph{ve-dec-ko-pe-da-go-gic-ký}.
+Ak delenie padne na miesto spojenia slov,
+rozdelíme ho nasledujúcim spôsobom:\\
+\indent\emph{vedecko-}\\
+\indent\emph{-pedagogický}
+
+V šablóne rieši tento problém príkaz
+\verb|\languageattribute{slovak}{split}|,
+ktorý je súčasťou jazykového balíka \verb|babel|.
+
+Nesprávne delenie slov sa v~práci zvyčajne objaví
+len zriedkavo a~nemá vplyv na jej hodnotenie.
+Netreba sa naň príliš sústrediť a~robiť si starosti.
+Celkový vzhľad práce viac naruší vypnutie delenia slov,
+než občasná malá chyba.
+
+\subsection{Jednopísmenové predložky a spojky}
+Hovoríme o predložkách k, o, v, s, z,
+ktoré by nemali ostať osamotené na konci riadka.
+Do tejto kategórie patria aj spojky a, i.
+Jednopísmenové slová pripájame k~nasledujúcemu slovu pomocou
+tzv. \emph{nedeliteľnej medzery},
+čo je špeciálny netlačiteľný znak.
+V kódovaní UTF-8 má číslo 00A0 (ASCII 160)
+a~hovorí textovému procesoru,
+že na tomto mieste nesmie byť za žiadnych okolností
+koniec riadka.
+V programe MS Word ho zadáme použitím klávesovej skratky
+Ctrl-Shift-Medzera.
+V \LaTeX-u\ zapíšeme nedeliteľnú medzeru s~premenlivou šírkou
+ako symbol vlnovka (\verb|~|)
+Napríklad slovné spojenie \emph{v~priestore} napíšeme takto:
+\verb|v~priestore|.
+Na rozdiel od Wordu, \LaTeX\ takéto medzery nevkladá automaticky
+a treba to urobiť ručne.
+
+Existuje viacero medzier, ktoré sú tiež nedeliteľné a~majú pevnú šírku.
+Najpoužívanejšia tzv. úzka medzera a zapíšeme ju ako \verb|\,|.
+Takýto typ medzery používame pri zápise hodnôt fyzikálnych veličín a vkladáme ju medzi číslo a jednotku.
+
+\section{Štylistika}
+Niektorí oponenti vyčítajú študentom príliš dlhé súvetia,
+iní zas príliš krátke.
+Pravda je, že jednoduché vety pôsobia školácky,
+zatiaľ čo dlhé súvetia sú často nezrozumiteľné a~únavné.
+
+V prvom rade sa snažíme nevrstviť podraďovacie súvetia.
+Vo vete \emph{Elektrostatické pole je fyzikálne pole,
+ktoré tvoria elektrické náboje, ktoré sú v pokoji}
+je dvakrát použitá spojka ktoré,
+čo je síce prípustné, avšak nie príliš estetické.
+Vetu môžeme opraviť takto:
+\emph{Elektrostatické pole je fyzikálne
+pole tvorené elektrickými nábojmi, ktoré sú v pokoji.}
+Ak sa chceme vyhnúť trpnému rodu,
+môžeme vetu preformulovať nasledujúcim spôsobom:
+\emph{Elektrostatické pole tvoria elektrické náboje,
+ktoré sú v~pokoji.}
+Vypadol síce pojem fyzikálne pole,
+ale zmysel vety zostal nezmenený.
+
+Správne a~plynulo bude veta vyzerať aj v~tomto tvare:
+\emph{Elektrostatické pole je fyzikálne pole,
+ktoré tvoria elektrické náboje v pokoji.}
+V prípade potreby môžeme vetu napísať aj inak:
+\emph{Fyzikálne pole elektrických nábojov,
+ktoré sú v pokoji, nazývame elektrostatické pole.}
+
+Obmieňame štruktúru po sebe nasledujúcich viet:
+\emph{Z výsledkov merania je zrejmé,
+že predpoklad o~zvyšovaní pohyblivosti nosičov náboja
+s~teplotou bol správny.
+Na začiatku práce sme hovorili o~tom,
+že toto tvrdenie podporíme hodnovernými experimentálnymi dátami.}
+Obe súvetia sú podraďovacie so spojkou že.
+Aby sme sa vyhli opakovaniu rovnakého typu viet,
+môžeme prvú vetu prepísať:
+\emph{Výsledky merania potvrdili predpoklad o~zvyšovaní
+pohyblivosti nosičov náboja s~rastúcou teplotou.}
+Druhú vetu ponecháme bez zmeny.
+
+Veľmi osviežujúco pôsobí, ak medzi dlhé a~kvetnaté súvetia
+občas vložíme jednoduchú holú vetu.
+Použijeme predchádzajúci príklad:
+\emph{Na začiatku práce sme hovorili o~tom,
+že predpoklad o~zvyšovaní pohyblivosti nosičov náboja
+s~rastúcou teplotou podporíme hodnovernými
+experimentálnymi dátami.
+Merania ho potvrdili.}
+Tento malý trik je nečakane účinný a~prispieva k~lepšiemu
+toku myšlienok.
+
+Pozor, v~texte pozostávajúcom z~krátkych jednoduchých viet
+je niekoľkoriadkové súvetie desivé:
+\emph{Pohyblivosť rastie s~teplotou.
+Hovorili sme o~tom už na začiatku.
+Tvrdenie ešte podporíme experimentom.
+Ukazuje sa, že sme predpoklad o~rastúcej pohyblivosti
+nosičov náboja so zvyšujúcou sa teplotou,
+pokiaľ berieme do úvahy výsledky meraní,
+formulovali správne.}
+
+Aby bol písaný text zaujímavý a~udržal čitateľov záujem,
+používame stredne dlhé súvetia pozostávajúce maximálne
+z~dvoch až troch viet.
+Občas text oživíme jednoduchou krátkou vetou.
+Dávame si pri tom pozor,
+aby táto činnosť nebola príliš schematická.
+
+\section{Anglický jazyk}
+Šablóna FEIstyle podporuje slovenský a anglický jazyk.
+Pre prácu v anglickom jazyku je potrebné túto skutočnosť nastaviť v preambule hlavného súboru \verb|thesis.tex| ako nepovinný parameter \verb|en| príkazu definície šablóny
+\begin{trivlist}
+\item \texttt{\textbackslash documentclass[bp,en]\{FEIstyle\}}
+\end{trivlist}
+Prvý parameter určuje, či ide o bakalársku (\verb|bp|) alebo diplomovú (\verb|dp|) prácu.
+
+Anglická práca musí obsahovať po závere rezumé a na to je potrebné odstrániť komentár pred príkazom
+\verb|\FEIresume{includes/resume}|.
+
+Na jazykovú lokalizáciu používame balík \verb|babel|.
+Ak sa v práci písanej v slovenčine nachádzajú výrazy v angličtine,
+uvedieme takýto text do makra \verb|\foreignlanguage|, čím zabezpečíme správne medzery a~delenie slov.
+Napríklad pri zavádzaní skratky AI môžeme napísať, že ide o anglický výraz pre umelú inteligencie \foreignlanguage{english}{Artificial Intelligence}.
+Zapíšeme ho nasledujúcim spôsobom:
+\begin{verbatim}
+\foreignlanguage{english}{Artificial Intelligence}
+\end{verbatim}
+
+Ak nastavíme parametrom \verb|en| anglický jazyk ako hlavný, stane sa slovenčina cudzím jazykom.
+
+\section{Použitie umelej inteligencie}\label{sec:utilizingAI}
+Na optimalizáciu formulácie myšlienok môžeme využiť služby
+umelej inteligencie (AI, z~ang. \emph{\foreignlanguage{english}{artificial intelligence}}) a~tzv. veľkých jazykových modelov (LLM, z~ang. \emph{\foreignlanguage{english}{large language model}}).
+Umelá inteligencia dokáže kontrolovať rozsiahlejšie časti prác,
+vyhľadáva chyby a navrhuje vhodnejšie
+formulácie na základe pravidiel,
+ktoré sme aplikovali v predchádzajúcom texte.
+Neosvedčuje sa však pri kompozícii textov.
+Neuspokojivé výsledky dosahujeme aj v prípadoch,
+kedy necháme umelú inteligenciu preformulovať celé odseky.
+Zanáša do nich chyby a nezmysly, ktoré tam pôvodne neboli.
+Ťažko sa potom odhaľujú.
+Tento jav poznáme ako tzv.
+halucinácie a trpia nimi všetky nástroje AI,
+vrátane najznámejšieho ChatGPT.
+
+Napriek tomu predstavujú služby AI silný nástroj pri tvorbe pôvodného obsahu, zvlášť užitočné sú tzv. generatívne umelé inteligencie (GAI),
+ktoré dokážu vytvárať výstupy takmer na nerozoznanie od tvorby človeka.
+Ich správna aplikácia nepochybne prispieva k~vyššej jazykovej a obsahovej kvalite záverečných prác.
+Treba však mať na pamäti, že záverečná práca má byť
+pôvodné autorské dielo študenta a všetky časti,
+ktoré nepochádzajú od autora musia byť riadne
+zdokumentované a deklarované v~zozname použitých zdrojov.
+V žiadnom prípade sa neodporúča, aby
+GAI formulovala pôvodné myšlienky
+alebo súvislé časti práce.
+Takéto konanie považujeme za nečestné podobne,
+ako keby prácu písal niekto iný,
+prípadne by boli celé odseky prebrané z iného zdroja bez korektného citovania (pozri kapitolu \ref{sec:citation}).
+
+Používane umelej inteligencie pri písaní záverečných prác
+upravuje opatrenie rektora STU v Bratislave č. 1/2024-O, ktoré budeme ďalej v~texte uvádzať ako \uv{opatrenie}~\cite{opatrenie12024}.
+
+\subsubsection*{Povolené činnosti umelej inteligencie bez potreby deklarácie}
+Podľa čl. V, ods. 2, písm. a) opatrenia môžu študenti používať GAI bez potreby deklarácie na tieto činnosti: kontrola gramatiky, oprava textu, tvorba osnovy, zhromažďovanie informácií a~použitie výpočtových metód a~softvérov, ktoré obsahujú prvky AI.
+
+\subsubsection*{Deklarácia činnosti generatívnej umelej inteligencie}
+Čl. V, ods. 2, písmeno b) opatrenia obsahuje zoznam možností použitia GAI, ktoré je potrebné v práci deklarovať na konci po zozname literatúry.
+Ide o nasledujúce činnosti: preklady medzi jazykmi, úpravy a reformulácie textu, tvorba zhrnutia a rešerší, citovanie odpovedí GAI, tvorba počítačových programov, tvorba grafického obsahu a obrázkov.
+
+V závere práce, uvedieme za zoznamom literatúry
+časti textu vytvorené s~pomocou AI, spôsob ich využitia a použitý nástroj AI (Opatrenie \cite{opatrenie12024}, čl. VI., ods. 2).
+
+V hlavnom súbore záverečnej práce \verb|thesis.tex| je príkaz
+\verb|\FEIaiDeclaration| na načítanie súboru \verb|ai_declaration.tex| z~priečinka \verb|includes|.
+Každý výskyt použitia nástrojov AI zapíšeme ako
+položku \verb|\item| do pripraveného prostredia
+\verb|trivlist| v tomto súbore.
+Formát a~obsah jednotlivých záznamov je naznačený v prílohe opatrenia číslo 1/2024-O.
+Záznamy obsahujú tieto prvky:
+\begin{trivlist}
+  \item Názov spoločnosti (dátum), Názov nástroja, čast práce, účel použitia.
+\end{trivlist}
+
+Predchádzajúci vzorec vygeneroval nástroj ChatGPT 4o od firmy
+OpenAI dňa 2. 2. 2025 na základe analýzy spomínaného opatrenia.
+V deklarácii použitia umelej inteligencie sa zapíšeme tento
+záznam:
+\begin{trivlist}
+  \item OpenAI (2025), ChatGPT 4o, časť \ref{sec:utilizingAI},
+  generovanie vzorca záznamu použitia AI.
+\end{trivlist}
+
+Súčasná verzia šablóny FEIstyle nedisponuje nástrojmi na
+automatizáciu záznamov činnosti AI.
+Preto ich treba zapisovať ručne do súboru
+\verb|includes/ai_declaration.tex|.

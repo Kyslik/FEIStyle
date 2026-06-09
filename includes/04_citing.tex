@@ -1,0 +1,465 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                             %%
+%% Citovanie externých zdrojov %%
+%%                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Citovanie externých zdrojov}\label{sec:citation}
+V~súvislosti s~preberaním časti obsahu iných diel
+rozoznávame dva pojmy. Sú to citát a~citácia.
+
+Citát je doslovná reprodukcia prevzatého textu,
+ktorý môžeme v~práci použiť dvomi spôsobmi.
+Buď ako súčasť odseku textu,
+alebo celý citovaný text vysádžeme v~samostatnom odseku.
+V oboch prípadoch je zvykom citovaný text uzavrieť do úvodzoviek
+a~zvýrazniť šikmým rezom písma.
+Za citovaným textom uvedieme meno autora,
+prípadne názov diela, rok a nasleduje číslo bibliografického
+zdroja v~hranatých zátvorkách uvádzajúce poradie
+v~zozname použitej literatúry v~závere práce.
+
+Na citovanie v rámci odseku môžeme využiť makrá \verb|\uv| pre
+správne slovenské úvodzovky a \verb|\emph|,
+ktoré zabezpečí vytlačenie textu kurzívou.
+
+Samostatne vysádzaný citát uzavrieme v \LaTeX-u do prostredia
+\verb|\begin{quote}...| \verb|\end{quote}|.
+
+Citácia je nepriamo prebraná a~prerozprávaná
+časť citovanej práce.
+Môže to byť vedecká myšlienka, odkaz na výsledky výskumu,
+dôležitý poznatok, matematický vzťah a~podobne.
+Schopnosť študenta pracovať s~literatúrou a~s~externými zdrojmi
+je dôležitý moment pri hodnotení spôsobilosti uchádzača
+o~vysokoškolský titul.
+Tomuto aspektu práce treba preto venovať patričnú pozornosť.
+
+Užitočný prehľad spôsobov citácií ponúkajú autorky
+Beáta Bellérová a~Lucia Lichnerová v~článku v~časopise ITLib~\cite{Lichnerova2023Nove}.
+
+\section{Odkazy na citované diela}
+Vo vedecko-technických oblastiach, do ktorých patria aj študijné programy na našej fakulte, je zvykom používať numerický systém citovania. Jednotlivé zdroje sú očíslované podľa poradia výskytu v texte, pričom číslo zdroja uvádzame v hranatých zátvorkách.
+Citovanie sa riadi technickou normou STN ISO 690: 2022 Informácie a dokumentácia: Návod na tvorbu bibliografických odkazov na informačné pramene a~ich citovanie~\cite{iso690}.
+
+Systém \LaTeX\ umožňuje pracovať s citáciami niekoľkými spôsobmi.
+Šablóna FEIstyle pracuje s balíčkom \verb|biblatex| na správu citácií. Jeho základom je externý databázový súbor \texttt{bibliography.bib},
+ktorý sa nachádza v hlavnom priečinku projektu záverečnej práce.
+Súbor obsahuje bibliografické záznamy citovaných diel
+v špecifickom formáte.
+Každý záznam začína jedinečným identifikátorom, ktorý zvyčajne
+volíme tak, aby sme si ho jednoducho pamätali.
+Ak totiž v texte chceme dielo citovať, napíšeme makro \verb|\cite{identifikator}| a~v~práci sa automaticky objaví poradové číslo citovaného diela v hranatej zátvorke.
+Číslo citácii pridelí externý program \textsl{biber},
+ktorý prejde celý dokument, identifikuje výskyty makra \verb|\cite|, zoradí citované diela podľa výskytu v~práci,
+pridelí im čísla a vytvorí podklady na zoznam literatúry na konci práce.
+Pri ďalšom spustení kompilátora \TeX-u dôjde k~nahradeniu makier
+\verb|\cite| číslami v hranatých zátvorkách a makro šablóny
+\verb|\FEIbibliography| vytvorí zoznam literatúry s nadpisom
+prvej úrovne Literatúra.
+
+Pri použití bibliografie odporúčame použiť dávkový súbor
+\texttt{Makefile} alebo spustiť externý program \texttt{biber}
+po prvej kompilácii a~potom skompilovať dokument ešte dvakrát.
+Posledná kompilácia zabezpečí správne čísla strán v obsahu.
+Online nástroj Overleaf robí všetky potrebné kroky v jednom behu,
+kompiláciu tu stačí spustiť iba raz.
+
+\section{Bibliografické záznamy}
+V zozname použitej literatúry v~závere práce sa nachádzajú
+podrobné záznamy použitých zdrojov.
+Sú to najmä mená autorov, názov článku alebo číslo kapitoly
+knihy, názov časopisu alebo knihy, vydavateľ, rok vydania,
+strana, na ktorej sa nachádza citovaný článok a podobne.
+V~prípade webových stránok je potrebné uviesť internetovú adresu
+a~dátum, kedy sme informáciu zo stánky čerpali.
+Dôležité je, aby boli informácie na základe týchto detailov
+ľahko a jednoznačne dohľadateľné.
+Norma STN ISO 690: 2022 tiež definuje formu takéhoto zoznamu~\cite{iso690}.
+
+V~tejto publikácii formátujeme použitú literatúru
+podľa štýlu iso-numeric \cite{Hoftich2022iso690} balíka \texttt{biblatex},
+\footnote{\href{https://ctan.org/pkg/biblatex}{\texttt{ctan.org/pkg/biblatex}}}
+ktorý do veľkej miery rešpektuje doteraz zaužívané zvyklosti
+a~je navrhnutý tak,
+aby spĺňal odporúčania normy aj v~slovenskom jazyku.
+
+\subsection{Príklad záznamu v databázovom súbore .bib}\label{sec:citExample}
+Súbor \texttt{bibliography.bib} je textový súbor, ktorý musí mať predpísanú štruktúru.
+Môžeme ho vytvoriť ručne alebo použiť niektorý zo systémov na správu publikácií a~citácií ako sú JabRef, Mendeley, Zotero a podobne.
+
+Nasledujúci bibliografický záznam
+\begin{trivlist}
+  \item STEINEROVÁ, J. Princípy formovania vzdelania
+  v~informačnej vede. \textit{Pedagogická revue.} 2000, \textbf{2}(3), 8--16.
+\end{trivlist}
+vyzerá v zdrojovom súbore \texttt{bibliography.bib} takto:
+\begin{verbatim}
+@article{Steinerova2000Principy,
+  author  = {J. Steinerová},
+  journal = {Pedagogická revue},
+  title   = {Princípy formovania vzdelania v informačnej vede},
+  year    = {2000},
+  number  = {3},
+  pages   = {8--16},
+  volume  = {2},
+}
+\end{verbatim}
+
+Každý záznam začína symbolom \verb|@| a nasleduje typ publikácie definovaných v dokumentácii k balíčku Bib\LaTeX.
+Okrem článku (\verb|article|) to môže byť aj kniha (\verb|book|),
+príspevok v zborníku konferencie (\verb|inproceedings|),
+webová stránka (\verb|online|),
+správa (\verb|techreport|),
+všeobecný záznam (\verb|misc|) a mnohé iné.
+
+Prvý povinný údaj je jedinečný identifikátor, ktorý je ľubovoľný.
+Odporúča sa však aby obsahoval priezvisko prvého autora, rok vydania a prvé slovo názvu.
+
+Jednotlivé položky databázového záznamu sú oddelené čiarkou,
+za posledným poľom už čiarka nie je.
+
+Každý typ záznamu má iné požiadavky na polia.
+Niektoré základné vlastnosti opíšeme v nasledujúcom texte.
+Viac informácií možno získať v príslušnej dokumentácii~\cite{Hoftich2022iso690}.
+
+\subsection{Prvky bibliografického záznamu}
+Zoznam použitej literatúry obsahuje informácie o jednotlivých zdrojoch. Je potrebné mať na pamäti, aby záznamy boli jasné, stručné a jednoznačne identifikovateľné. Bežne zorientovaný čitateľ práce, ktorý sa pohybuje v okruhu tém práce by mal byť schopný identifikovať jednotlivé diela na prvé pozretie. Prípadný záujemca o detailné štúdium problematiky by si mal vedieť na základe záznamu vyhľadať citovanú publikáciu buď na internete alebo v knižnici. Týmito pravidlami sa riadime pri vytváraní zoznamu použitej literatúry.
+
+Uvedieme niekoľko jednoduchých a~najčastejších príkladov bežného
+spôsobu citovania.
+Snaha je, aby sme sa prirodzene naučili formy uvádzania
+bibliografických záznamov v~našej oblasti vedy a techniky
+a~dokázali vytvoriť správnu databázu zdrojov v systéme Bib\LaTeX.
+
+\subsection*{Mená tvorcov}
+V zozname literatúry majú formu: PRIEZVISKO, Meno alebo PRIEZVISKO, M. a~navzájom sú oddelené bodkočiarkou.
+Za zoznamom autorov nasleduje bodka.
+
+\subsection*{\normalsize Pole v .bib súbore}
+\begin{verbatim}
+author = {Meno1 Priezvisko1 and Meno2 Priezvisko2 and Meno3 Prizvisko3}
+\end{verbatim}
+Autorov zapisujeme ako \verb|Meno Priezvisko| a~oddeľujeme ich kľúčovým slovom and.
+Môžeme tiež použiť obrátený tvar \verb|Priezvisko, Meno and|\dots s~čiarkou medzi priezviskom a~menom.
+
+\subsection*{Názov}
+Názov článku píšeme normálnym písmom.
+Názov nosného informačného zdroja (kniha, časopis, zborník) píšeme kurzívou.
+
+\subsection*{\normalsize Polia v .bib súbore}
+\begin{verbatim}
+title = {}
+booktitle = {}
+\end{verbatim}
+
+\subsection*{Dátum}
+Pri každej publikácii musí byť uvedený aspoň rok vydania
+vo formáte YYYY, t. j. 2024.
+V prípade online zdrojov treba uvádzať aj presný dátum,
+kedy sme zdroj použili.
+Vkladáme ho do hranatých zátvoriek s~kľúčovým slovom cit.
+Odporúčame použiť formát [cit. YYYY-MM-DD].
+Ak sme teda informáciu z webovej stránky získali dňa
+14. mája 2023,
+napíšeme to takto: [cit. 2023-05-14].
+Ide o medzinárodne akceptovaný a~zrozumiteľný tvar zápisu dátumu.
+
+\subsection*{\normalsize Polia v .bib súbore}
+\begin{verbatim}
+year = {2024}
+date = {2024-12-31}
+\end{verbatim}
+
+\subsection*{Dostupnosť}
+Myslí sa tým dostupnosť na internete najmä prostredníctvom webu.
+Uvádzame buď úplnú webovú adresu alebo DOI číslo.
+Nepíšeme oba údaje, preferujeme DOI.
+Tento údaj sa nachádza zväčša na konci záznamu za kľúčovým výrazom Dostupné na.
+
+\subsection*{\normalsize Polia v .bib súbore}
+\begin{verbatim}
+url = {}
+doi = {}
+eprint = {}
+\end{verbatim}
+Ak uvedieme viacero polí, Bib\LaTeX\ zväčša vyberie iba jedno
+podľa preferencií špecifikovaných v~definičnom súbore.
+
+\subsection*{Ročník alebo zväzok a číslo časopisu}
+Vedecké periodiká vychádzajú v tzv. zväzkoch (angl. \foreignlanguage{english}{\it volume}).
+Zväzky sa môžu deliť na čísla
+(angl. \foreignlanguage{english}{\it issue} alebo
+\foreignlanguage{english}{\it number}).
+Zväzok a číslo zapisujeme buď pomocou skratiek vol. a~iss.
+(prípadne no. podľa skutočného členenia jednotlivých vydaní konkrétneho časopisu),
+alebo preferujeme zaužívanú skrátenú formu,
+pri ktorej nepoužijeme slovné skratky,
+ale píšeme len čísla,
+pričom zväzok vytlačíme tučným rezom (bold)
+tesne nasledovaný číslom časopisu normálnym písmom
+v~okrúhlych zátvorkách.
+Napríklad zväzok 15, číslo 8 môžeme zapísať
+ako vol. 15, iss. 8 alebo \textbf{15}(8).
+
+\subsection*{\normalsize Polia v .bib súbore}
+\begin{verbatim}
+volume = {}
+number = {}
+\end{verbatim}
+
+\section{Článok v odbornom periodiku}
+Záznam musí obsahovať mená autorov (tvorcov), názov článku, názov časopisu, dátum alebo iba rok vydania, ročník alebo zväzok (volume) a číslo vo zväzku (issue), číslo prvej strany, prípadne rozsah strán, na ktorých sa nachádza.
+
+\subsection*{\normalsize Nepovinné údaje}
+Ak je článok dostupný online, je dobré, ak sa v zápise objaví aj webová adresa digitálnej verzie článku. Vedecké publikácie majú pridelený jedinečný kód, tzv. DOI (Digital Object Identifier – identifikátor digitálneho objektu), ktorý tiež môže byť súčasťou bibliografického zápisu. Ďalšou nepovinnou časťou je International Standard Serial Number (ISSN), teda medzinárodné štandardné sériové číslo, ktoré sa prideľuje časopisom.
+
+\subsection*{\normalsize Printový časopis}
+\begin{trivlist}
+\item TVORCOVIA. Názov článku. \textit{Názov periodika.} Rok vydania, \textbf{zväzok}(časť), rozsah strán. Dostupnosť.
+\end{trivlist}
+
+\subsection*{\normalsize Online časopis}
+\begin{trivlist}
+\item TVORCOVIA. Názov článku. \textit{Názov periodika} [online]. Rok vydania, \textbf{zväzok}(časť), rozsah strán (ak je k dispozícii). [cit. yyyy-mm-dd]. Dostupnosť.
+\end{trivlist}
+
+\subsection*{\normalsize Príklady}
+Prvý príklad je z~časti
+\ref{sec:citExample} odkazuje na článok s názvom Princípy formovania vzdelania v informačnej vede od autorky Jely Steinerovej, ktorý vyšiel v roku 2000 v 3. čísle 2. ročníka časopisu Pedagogická revue. Článok sa v časopise nachádza na stranách 8 až 16.
+
+V druhom príklade skratka et. al. (skratka latinského slovného spojenia \textit{et alii}, vo význame a~iní) za menom autora znamená, že článok má viacero autorov (bežne viac než 5) a nemusíme ich všetkých uvádzať.
+V slovenských textoch sa môže použiť skratka a~kol. (a~kolektív).
+
+Tretí príklad je príklad online časopisu, ktorý možno nájsť na internete. Príznak [online] a~dátum citovania [cit. 2023-01-10] sa objaví v zozname literatúry, keď v súbore \verb|bibliography.bib| použijeme pole \verb|urldate|.
+
+\begin{enumerate}
+\item STEINEROVÁ, J. Princípy formovania vzdelania v informačnej vede. \textit{Pedagogická revue}. 2000, \textbf{2}(3), 8–16.
+\item BEŇAČKA, J. et al. A better cosine approximate solution to pendulum equation. \textit{International Journal of Mathematical Education in Science and Technology}, 2009, \textbf{40}(2), 206–215.
+\item HOGGAN, D. B. Challenges, Strategies, and Tools for Research Scientists. Electronic Journal of \textit{Academic and Special Librarianship} [online]. 2009, \textbf{3}(3). [cit. 2023-01-10]. Dostupné z: \texttt{http://southernlibrarianship.icaap.org/content/ v03n03/Hoggan\_d01.htm}. ISSN 1525-321X.
+\end{enumerate}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@article{Steinerova2000Principy,
+  author  = {J. Steinerová},
+  journal = {Pedagogická revue},
+  title   = {Princípy formovania vzdelania v informačnej vede},
+  year    = {2000},
+  number  = {3},
+  pages   = {8--16},
+  volume  = {2},
+}
+
+@article{Benacka2009Abetter,
+  author  = {Ján Benačka and others},
+  title   = {A better cosine approximate solution to pendulum
+             equation},
+  journal = {International Journal of Mathematical Education in Science
+             and Technology},
+  volume  = {40},
+  number  = {2},
+  pages   = {307--308},
+  year    = {2009},
+  doi     = {10.1080/00207390802419594},
+}
+
+@article{Hoggan2002Challenges,
+  author  = {Danielle Bodrero Hoggan},
+  journal = {Electronic Journal of Academic and Special Librarianship},
+  title   = {Challenges, Strategies, and Tools for Research Scientists:
+             Using Web-Based Information Resources},
+  year    = {2002},
+  number  = {3},
+  volume  = {3},
+  url     = {https://southernlibrarianship.icaap.org/content/v03n03/
+             Hoggan_d01.htm},
+  urldate = {2023-01-10},
+}
+\end{verbatim}
+
+\section{Monografia a~kniha}
+\begin{trivlist}
+\item TVORCOVIA. Názov knihy. Vydanie. Mesto: Vydavateľ, Rok vydania. ISBN.
+\end{trivlist}
+
+\subsection*{\normalsize Príklady}
+\begin{enumerate}
+\item OBERT, V. \textit{Návraty a odkazy}. Nitra: Univerzita Konštantína Filozofa, 2006. ISBN 80-8094-046-0.
+
+\item TIMKO, J.; SIEKEL, P.; TURŇA, J. Geneticky modifikované organizmy. Bratislava: Veda, 2004. ISBN 80-224-0834-4.
+\end{enumerate}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@book{Obert2006Navraty,
+  author    = {Viliam Obert},
+  publisher = {Univerzita Konštantína Filozofa},
+  title     = {Návraty a odkazy},
+  year      = {2006},
+  address   = {Nitra},
+  isbn      = {80-8094-046-0},
+}
+
+@book{Timko2004Geneticky,
+  author    = {Jozef Timko and Peter Siekel and Ján Turňa},
+  publisher = {Veda},
+  title     = {Geneticky modifikované organizmy},
+  year      = {2004},
+  isbn      = {80-224-0834-4},
+}
+\end{verbatim}
+
+\section{Záverečná a~vedecko-kvalifikačná práca, správa}
+AUTOR. \textit{Názov práce}. Mesto, Rok vypracovania. Typ práce. Inštitúcia
+
+\subsection*{\normalsize Príklady}
+\begin{enumerate}
+  \item MIKULÁŠIKOVÁ, M. \textit{Didaktické pomôcky pre praktickú výučbu na hodinách výtvarnej výchovy pre 2. stupeň základných škôl.} Nitra, 1999. Diplomová práca. Univerzita Konštantína Filozofa
+
+  \item BAUMGARTNER, J. et al. \textit{Ochrana a udržiavanie genofondu zvierat, šľachtenie zvierat.} Nitra, 1998. Výskumná správa. VÚŽV.
+\end{enumerate}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@thesis{Mikulasikova1999Didakticke,
+  author  = {M. Mikulášiková},
+  title   = {Didaktické pomôcky pre praktickú výučbu na hodinách
+             výtvarnej výchovy pre 2. stupeň základných škôl},
+  address = {Nitra},
+  year    = {1999},
+  type    = {Diplomová práca},
+  school  = {Univerzita Konštantína Filozofa},
+}
+
+@report{Baumgarntner1998Ochrana,
+  author      = {J. Baumgartner and others},
+  institution = {VÚŽV},
+  title       = {Ochrana a udržiavanie genofondu zvierat, šľachtenie
+                 zvierat},
+  address     = {Nitra},
+  year        = {1998},
+  type        = {Výskumná správa},
+}
+\end{verbatim}
+
+\section{Príspevok v zborníku konferencie, časť knihy}
+Ak citujeme iba jednu kapitolu knihy,
+prípadne ide o~príspevok z~neperiodického zborníka,
+uvedieme za názvom príspevku (kapitoly)
+kľúčové slovo In:, po dvojbodke nasleduje zoznam editorov zborníka a názov zborníka alebo knihy:
+\begin{trivlist}
+  \item TVORCOVIA. Názov príspevku. In: EDITORI (ed.). \textit{Názov zborníka.} Mesto: Vydavateľ, Rok vydania, zväzok, s. rozsah strán, zv. číslo. ISBN. ISSN. Dostupnosť.
+\end{trivlist}
+
+\subsection*{\normalsize Príklady}
+\begin{enumerate}
+  \item ZEMÁNEK, P. The machines for ``green works'' in vineyards and their economical evaluation. In: \textit{9th International Conference: proceedings. Vol. 2. Fruit Growing and viticulture.} Lednice: Mendel University of Agriculture a Forestry, 2001, zv. 2, s. 262–268. ISBN 80-7157-524-0.
+
+  \item CHLPÍK, J.; KURTULÍK, M.; KOTOROVÁ, S.; CIRÁK, J. Spectroscopic ellipsometry of Au nanoparticles layers. In: SITEK, J.; VAJDA, J.; JAMNICKÝ, I. (ed.). \textit{AIP Conference Proceedings.} 2024, zv. 3054, s. 080004. Č. 1. ISSN 0094-243X. Dostupné z doi: 10.1063/5.0187526.
+\end{enumerate}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@InProceedings{Zemanek2001TheMachines,
+  author    = {P. Zemánek},
+  booktitle = {9th International Conference: proceedings. Vol. 2. Fruit
+               Growing and viticulture},
+  title     = {The machines for ``green works'' in vineyards and their
+               economical evaluation},
+  volume    = {2},
+  year      = {2001},
+  pages     = {262--268},
+  publisher = {Mendel University of Agriculture and Forestry},
+  address   = {Lednice},
+  isbn      = {80-7157- 524-0},
+}
+
+@InProceedings{ChlpikSpectroscopic2024,
+  author    = {Chlpík, Juraj and Kurtulík, Matej and Kotorová, Soňa
+               and Cirák, Július},
+  date      = {2024-01},
+  title     = {Spectroscopic ellipsometry of Au nanoparticles
+               layers},
+  editor    = {Jozef Sitek and Ján Vajda and Igor Jamnický},
+  doi       = {10.1063/5.0187526},
+  number    = {1},
+  pages     = {080004},
+  volume    = {3054},
+  issn      = {0094-243X},
+  booktitle = {AIP Conference Proceedings},
+}
+\end{verbatim}
+
+\section{Webová stránka, sociálna sieť, video}
+Pri multimediálnom online obsahu často nepoznáme autora,
+prípadne je komplikované zistiť názov webovej stránky.
+Snažíme sa teda zahrnúť čo najviac jednoznačných informácií,
+najmä webovú adresu, dátum publikovania a dátum citovania.
+\begin{trivlist}
+  \item TVORCOVIA. \textit{Názov obsahu} [online]. Platforma, dátum publikovania [cit. dátum citovania]. Dostupnosť.
+\end{trivlist}
+
+\subsection*{\normalsize Príklady}
+\begin{enumerate}
+  \item VALKO, P. \textit{M31, M32 a jeden Starlink k tomu} [online]. Facebook, 2024-08-30 [cit. 2024-09-06]. Dostupné z: \texttt{https://www.facebook.com/share/p/S93xZoz9Rbnh
+  dQ7M}.
+
+  \item \textit{Why lenses can't make perfect images} [online]. Youtube, 2017-10-18 [cit. 2024-08-25]. Dostupné z: \texttt{https://youtu.be/DDoryfCXxPI?si=hC5Kuuf4p3OxOOsm}.
+\end{enumerate}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@online{Valko2024M31,
+  author       = {Pavol Valko},
+  title        = {31, M32 a jeden Starlink k tomu},
+  howpublished = {online},
+  date         = {2025-08-30T00:03:00},
+  url          = {https://www.facebook.com/share/p/S93xZoz9RbnhdQ7M},
+  urldate      = {2024-09-06},
+  publisher    = {Facebook},
+}
+
+@online{WhyLenses2017,
+  title        = {Why lenses can’t make perfect images},
+  howpublished = {online},
+  date         = {2025-10-18},
+  url          = {https://youtu.be/DDoryfCXxPI?si=hC5Kuuf4p3OxOOsm},
+  urldate      = {2024-08-25},
+  publisher    = {Youtube},
+}
+\end{verbatim}
+
+\section{Ako citovať technické normy}
+K normám nemusíme uvádzať autorov, ak ide o slovenskú normu STN, netreba ani vydavateľa. Dôležité je číslo normy a rok vydania.
+
+\begin{trivlist}
+\item \textit{Číslo normy. Názov: Podnázov.} Mesto: Vydavateľ. Rok vydania.
+\end{trivlist}
+
+\subsection*{\normalsize Príklad}
+\begin{itemize}
+  \item \textit{STN ISO 690: 2023. Informácie a~dokumentácia: Návod na tvorbu bibliografických odkazov na informačné pramene a ich citovanie.} Bratislava: Slovenský ústav technickej normalizácie, 2023.
+\end{itemize}
+
+\subsection*{\normalsize Zápis v zdrojovom .bib súbore}
+\begin{verbatim}
+@report{iso690,
+  title     = {STN ISO 690: 2022. Informácie a~dokumentácia},
+  subtitle  = {Návod na tvorbu bibliografických odkazov na informačné
+               pramene a~ich citovanie},
+  address   = {Bratislava},
+  publisher = {Slovenský ústav technickej normalizácie},
+  year      = {2022},
+}
+\end{verbatim}
+
+% LocalWords:  zostručnenie Bib vý nok výk le ok ax bx ds dt dx Eq CoulombVec
+% LocalWords:  eq px lrrrr FWHM Full Width rrrr kA Technology HOGGAN Challenges
+% LocalWords:  Strategies Tools Research Scientists Electronic Academic Special
+% LocalWords:  Librarianship Hoggan OBERT TIMKO SIEKEL MIKULÁŠIKOVÁ BAUMGARTNER
+% LocalWords:  VÚŽV ed ZEMÁNEK machines green works vineyards their economical
+% LocalWords:  evaluation th Conference proceedings Fruit Growing viticulture
+% LocalWords:  Mendel University Agriculture Forestry CHLPÍK KURTULÍK KOTOROVÁ
+% LocalWords:  CIRÁK Spectroscopic ellipsometry nanoparticles layers SITEK doi
+% LocalWords:  JAMNICKÝ VALKO Starlink Facebook dQ Why lenses can perfect
+% LocalWords:  images Youtube
