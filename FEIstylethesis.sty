@@ -1,6 +1,7 @@
 \RequirePackage{keyval}
 \RequirePackage{xstring}
 \RequirePackage{textcase}
+\RequirePackage{enumitem}
 % For list of figures and tables
 \RequirePackage{tocloft}
 
@@ -336,4 +337,47 @@
   \@starttoc{lot}
   %\newpage
   %\pagestyle{plain}
+}
+
+\AddToHook{cmd/appendix/after}{%
+  \renewcommand{\thechapter}{\appendixname{} \Alph{chapter}}%
+  \def\@FEIafterTheChapter{:}
+  \def\@FEIbeforeChapterName{\ }
+
+  \addtocontents{toc}{%
+    \protect\setlength{\protect\cftchapnumwidth}{6em}%
+  }%
+}
+
+\newenvironment{changemargin}[2]
+{%
+  \begin{list}{}{%
+      \setlength{\leftmargin}{#1}%
+      \setlength{\rightmargin}{#2}%
+    }%
+  \item[]%
+  }
+  {%
+  \end{list}%
+}
+
+\newcommand{\dir}[3]{
+  \begin{description}[topsep=0pt,leftmargin=0.5cm,style=nextline]
+  \item[#1] \(\cdot\) #2
+  \end{description}
+  \ifx&#3&%
+    % #3 is empty
+  \else
+    \vspace{-5mm}
+    \begin{changemargin}{0.5cm}{0cm}
+      #3
+    \end{changemargin}
+    \vspace{-4mm}
+  \fi
+}
+
+\newcommand{\file}[2]{
+  \begin{description}[topsep=0pt,leftmargin=0.5cm,font=\normalfont\itshape,style=nextline]
+  \item[#1] \(\cdot\) #2
+  \end{description}
 }
