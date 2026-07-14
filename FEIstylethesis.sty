@@ -17,6 +17,84 @@ giveninits=true]{biblatex}
 \DefineBibliographyStrings{slovak}{
   urlfrom = {Dostupné z}
 }
+
+% Listings
+% https://www.overleaf.com/learn/latex/Code_listing
+\RequirePackage{listings}
+% Support small subset of UTF-8
+% https://stackoverflow.com/a/74266238
+\lstset{
+  extendedchars=true,
+  literate=
+    {á}{{\'a}}1
+    {ä}{{\"a}}1
+    {č}{{\v{c}}}1
+    {ď}{{\v{d}}}1
+    {é}{{\'e}}1
+    {í}{{\'i}}1
+    {ĺ}{{\'l}}1
+    {ľ}{{\v{l}}}1
+    {ň}{{\v{n}}}1
+    {ó}{{\'o}}1
+    {ô}{{\^o}}1
+    {ŕ}{{\'{r}}}1
+    {š}{{\v{s}}}1
+    {ť}{{\v{t}}}1
+    {ú}{{\'u}}1
+    {ý}{{\'y}}1
+    {ž}{{\v{z}}}1
+    {Á}{{\'A}}1
+    {Ä}{{\""A}}1
+    {Č}{{\v{C}}}1
+    {Ď}{{\v{C}}}1
+    {É}{{\'E}}1
+    {Í}{{\'I}}1
+    {Ĺ}{{\'L}}1
+    {Ľ}{{\v{L}}}1
+    {Ň}{{\v{N}}}1
+    {Ó}{{\'O}}1
+    {Ô}{{\^O}}1
+    {Ŕ}{{\'{R}}}1
+    {Š}{{\v{S}}}1
+    {Ť}{{\v{T}}}1
+    {Ú}{{\'U}}1
+    {Ý}{{\'Y}}1
+    {Ž}{{\v{Z}}}1
+  }
+% Support for color definitions
+\RequirePackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.506,0}
+\definecolor{codegray}{rgb}{0.2,0.2,0.2}
+\definecolor{codeviolet}{rgb}{0.58,0,0.82}
+\definecolor{codemagenta}{rgb}{0.839,0,0.494}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+% You are free to use this style, or define your own.
+\lstdefinestyle{code-listing}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{codemagenta},
+  numberstyle=\ttfamily\footnotesize\color{codegray},
+  stringstyle=\color{codeviolet},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=none,
+  numbersep=8pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  frame=single,
+  framesep=3pt,
+  framerule=0pt,
+  xleftmargin=4pt,
+  xrightmargin=4pt,
+  framexleftmargin=1pt,
+  framexrightmargin=1pt
+}
+
 % Default definitions
 \def\FEIlanguage{slovak}
 \def\FEIthesisType{bp}
@@ -179,6 +257,7 @@ giveninits=true]{biblatex}
     \def\FEIabstractString{Abstrakt}
     \def\FEIkeywordsString{Kľúčové slová}
     \def\FEIlistOfFiguresAndTablesString{Zoznam obrázkov a tabuliek}
+    \def\FEIlistOfListingsString{Zoznam výpisov kódov}
   }
   {english}{
     \def\FEIuniversity{Slovenská technická univerzita v Bratislave}
@@ -202,8 +281,13 @@ giveninits=true]{biblatex}
     \def\FEIabstractString{Abstract}
     \def\FEIkeywordsString{Keywords}
     \def\FEIlistOfFiguresAndTablesString{List of Figures and Tables}
+    \def\FEIlistOfListingsString{List of Listings}
   }
 }[]
+}
+
+\AtBeginDocument{%
+  \renewcommand{\lstlistlistingname}{\fontsize{20pt}{1.3}\selectfont \FEIlistOfListingsString}
 }
 
 \def\FEIheaderSize{14.5pt}
