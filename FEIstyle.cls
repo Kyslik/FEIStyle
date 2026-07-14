@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FEIstyle}[2025/02/07 v. 3.0.0 Thesis template - FEI STUBA]
+\ProvidesClass{FEIstyle}[2026/07/14 v3.0.0 Thesis template - FEI STUBA]
 
 \RequirePackage{ifxetex}
 \RequirePackage{ifluatex}

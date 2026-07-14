@@ -1,3 +1,6 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{FEIstylethesis}[2026/07/14 v3.0.0 Thesis template - FEI STUBA]
+
 \RequirePackage{keyval}
 \RequirePackage{xstring}
 \RequirePackage{textcase}
@@ -150,7 +153,7 @@ giveninits=true]{biblatex}
   }
   [
   \PackageWarning{FEIstyle}{Incorrect thesis type.
-    Suppoted values: bp, dp, dizp.}
+    Supported values: bp, dp, dizp.}
   \def\FEIthesisType{bp}]}
 \define@key{FEIstyle}{author}{%
   \def\FEIauthor{#1}}
