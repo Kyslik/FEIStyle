@@ -298,7 +298,16 @@ giveninits=true]{biblatex}
 }[]
 }
 
+% Slovak babel uses 'Obr.' as figure name, but 'Tabuľka' for table name. This
+% definition fixes the inconsistency.
 \AtBeginDocument{%
+  \ifcsname captionsslovak\endcsname
+    \expandafter\addto\csname captionsslovak\endcsname{%
+      \renewcommand{\figurename}{Obrázok}%
+      \renewcommand{\bibname}{Literatúra}%
+    }%
+  \fi
+
   % Localizaton of list of algorithms and listings
   \renewcommand{\listalgorithmname}{\fontsize{20pt}{1.3}\selectfont \FEIlistOfAlgorithmsString}
   \renewcommand{\lstlistlistingname}{\fontsize{20pt}{1.3}\selectfont \FEIlistOfListingsString}
@@ -445,7 +454,7 @@ giveninits=true]{biblatex}
   \@starttoc{lof}
   \bigskip
   \@starttoc{lot}
-  %\newpage
+  \newpage
   %\pagestyle{plain}
 }
 
