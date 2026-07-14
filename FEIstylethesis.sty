@@ -5,6 +5,18 @@
 % For list of figures and tables
 \RequirePackage{tocloft}
 
+% ISO 690 bibliography
+\RequirePackage[backend=biber,
+sorting=none,
+style=iso-numeric,
+shortnumeration=true,
+citestyle=numeric-comp,
+maxnames=5,
+minnames=1,
+giveninits=true]{biblatex}
+\DefineBibliographyStrings{slovak}{
+  urlfrom = {Dostupné z}
+}
 % Default definitions
 \def\FEIlanguage{slovak}
 \def\FEIthesisType{bp}
