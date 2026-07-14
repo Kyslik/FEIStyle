@@ -259,6 +259,10 @@ giveninits=true]{biblatex}
     \def\FEIlistOfFiguresAndTablesString{Zoznam obrázkov a tabuliek}
     \def\FEIlistOfAlgorithmsString{Zoznam algoritmov}
     \def\FEIlistOfListingsString{Zoznam výpisov kódov}
+    \def\FEIintroductionString{Úvod}
+    \def\FEIconclusionString{Záver}
+    \def\FEIresumeString{Rezumé}
+    \def\FEIaiDeclarationString{Použitie nástrojov umelej inteligencie}
   }
   {english}{
     \def\FEIuniversity{Slovenská technická univerzita v Bratislave}
@@ -284,6 +288,10 @@ giveninits=true]{biblatex}
     \def\FEIlistOfFiguresAndTablesString{List of Figures and Tables}
     \def\FEIlistOfAlgorithmsString{List of Algorithms}
     \def\FEIlistOfListingsString{List of Listings}
+    \def\FEIintroductionString{Introduction}
+    \def\FEIconclusionString{Conclusion}
+    \def\FEIresumeString{Résumé}
+    \def\FEIaiDeclarationString{Usage of Artificial Intelligence Tools}
   }
 }[]
 }
@@ -437,6 +445,40 @@ giveninits=true]{biblatex}
   \@starttoc{lot}
   %\newpage
   %\pagestyle{plain}
+}
+
+\newcommand\FEIintroduction[1]{
+  % \pagestyle{plain}
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\FEIintroductionString}
+  \section*{\FEIintroductionString}
+  \noindent \input{#1}
+}
+
+\newcommand\FEIconclusion[1]{
+  \newpage
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\FEIconclusionString}
+  \section*{\FEIconclusionString}
+  \noindent \input{#1}
+}
+
+\newcommand\FEIresume[1]{
+  \newpage
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\FEIresumeString}
+  \section*{\FEIresumeString}
+  \noindent \input{#1}
+}
+
+\newcommand\FEIaiDeclaration[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{\FEIaiDeclarationString}
+  \section*{\FEIaiDeclarationString}
+  \input{#1}\par
 }
 
 \AddToHook{cmd/appendix/after}{%
