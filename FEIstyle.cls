@@ -108,4 +108,7 @@ unicode]{hyperref}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
+% Don't reset footnote counter after a chapter
+\@removefromreset{footnote}{chapter}
+
 \endinput
