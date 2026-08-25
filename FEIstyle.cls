@@ -38,7 +38,7 @@ unicode]{hyperref}
 \parskip 1pt
 \linespread{1.25} % Vyriesit nizsie
 
-\def\@chapterskip{2.3ex plus .2ex}
+\def\@chapterskip{1.25ex \@plus.2ex}
 \def\@sectionbeforeskip{-3ex \@plus -1ex \@minus -.2ex}
 \def\@sectionafterskip{1.25ex \@plus.2ex}
 \def\@subsectionbeforeskip{-2.5ex \@plus -1ex \@minus -.2ex}
