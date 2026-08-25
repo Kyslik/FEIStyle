@@ -505,36 +505,3 @@ giveninits=true]{biblatex}
   \def\@FEIafterTheChapter{:}
   \def\@FEIbeforeChapterName{\ }
 }
-
-\newenvironment{changemargin}[2]
-{%
-  \begin{list}{}{%
-      \setlength{\leftmargin}{#1}%
-      \setlength{\rightmargin}{#2}%
-    }%
-  \item[]%
-  }
-  {%
-  \end{list}%
-}
-
-\newcommand{\dir}[3]{
-  \begin{description}[topsep=0pt,leftmargin=0.5cm,style=nextline]
-  \item[#1] \(\cdot\) #2
-  \end{description}
-  \ifx&#3&%
-    % #3 is empty
-  \else
-    \vspace{-5mm}
-    \begin{changemargin}{0.5cm}{0cm}
-      #3
-    \end{changemargin}
-    \vspace{-4mm}
-  \fi
-}
-
-\newcommand{\file}[2]{
-  \begin{description}[topsep=0pt,leftmargin=0.5cm,font=\normalfont\itshape,style=nextline]
-  \item[#1] \(\cdot\) #2
-  \end{description}
-}
