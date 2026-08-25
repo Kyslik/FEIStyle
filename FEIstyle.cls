@@ -107,6 +107,7 @@ unicode]{hyperref}
 % Counters without chapter number
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
 
 % Don't reset footnote counter after a chapter
 \@removefromreset{footnote}{chapter}
