@@ -276,11 +276,11 @@ ak to nie je úplne nevyhnutné.
 Uprednostňujeme tzv. plávajúcu formu obrázkov,
 teda objektov, ktoré sa nemusia nachádzať bezprostredne
 na mieste v texte, kde sú spomenuté.
-V zdrojovom kóde umiestňujeme príkazy na sadzbu obrázku za odsek,
+V zdrojovom kóde umiestňujeme príkazy na sadzbu obrázka za odsek,
 v~ktorom sa o~ňom hovorí po prvýkrát.
 Pod každým obrázkom je textové označenie,
 začínajúce skratkou slova obrázok (Obr.) a~nasleduje
-poradové číslo obrázku v práci.
+poradové číslo obrázka v práci.
 
 Na obrázku \ref{fig:measurement} je znázornený proces správneho merania výšky dieťaťa.
 Grafický objekt je súčasťou plávajúceho prostredia \verb|figure|.
@@ -315,7 +315,7 @@ Slovo obrázok aj skratku píšeme v~odkaze v~texte
 malým začiatočným písmenom, ak sa nachádza vo vnútri vety.
 Na každý obrázok v~práci by mal existovať odkaz v~texte.
 
-Umiestnenie obrázku v rámci dokumentu riadi pomerne
+Umiestnenie obrázka v rámci dokumentu riadi pomerne
 komplikovaný algoritmus, čo nie vždy vedie k uspokojivým výsledkom.
 Polohu plávajúceho objektu môžeme čiastočne ovplyvniť
 nepovinným parametrom prostredia \verb|figure|.
@@ -325,7 +325,7 @@ Predstavuje požiadavku, že preferujeme,  aby sa obrázok nachádzal vo výsled
 Ak sa mu obrázok nepodarí umiestniť, zaradí ho až na
 samý koniec kapitoly aj spolu so všetkými nasledujúcimi obrázkami.
 To nebýva žiaduce a žiaľ, nemáme príliš veľa možností, ako takýto výsledok ovplyvniť.
-Pomôže zmena rozmerov obrázku, prípadne jeho premiestnenie inam v zdrojovom kóde.
+Pomôže zmena rozmerov obrázka, prípadne jeho premiestnenie inam v zdrojovom kóde.
 Odporúča sa, aby sa prostredie \verb|\begin{figure}...\end{figure}| nachádzalo mimo textového odseku, t. j. treba ho od okolitého textu oddeliť minimálne jedným prázdnym riadkom zhora aj zdola.
 
 Na ovládanie umiestnenia plávajúceho objektu môžeme použiť tieto
@@ -346,12 +346,12 @@ na konci dokumentu.
 V~takom prípade treba skúsiť niektoré
 z~riešení spomenutých v~predchádzajúcom odseku.
 
-\subsection{Označenie obrázku a text pod obrázkom}
-Text pod obrázkom pozostáva z~označenia obrázku a z~vysvetľujúceho obsahu.
+\subsection{Označenie obrázka a text pod obrázkom}
+Text pod obrázkom pozostáva z~označenia obrázka a z~vysvetľujúceho obsahu.
 Mal by sa nachádzať spolu s~obrázkom na tej istej strane.
 
 Text je dostatočne opisný,
-aby bol jasný obsah obrázku aj pri rýchlom prechádzaní
+aby bol jasný obsah obrázka aj pri rýchlom prechádzaní
 práce bez nutnosti detailného čítania hlavného textu.
 Ak opis pod obrázkom pozostáva iba z~jednej vety,
 prípadne ide o~heslo bez vetnej štruktúry,
@@ -368,7 +368,7 @@ Používame jednoúrovňové číslovanie,
 teda obrázok 1, obrázok 2, atď.
 V~\LaTeX-u je automatické číslovanie obrázkov zabezpečené v definícii makra \verb|\caption|.
 
-Odvolávanie sa na číslo obrázku rieši dvojica príkazov \verb|\label| a~\verb|\ref|.
+Odvolávanie sa na číslo obrázka rieši dvojica príkazov \verb|\label| a~\verb|\ref|.
 Prvý príkaz zistí prítomnosť najbližšieho číselného
 registra a priradí k nemu menovku, ktorú zadáme do argumentu.
 Napríklad obrázok \ref{fig:measurement} má menovku \verb|fig:measurement|. Menovku volí autor textu, môže byť ľubovoľná, musí však začínať písmenom a nesmie obsahovať špeciálne znaky, ktoré majú v \TeX-u kategóriu vykonateľných príkazov (napr. \verb|\|, \verb|%|, \verb|#|, \verb|$|, zátvorky a podobne). Tiež treba venovať pozornosť tomu, aby sa rovnaká menovka nevyskytla v~texte v príkaze \verb|\label| viackrát, pretože by došlo k jej preťaženiu a znefunkčneniu odkazov.
@@ -379,7 +379,7 @@ Z praktických dôvodov sa ustálila prax začínať menovku skratkou typu čís
 Grafmi budeme nazývať zobrazenie vedeckých dát
 najčastejšie vo forme dvojrozmerného grafu
 závislosti dvoch alebo viacerých veličín.
-Príklad takéhoto objektu je na obrázku \ref{fig:Graph1}.
+Príklad takéhoto objektu je na obrázku~\ref{fig:Graph1}.
 Grafická reprezentácia vedeckých dát musí byť
 v~prvom rade čitateľná, zreteľná a~jednoznačná.
 Tomu treba prispôsobiť všetky zásady pri tvorbe grafov.
@@ -400,7 +400,7 @@ exportovať do bitmapového formátu, najlepšie PNG.
 Stratový formát JPEG nie je na čiarovú grafiku vhodný.
 Rozlíšenie bitmapového súboru by malo byť minimálne 600 dpi,
 aby boli čiary ostré.
-Znamená to, že ak predpokladáme veľkosť obrázku
+Znamená to, že ak predpokladáme veľkosť obrázka
 $10\,\mathrm{cm} \times 7{,}5\,\mathrm{cm}$,
 musí mať aspoň 2\,363\,px $\times$ 1\,772\,px (pixelov).
 
