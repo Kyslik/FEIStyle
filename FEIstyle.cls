@@ -46,6 +46,7 @@ unicode]{hyperref}
 \def\@sectiontitlefont{\fontsize{16pt}{15pt}}
 \def\@subsectiontitlefont{\fontsize{14pt}{14pt}}
 
+\def\@FEIbeforeTheChapter{}
 \def\@FEIafterTheChapter{ \space}
 \def\@FEIbeforeChapterName{ }
 
@@ -57,7 +58,7 @@ unicode]{hyperref}
     \c@secnumdepth >\m@ne
     \par\nobreak
     % \vskip 10\p@
-    \thechapter{}\@FEIafterTheChapter%
+    \@FEIbeforeTheChapter\thechapter{}\@FEIafterTheChapter%
   \fi\@FEIbeforeChapterName#1\par
   \nobreak
   \addpenalty\@secpenalty\addvspace{\@chapterskip}}

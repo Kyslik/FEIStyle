@@ -500,13 +500,9 @@ giveninits=true]{biblatex}
 }
 
 \AddToHook{cmd/appendix/after}{%
-  \renewcommand{\thechapter}{\appendixname{} \Alph{chapter}}%
+  \def\@FEIbeforeTheChapter{\appendixname{} }
   \def\@FEIafterTheChapter{:}
   \def\@FEIbeforeChapterName{\ }
-
-  \addtocontents{toc}{%
-    \protect\setlength{\protect\cftchapnumwidth}{6em}%
-  }%
 }
 
 \newenvironment{changemargin}[2]
