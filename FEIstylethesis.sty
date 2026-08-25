@@ -6,7 +6,8 @@
 \RequirePackage{textcase}
 \RequirePackage{enumitem}
 % For list of figures and tables
-\RequirePackage{tocloft}
+% Use titles as defined by upper class (FEIstyle presumably)
+\RequirePackage[titles]{tocloft}
 
 % ISO 690 bibliography
 \RequirePackage[backend=biber,
@@ -407,8 +408,8 @@ giveninits=true]{biblatex}
 
 \newcommand\FEIacknowledgements[1]{
   \pagestyle{empty}
-  \vspace*{\stretch{1}}
-  \section*{\fontsize{16pt}{1.3}\selectfont \FEIacknowledgementsString}
+  \chapter*{\vspace*{\fill}\fontsize{16pt}{1.3}\selectfont%
+    \FEIacknowledgementsString}
   \vspace{1pt}
   \input{#1}
   \vspace{7.1pt}
@@ -456,7 +457,7 @@ giveninits=true]{biblatex}
   \setlength{\cftfignumwidth}{\dimexpr\mylenf+3em}
   \setlength{\cfttabnumwidth}{\dimexpr\mylenf+3em}
   
-  \section*{\fontsize{20pt}{1.3}\selectfont \FEIlistOfFiguresAndTablesString}
+  \chapter*{\FEIlistOfFiguresAndTablesString}
   \phantomsection
   \@starttoc{lof}
   \bigskip
@@ -470,7 +471,7 @@ giveninits=true]{biblatex}
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{chapter}{\FEIintroductionString}
-  \section*{\FEIintroductionString}
+  \chapter*{\FEIintroductionString}\par
   \noindent \input{#1}
 }
 
@@ -479,7 +480,7 @@ giveninits=true]{biblatex}
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{chapter}{\FEIconclusionString}
-  \section*{\FEIconclusionString}
+  \chapter*{\FEIconclusionString}
   \noindent \input{#1}
 }
 
@@ -488,7 +489,7 @@ giveninits=true]{biblatex}
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{chapter}{\FEIresumeString}
-  \section*{\FEIresumeString}
+  \chapter*{\FEIresumeString}
   \noindent \input{#1}
 }
 
