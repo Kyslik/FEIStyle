@@ -49,8 +49,8 @@ unicode]{hyperref}
 \def\@FEIafterTheChapter{ \space}
 \def\@FEIbeforeChapterName{ }
 
-\def\@makechapterhead#1{{%
-    \setlength\parindent{\z@}%
+\def\@makechapterhead#1{%
+  \setlength\parindent{\z@}%
   \setlength\parskip  {\z@}%
   \@chaptertitlefont\selectfont\bfseries %\Large \ChapFont
   \ifnum
@@ -60,14 +60,15 @@ unicode]{hyperref}
     \thechapter{}\@FEIafterTheChapter%
   \fi\@FEIbeforeChapterName#1\par
   \nobreak
-  \addpenalty\@secpenalty\addvspace{\@chapterskip}}}
+  \addpenalty\@secpenalty\addvspace{\@chapterskip}}
 
-\def\@makeschapterhead#1{{%
-  \setlength\parindent{\z@}%
-  \setlength\parskip  {\z@}%
-  \@chaptertitlefont\selectfont\bfseries #1\par
-  \nobreak
-  \addpenalty\@secpenalty\addvspace{\@chapterskip}}}
+% Star version of chapter.
+\def\@makeschapterhead#1{%
+  \parindent \z@ \raggedright
+  \normalfont
+  \interlinepenalty\@M
+  \@chaptertitlefont\selectfont \bfseries  #1\par\nobreak
+  \addvspace{\@chapterskip}}
 
 \def\chapter{%
  \clearpage
