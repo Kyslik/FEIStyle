@@ -48,17 +48,23 @@ Hlavným obsahom úvodnej časti sú formálne náležitosti práce a musia byť
 \subsection{Obálka, titulný list, zadanie}
 Začiatočné stránky práce automaticky generuje univerzitný
 informačný systém AIS vo formáte PDF.
-Môžeme ich do záverečnej práce vložiť pomocou príkazu \verb|\includepdf| z~balíčka \verb|pdfpages|
-alebo využijeme makrá \verb|FEIcover| a~\verb|FEItitle| na vytvorenie obálky a prvej
-stránky práce.
 Aby boli všetky informácie aktuálne,
 treba venovať pozornosť vyplneniu údajových
-premenných v~úvode hlavného súboru \verb|thesis.tex|.
+premenných v~úvode hlavného súboru \verb|thesis.tex| v makre \verb|\FEIsetup|.
 
-Zadanie odporúčame vložiť pomocou spomínaného makra
-\verb|\includepdf| tak, že najprv uložíme PDF súbor
+Šablóna sa postará o automatické vygenerovanie obálky a titulnej strany podľa
+poskytnutých informácií.
+Pokročilí študenti môžu toto automatické generovanie vypnúť nastavením
+parametra \verb|automaticfront| na \verb|false| balíka \verb|FEIstylethesis|.
+Potom je možné vygenerovanú obálku a titulnú stranu z AIS-u vložiť priamo
+pomocou príkazu \verb|\includepdf| z~balíčka \verb|pdfpages|.
+V prípade vypnutia automatického generovania preambuly práce je potrebné vložiť
+zadanie, poďakovanie, abstrakty a obsah \emph{manuálne}.
+
+Zadanie odporúčame vložiť vyplnením cesty v makre
+\verb|\FEIsetup| tak, že najprv uložíme PDF súbor
 so zadaním do priečinka \verb|includes| a prepíšeme
-názov súboru v argumente makra.
+názov súboru v~kľúči \verb|assignment| makra \verb|\FEIsetup|.
 
 \subsection{Poďakovanie}
 Nepovinná, ale veľmi obľúbená časť práce.

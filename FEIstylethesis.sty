@@ -1,6 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{FEIstylethesis}[2026/07/14 v3.0.0 Thesis template - FEI STUBA]
 
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{
+  family=FEI,
+  prefix=FEI@
+}
+\DeclareBoolOption[true]{automaticfront}
+\ProcessKeyvalOptions*
+
 \RequirePackage{keyval}
 \RequirePackage{xstring}
 \RequirePackage{textcase}
@@ -213,28 +221,31 @@ giveninits=true]{biblatex}
       % Subject={\typPrace},
       Keywords={\FEIkeywords}
     }}
-  \AtBeginDocument{
-    \FEIcover
-    \FEItitlePage
-    \IfEq{\FEIassignmentPath}
-    {}
-    {
-      \PackageWarningNoLine{FEIstylethesis}{Missing
-        assignment in \string\FEIsetup. Assignment won't be typeset}
-    }{
-      \includepdf[pages=-]{\FEIassignmentPath}
+  \ifFEI@automaticfront
+    \AtBeginDocument{
+      \FEIcover
+      \FEItitlePage
+      \IfEq{\FEIassignmentPath}
+      {}
+      {
+        \PackageWarningNoLine{FEIstylethesis}{Missing
+          assignment in \string\FEIsetup. Assignment won't be typeset}
+      }{
+        \includepdf[pages=-]{\FEIassignmentPath}
+      }
+      \IfEq{\FEIacknowledgementsPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+          acknowledgements in \string\FEIsetup. Acknowledgements won't be typeset}}{
+        \FEIacknowledgements{\FEIacknowledgementsPath}}
+      \IfEq{\FEIabstractPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+          abstract in \string\FEIsetup. Abstract won't be typeset}}{
+        \FEIabstract{\FEIabstractPath}}
+      \IfEq{\FEIabstractEnPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
+          abstractEn in \string\FEIsetup. English version of abstract won't be typeset}}{
+        \FEIabstractEn{\FEIabstractEnPath}}
+      \FEItoc
+      % \tableofcontents
     }
-    \IfEq{\FEIacknowledgementsPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
-        acknowledgements in \string\FEIsetup. Acknowledgements won't be typeset}}{
-      \FEIacknowledgements{\FEIacknowledgementsPath}}
-    \IfEq{\FEIabstractPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
-        abstract in \string\FEIsetup. Abstract won't be typeset}}{
-      \FEIabstract{\FEIabstractPath}}
-    \IfEq{\FEIabstractEnPath}{}{\PackageWarningNoLine{FEIstylethesis}{Missing
-        abstractEn in \string\FEIsetup. English version of abstract won't be typeset}}{
-      \FEIabstractEn{\FEIabstractEnPath}}
-    \FEItoc
-  }
+  \fi
 }
 
 % Localization
