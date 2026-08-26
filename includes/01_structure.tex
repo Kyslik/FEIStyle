@@ -67,12 +67,12 @@ so zadaním do priečinka \verb|includes| a prepíšeme
 názov súboru v~kľúči \verb|assignment| makra \verb|\FEIsetup|.
 
 \subsection{Poďakovanie}
-Nepovinná, ale veľmi obľúbená časť práce.
+\textbf{Nepovinná}, ale veľmi obľúbená časť práce.
 Je umiestnené na samostatnej strane zväčša v~dolnej časti.
 Jej obsah je ponechaný na autora.
 Obsah poďakovania sa nachádza v~súbore
 \verb|includes/thanks.tex| a~sadzbu má na starosti
-príkaz \verb|\FEIthanks|.
+kľúč \verb|assignment| v príkaze \verb|\FEIsetup|.
 
 \subsection{Slovenský a anglický abstrakt}
 Definícia abstraktu vychádza z technickej normy STN ISO 214 Dokumentácia.
@@ -97,7 +97,7 @@ musí obsahovať rezumé v~slovenčine.
 V~slovenskej práci nemusí byť rezumé.
 
 \subsubsection{Účel a použitie abstraktov}
-\begin{itemize}\it
+\begin{itemize}\itshape
   \item \uv{Dobre vypracovaný abstrakt umožní čitateľom identifikovať
   základný obsah dokumentu, rýchlo a presne stanoviť jeho
   relevanciu, a tak sa rozhodnúť, či potrebujú čítať celý
@@ -125,15 +125,12 @@ Abstrakt sa píše súvisle ako jeden odsek a jeho rozsah je
 spravidla 100 až 500 slov}}~\cite{usmernenie562011}.
 
 Text slovenského a~anglického abstraktu sa nachádzajú
-v~súboroch \verb|attachment.tex| a~\verb|attachmentEN.tex| v~priečinku \verb|includes|.
-
-Do dokumentu ich vložia makrá šablóny
-\verb|\FEIabstract| a~\verb|\FEIabstractEN|
-v~hlavnom súbore \verb|thesis.tex|.
-Každé makro má jeden povinný parameter --
-cesta a~názov súboru s~textom abstraktu.
-Makrá zároveň vytlačia pod abstrakty
-v každom jazyku zoznam kľúčových slov.
+v~súboroch \verb|appendix.tex| a~\verb|appendixEN.tex| v~priečinku \verb|includes|.
+Do dokumentu ich vloží makro šablóny
+\verb|\FEIsetup| v~hlavnom súbore \verb|thesis.tex|.
+Makro obsahuje cesty k textom slovenského a~anglického abstraktu.
+Pod abstrakty sa zároveň automaticky vytlačia
+zoznamy kľúčových slov v príslušnom jazyku.
 
 \subsection{Obsah a zoznamy}
 Obsah je povinný prehľad jednotlivých kapitol
@@ -147,24 +144,25 @@ ktorý v~mieste použitia vloží automatický zoznam kapitol s~číslami strán
 Obsah vytvára na základe použitia nadpisov \verb|\section|,
 \verb|\subsection| a \verb|\subsubsection|.
 Toto makro vytvorí v~pracovnom adresári pomocný textový súbor
-s~príponou .toc a~na základe neho generuje finálnu podobu obsahu.
+s~príponou \verb|.toc| a~na základe neho generuje finálnu podobu obsahu.
 Z~toho dôvodu je potrebné kompilátor \LaTeX-u
 spustiť minimálne dvakrát za sebou.
 
-V tejto šablóne má na starosti vytvorenie obsahu makro \verb|\FEIcontent|.
+V tejto šablóne je obsah automaticky generovaný po abstraktoch. Vytvorenie
+obsahu má na starosti makro \verb|\FEItoc|, ktoré musíte zavolať, ak ste vypli
+automatické generovanie preambuly.
 
 \subsection*{\normalsize Zoznam ilustrácií,
 obrázkov a tabuliek}
 Sú to nepovinné prehľady tzv. plávajúcich objektov.
-\LaTeX\ pozná na tento účel dva príkazy: \verb|\listoffigures| a~\verb|\listoftables|. Šablóna FEIstyle ponúka alternatívne makrá \verb|\FEIlistOfFigures| a~\verb|\FEIlistOfTables|, ktoré okrem toho nastavia požadovaný typ stránky bez číslovania.
-
-Zvlášť užitočný je príkaz \verb|\FEIlistOfFiguresAndTables|.
-Vytvorí totiž spojený zoznam obrázkov a tabuliek s jedným nadpisom.
+\LaTeX\ pozná na tento účel dva príkazy: \verb|\listoffigures| a~\verb|\listoftables|.
+Zvlášť užitočný príkaz zo šablóny \verb|FEIstylethesis| je \verb|\FEIlistOfFiguresAndTables|.
+Vytvorí totiž spojený zoznam ob\-ráz\-kov a~tabuliek s jedným nadpisom.
 
 Ak zoznamy v práci nechceme, môžeme príslušné príkazy z~hlavného súboru \verb|thesis.tex| vymazať alebo ich označiť ako komentár.
 
 \subsection*{\normalsize Zoznam skratiek a značiek}
-V textových výstupoch vedecko-technických odborov sa používa
+V textových výstupoch vedecko-technických odborov sa používac
 množstvo značiek a~skratiek najmä na označenie fyzikálnych
 veličín v matematických vzťahoch,
 ale aj zostručnenie textového prejavu najmä pri zložitých názvoch
@@ -186,18 +184,18 @@ značky uvádzame v~abecednom poradí.
 
 Šablóna ponúka dva spôsoby vytvorenia zoznamu a~práce so skratkami a~značkami v~texte.
 \begin{enumerate}
-\item Použitie nástrojov balíka \verb|glossary| umožňuje plne automatickú kontrolu nad veľkým množstvom skratiek. Skratky treba najprv definovať v externom súbore \verb|glossary.tex| a~potom ich môžeme v práci používať dvomi spôsobmi. Pri prvom výskyte použijeme skratku aj s~jej opisom, čo zariadi príkaz \verb|acrfull|.
-Pri ďalších výskytoch v texte už stačí používať iba skrátený tvar pomocou príkazu \verb|acrshort|.
+\item Použitie nástrojov balíka \verb|glossary| umožňuje plne automatickú kontrolu nad veľkým množstvom skratiek. Skratky treba najprv definovať v externom súbore \verb|glossary.tex| a~potom ich môžeme v práci používať dvomi spôsobmi. Pri prvom výskyte použijeme skratku aj s~jej opisom, čo zariadi príkaz \verb|\acrfull|.
+Pri ďalších výskytoch v texte už stačí používať iba skrátený tvar pomocou príkazu \verb|\acrshort|.
 
 Po prvom skompilovaní je potrebné spustiť externý program \verb|makeglossaries| a~text skompilovať znova, prípadne kvôli správnemu radeniu strán v~obsahu, treba kompiláciu spustiť aj tretíkrát.
 Podobná procedúra sa vyžaduje aj pri práci s~citáciami v systéme Bib\LaTeX.
-Makro \verb|\FEIlistOfGlossaries| vytvorí abecedne zoradený zoznam.
+Makro \verb|\printacronyms| vytvorí abecedne zoradený zoznam.
 
 Ak sa rozhodneme pre túto možnosť,
 treba v hlavnom súbore \verb|thesis.tex| odstrániť
 znak komentára pred príkazmi
-\verb|\FEIglossaries{includes/glossary}|
-a~\verb|\FEIlistOfGlossaries|. Pozor, tieto dva
+\verb|\makeglossaries|, \verb|\loadglsentries{includes/| \verb|glossary}|
+a~\verb|\printacronyms|. Pozor, tieto tri
 riadky sa v súbore \verb|thesis.tex|
 nachádzajú na rôznych miestach.
 Nepremiestňujeme ich.
@@ -213,13 +211,14 @@ Viac sa o možnostiach balíka dozvieme z tutoriálu na stránke \href{https://w
 Automatické riešenie v predchádzajúcom bode úplne zlyháva pri práci s veličinami, ktorých zoznam predstavuje praktickú pomôcku najmä vo fyzikálnych a~matematických oblastiach techniky. Na označovanie veličín používame rôzne symboly a ich modifikácie, napríklad písmená gréckej abecedy ($\alpha, \omega, \xi$), symboly so šípkami v prípade vektorov ($\vec r, \vec\varphi, \vec\imath$), preškrtnuté h ($\hbar$), zdvojené symboly ako $\mathbb Z$, prípadne aj niečo takéto: $\aleph_0$, čo je hebrejské písmeno alef.
 
 Súbor \verb|manual_glossary.tex| obsahuje príklad, ako by mohol takýto ručne vyrobený zoznam vyzerať.
-Makro
-\verb|\FEImanualListOfGlossaries|, ktorého parameter je cesta a názov spomínaného súboru, zariadi samotnú sadzbu.
+Obsah tohto súboru je možné vysádzať do práce štan\-dard\-ným makrom
+\verb|\include| pre vloženie obsahu súboru, ktorého parameter je cesta
+k~spomínanému súboru.
 Zoznam si môžeme postupne vytvárať pri písaní a~udržiavať ho v abecednom poradí.
 \end{enumerate}
 
 \subsection*{\normalsize Zoznamy algoritmov a výpisov kódov programov}
-Tieto typy zoznamov vytvoria makrá \verb|\FEIlistOfAlgorithms|, \verb|\FEIlistOfListings| a~sú špecifické pre informatické odbory.
+Tieto typy zoznamov vytvoria makrá \verb|\listofalgorithms|, \verb|\lstlistoflistings| a~sú špecifické pre informatické odbory.
 
 Ak v práci nemáme výpisy kódov alebo algoritmy,
 bude potrebné riadky s týmito príkazmi vymazať alebo označiť ako komentár. O~uvádzaní častí kódov
@@ -280,7 +279,7 @@ Odporúčaná štruktúra tejto časti je na
 strane~\pageref{sec:StrukturaPrace}.
 
 Samotný obsah jadra sa nachádza v~súbore \verb|includes/core.tex|.
-Do hlavného dokumentu \verb|thesis.tex| ho načíta makro \verb|\FEIcore{includes/core}|.
+Do hlavného dokumentu \verb|thesis.tex| ho načíta makro \verb|\input{includes/core}|.
 Parameter makra je názov súboru bez prípony.
 Ak je \verb|core.tex| príliš obsiahly,
 môžeme jednotlivé kapitoly uložiť do samostatných
@@ -478,7 +477,7 @@ Každú prílohu treba jasne označiť, očíslovať a~nazvať.
 Zoznam príloh potom uvedieme v~jednom z~dodatkov.
 
 Do tzv. dodatkov umiestňujeme informácie,
-ktoré kvôli rozsahu nemôžu byť v hlavnom texte práce.
+ktoré kvôli rozsahu nemôžu byť v~hlavnom texte práce.
 Sú to napríklad údajové listy k~použitým prístrojom
 a~zariadeniam, zdĺhavejšie matematické odvodenia,
 rozsiahlejšie kódy programov, dokumentácia
@@ -489,8 +488,7 @@ a~ich grafy, fotografie a podobne.
 
 Jednotlivé kapitoly v~dodatkoch číslujeme veľkými písmenami, čísla podkapitol majú formu A.1, B.3.2, atď.
 Na tento účel vytvoríme pre každý dodatok samostatný súbor v~priečinku \verb|includes/|, odporúčame názov súboru v~tvare \verb|attachmentA.tex| alebo podobne.
-Každý dodatok je potom potrebné načítať v~hlavnom súbore \verb|thesis.tex| nasledujúcim spôsobom:
-\begin{verbatim}
-\FEIappendix{Názov prílohy\label{att:A}}{includes/attachmentA}
-\end{verbatim}
-Prvý parameter makra je názov dodatku a ten sa nesmie nachádzať v~zdrojovom súbore \verb|attachemntA.tex|.
+Každý dodatok je potom potrebné načítať v~hlavnom súbore \verb|thesis.tex|
+pomocou makra \verb|\include|, napr. \verb|\include{includes/attachmentA}|.
+Načítanie dodatkov musí byť umiestnené \textbf{za} makrom \verb|\appendix|,
+ináč nebudú správne sádzané nadpisy kapitol dodatkov.
