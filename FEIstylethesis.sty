@@ -17,6 +17,11 @@
 % Use titles as defined by upper class (FEIstyle presumably)
 \RequirePackage[titles]{tocloft}
 
+% Support for automatic glossaries
+\RequirePackage[acronym,nopostdot,nogroupskip,nonumberlist]{glossaries}
+\setglossarystyle{long}
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+
 % ISO 690 bibliography
 \RequirePackage[backend=biber,
 sorting=none,
@@ -330,6 +335,7 @@ giveninits=true]{biblatex}
   \renewcommand{\listalgorithmname}{\fontsize{20pt}{1.3}\selectfont \FEIlistOfAlgorithmsString}
   \renewcommand{\lstlistlistingname}{\fontsize{20pt}{1.3}\selectfont \FEIlistOfListingsString}
   \renewcommand{\lstlistingname}{\FEIlistingString}
+  \renewcommand*{\acronymname}{\FEIlistOfSymbolsAndAbbreviationsString}
 }
 
 \def\FEIheaderSize{14.5pt}
@@ -475,6 +481,18 @@ giveninits=true]{biblatex}
   \@starttoc{lot}
   \newpage
   %\pagestyle{plain}
+}
+
+% Glossaries of long type modify the table counter because they use longtable.
+% Fix this using stored table counter.
+\newcounter{FEIgls@tablecounter}
+\AddToHook{env/theglossary/begin}{%
+  \setcounter{FEIgls@tablecounter}{\value{table}}%
+  % Change style of the longtable used to typeset the glossary
+  \setlength\LTleft{8pt}%
+}
+\AddToHook{env/theglossary/end}{%
+  \setcounter{table}{\value{FEIgls@tablecounter}}%
 }
 
 \newcommand\FEIintroduction[1]{

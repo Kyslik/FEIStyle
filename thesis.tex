@@ -86,10 +86,15 @@
   abstractEn          = includes/abstractEN,     %%%
 }
 
-% Glossaries -- terms and abbreviations.
-% If you use automatic glossaries,
-% uncomment the next line.
-%\FEIglossaries{includes/glossary}
+%% Glossaries -- terms and abbreviations.
+%% If you use automatic glossaries,
+%% uncomment the next two lines.
+% \makeglossaries
+% \loadglsentries{includes/glossary}
+%% You have to reference glossary items from the text of the thesis for them to
+%% be indexed and typeset into the list. If you want them to appear in the list
+%% without referencing them, call `\glsaddall' here.
+% \glsaddall
 
 % Bibliography database file
 \bibliography{includes/bibliography.bib}
@@ -110,13 +115,13 @@
 %% Choose the method of typesetting the list of
 %% units and abbreviations.
 %% Uncomment only one of the two lines below!
-
+%%
 %% METHOD 1:
 %% ---------
 %% Automatically generated and sorted list of
 %% abbreviations with hyperlinks from the text.
 %% Edit includes/glossary.tex.
-%\FEIlistOfGlossaries
+% \printacronyms
 %% METHOD 2:
 %% ---------
 %% Manual list -- must be manually filled and sorted,
