@@ -254,6 +254,11 @@ giveninits=true]{biblatex}
 }
 
 % Localization
+\def\FEIabstractString{Abstrakt}
+\def\FEIkeywordsString{Kľúčové slová}
+\def\FEIabstractStringEn{Abstract}
+\def\FEIkeywordsStringEn{Keywords}
+
 \def\FEIdefineStrings{
 \IfEqCase*{\FEIlanguage}{
   {slovak}{
@@ -275,8 +280,6 @@ giveninits=true]{biblatex}
     \def\FEIstudyFieldName{\FEIstudyField}
     \def\FEItrainingWorkplaceName{\FEItrainingWorkplace}
     \def\FEIacknowledgementsString{Poďakovanie}
-    \def\FEIabstractString{Abstrakt}
-    \def\FEIkeywordsString{Kľúčové slová}
     \def\FEIlistOfFiguresAndTablesString{Zoznam obrázkov a tabuliek}
     \def\FEIlistOfSymbolsAndAbbreviationsString{Zoznam značiek a skratiek}
     \def\FEIlistOfAlgorithmsString{Zoznam algoritmov}
@@ -288,9 +291,9 @@ giveninits=true]{biblatex}
     \def\FEIaiDeclarationString{Použitie nástrojov umelej inteligencie}
   }
   {english}{
-    \def\FEIuniversity{Slovenská technická univerzita v Bratislave}
-    \def\FEIfaculty{Fakulta elektrotechniky a informatiky}
-    \def\FEIregNrString{{Evidenčné číslo: \FEIregNr}}
+    \def\FEIuniversity{Slovak University of Technology in Bratislava}
+    \def\FEIfaculty{Faculty of Electrical Engineering and Information Technology}
+    \def\FEIregNrString{{Reg. No.: \FEIregNr}}
     \def\FEItitleString{\FEITeXtitle}
     \IfEqCase*{\FEIthesisType}{
       {bp}{\def\FEIthesisTypeString{Bachelor's thesis}}
@@ -306,8 +309,6 @@ giveninits=true]{biblatex}
     \def\FEIstudyFieldName{\FEIstudyFieldEn}
     \def\FEItrainingWorkplaceName{\FEItrainingWorkplaceEn}
     \def\FEIacknowledgementsString{Acknowledgements}
-    \def\FEIabstractString{Abstract}
-    \def\FEIkeywordsString{Keywords}
     \def\FEIlistOfFiguresAndTablesString{List of Figures and Tables}
     \def\FEIlistOfSymbolsAndAbbreviationsString{List of Symbols and Abbreviations}
     \def\FEIlistOfAlgorithmsString{List of Algorithms}
@@ -450,7 +451,7 @@ giveninits=true]{biblatex}
 }
     
 \newcommand\FEIabstractEn[1]{
-  \FEIabstractGeneric{#1}{\FEIabstractString}{\FEIkeywordsString}{\FEITeXkeywordsEn}
+  \FEIabstractGeneric{#1}{\FEIabstractStringEn}{\FEIkeywordsStringEn}{\FEITeXkeywordsEn}
 }
 
 \newcommand\FEIabstract[1]{
