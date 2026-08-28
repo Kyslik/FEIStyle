@@ -15,6 +15,7 @@
 \ifluatex
 \else
   \RequirePackage[utf8]{inputenc}
+  \RequirePackage[T1]{fontenc}
 \fi
 
 \LoadClass[a4paper,12pt]{report}
